@@ -10,9 +10,9 @@ AcquireProject
 ## Description
 AcquireProject is a digital recreation of the board game Acquire. It has a working GUI and supports multiplayer.
 ## Installation
-None
+
 ## Usage
-None
+
 ## Credits
 Michael Collier - michaelcollier@isu.edu\
 Emily Elzinga - emilyelzinga@isu.edu\
