@@ -12,6 +12,15 @@ plugins {
 
     // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
+
+    // Use javaDoc for documentation
+    id 'java'
+
+    // Use Project Lombok to reduce boilerplate
+    id 'io.freefair.lombok' version '5.3.0'
+
+    // Use JavaFX for UI design
+    id 'org.openjfx.javafxplugin' version '0.0.9'
 }
 
 repositories {
@@ -29,6 +38,10 @@ dependencies {
 
     // This dependency is used by the application.
     implementation 'com.google.guava:guava:30.1.1-jre'
+
+    // Use Gson for saving and loading objects
+    implementation 'com.google.code.gson:gson:2.8.6'
+
 }
 
 application {
@@ -40,3 +53,13 @@ tasks.named('test') {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
 }
+
+javafx {
+    version = "15.0.1"
+    modules = [ 'javafx.controls' ]
+}
+
+
+
+
+
