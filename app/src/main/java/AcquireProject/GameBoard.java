@@ -13,15 +13,15 @@ class GameBoard{
 
    }
    private Merger mergeNeeded(){
-
+      return new Merger();
    }
    private Founder foundNeeded(){
-
+      return new Founder();
    }
    public boolean moveIsLegal(String tile){
-
+      return true;
    }
-   private Vector tileToCoords(String tile){
-      return
+   private int[] tileToCoords(String tile){
+      return new int[]{0, 0};
    }
 }

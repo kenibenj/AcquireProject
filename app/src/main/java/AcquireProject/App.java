@@ -3,7 +3,6 @@
  */
 package AcquireProject;
 
-<<<<<<< HEAD
 import javafx.application.Application;
 import javafx.stage.Stage;
 
@@ -11,9 +10,6 @@ public class App extends Application{
 
     static MainMenu mainMenu = new MainMenu();
     static UserInterface ui = new UserInterface();
-=======
-public class App {
->>>>>>> e8e35a8285f03a51e2023f161a595f374931c5d6
 
     public static void main(String[] args) {
 
