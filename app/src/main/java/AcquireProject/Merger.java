@@ -11,6 +11,6 @@ public class Merger {
     private HotelChain acquiredChain;
 
     private int calculateShareholderBonus(){
-
+        return 1;
     }
 }

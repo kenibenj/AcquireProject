@@ -3,12 +3,28 @@
  */
 package AcquireProject;
 
-public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
+import javafx.application.Application;
+import javafx.stage.Stage;
+
+public class App extends Application{
+
+    static MainMenu mainMenu = new MainMenu();
+    static UserInterface ui = new UserInterface();
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+
+        Application.launch();
+
     }
+
+    @Override
+    public void start(Stage stage) throws Exception {
+        stage.setTitle("Acquire");
+        stage.show();
+        ui.setStage(stage);
+        ui.changeScene(mainMenu.getScene());
+    }
+
+
+
 }
