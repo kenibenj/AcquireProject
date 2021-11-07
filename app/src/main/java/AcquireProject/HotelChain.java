@@ -13,10 +13,13 @@ public class HotelChain {
     private List<String> tiles;
 
     public int getSize(){}
-    public void addTile(String tile){}]
+    public void addTile(String tile){}
     public int getStockPrice(){
 
     }
+
+
+
     public int getMajorityShareholderBonus(){
 
     }
