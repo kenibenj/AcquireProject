@@ -103,7 +103,7 @@ class GameBoard{
    }
 
    /**
-    * Setup necessary for the breadth first search method
+    * Setup necessary for the breadthFirstSearch method
     * @param tile string representation of the newly laid tile
     * @return list of all of the newly laid tile's neighbors, including itself
     */
