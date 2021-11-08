@@ -14,7 +14,7 @@ public class UnplayedTiles {
 
     ArrayList<String> tiles = new ArrayList<>();
 
-    public void createUnplayedTiles() {
+    private UnplayedTiles() {
         for (int i = 1; i < 13; i++) {
             for (char alphabet = 'A'; alphabet <= 'I'; alphabet++) {
                 tiles.add(String.valueOf(i) + alphabet);
@@ -22,15 +22,15 @@ public class UnplayedTiles {
         }
     }
 
-    public ArrayList<String> unPlayedTiles(){
+    public ArrayList<String> getTiles(){
         return tiles;
     }
 
 
     public String drawTile(){
-        int random = (int)((Math.random()*unPlayedTiles().size()));
-        String return_string = unPlayedTiles().get(random);
-        unPlayedTiles().remove(random);
+        int random = (int)((Math.random()*getTiles().size()));
+        String return_string = getTiles().get(random);
+        getTiles().remove(random);
 
         return return_string;
     }
