@@ -12,7 +12,9 @@ public class HotelChain {
     private int tier;
     private List<String> tiles;
 
-    public int getSize(){}
+    public int getSize(){
+        return 1;
+    }
     public void addTile(String tile){}
     public int getStockPrice(){
         return 1;
@@ -26,7 +28,10 @@ public class HotelChain {
     public Player getMajorityShareholder(){
         return new Player();
     }
-    public Player getMinorityShareholder(){
+    public Player getMinorityShareholder() {
         return new Player();
+    }
+    public Boolean isSafe(){
+        return true;
     }
 }

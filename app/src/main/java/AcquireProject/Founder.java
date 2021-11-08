@@ -21,4 +21,8 @@ public class Founder {
     public void foundChain(){
 
     }
+
+    public int calculateShareholderBonus(){
+        return 1;
+    }
 }

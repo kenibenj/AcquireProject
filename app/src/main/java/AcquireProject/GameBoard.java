@@ -100,7 +100,9 @@ class GameBoard{
       return new Merger();
    }
    private Founder foundNeeded(){
-      return new Founder();
+
+
+      return new Founder(playedTiles, new HotelChain()); //THIS IS A PLCEHOLDER,
    }
    public boolean moveIsLegal(String tile){
       return true;
