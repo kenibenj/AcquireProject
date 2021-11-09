@@ -10,24 +10,24 @@ import java.util.ArrayList;
 
 public class Player {
 
-    String player_name = "";
-    int balance = 0;
-    ArrayList<String> player_tiles = new ArrayList<>();
-    ArrayList<Stock> player_stocks = new ArrayList<>();
+
+    private String playerName;
+    private int balance;
+    private ArrayList<String> playerTiles;
+    private ArrayList<Stock> playerStocks;
 
     Player(String name) {
-        player_name = name;
+        playerName = name;
         int balance = 6000;
-        player_tiles.add(UnplayedTiles.drawTiles);
-        player_tiles.add(UnplayedTiles.drawTiles);
-        player_tiles.add(UnplayedTiles.drawTiles);
-        player_tiles.add(UnplayedTiles.drawTiles);
-        player_tiles.add(UnplayedTiles.drawTiles);
-        player_tiles.add(UnplayedTiles.drawTiles);
+        playerTiles = new ArrayList<>();
+    }
+
+    public void addTile(String tile){
+        playerTiles.add(tile);
     }
 
     public String getPlayer_name() {
-        return player_name;
+        return playerName;
     }
 
     public int getBalance() {
@@ -38,23 +38,19 @@ public class Player {
         balance += change;
     }
 
-    public void addTile(String tile){
-        player_tiles.add(UnplayedTiles.drawTiles);
-    }
-
     public ArrayList<String> getPlayer_tiles() {
-        return player_tiles;
+        return playerTiles;
     }
 
     public ArrayList<Stock> getPlayer_stocks() {
-        return player_stocks;
+        return playerStocks;
     }
 
     public void addStock(Stock stock){
-        player_stocks.add(stock);
+        playerStocks.add(stock);
     }
 
     public void removeStock(Stock stock){
-        player_stocks.remove(stock);
+        playerStocks.remove(stock);
     }
 }

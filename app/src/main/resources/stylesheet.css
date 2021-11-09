@@ -1,0 +1,10 @@
+
+.hbox {
+    -fx-padding: 15;
+    -fx-spacing: 10;
+}
+
+.infoBox {
+    -fx-border-color: black;
+    -fx-padding: 10;
+}
