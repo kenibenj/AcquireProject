@@ -11,15 +11,17 @@ import java.util.List;
 
 public class Player {
 
+    private String playerName;
+    private int balance;
+    private ArrayList<String> playerTiles;
+
     Player(String name) {
-        String player_name = name;
+        playerName = name;
         int balance = 6000;
-        ArrayList<String> player_tiles = new ArrayList<>();
-        player_tiles.add(UnplayedTiles.drawTiles);
-        player_tiles.add(UnplayedTiles.drawTiles);
-        player_tiles.add(UnplayedTiles.drawTiles);
-        player_tiles.add(UnplayedTiles.drawTiles);
-        player_tiles.add(UnplayedTiles.drawTiles);
-        player_tiles.add(UnplayedTiles.drawTiles);
+        playerTiles = new ArrayList<>();
+    }
+
+    public void addTile(String tile){
+        playerTiles.add(tile);
     }
 }

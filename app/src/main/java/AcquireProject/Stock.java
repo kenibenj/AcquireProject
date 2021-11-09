@@ -9,7 +9,7 @@ public class Stock {
         return 1;
     }
     public Player getOwner() {
-        return new Player();
+        return new Player("Alice");
     }
     public HotelChain getChain() {
         return new HotelChain();

@@ -8,7 +8,6 @@ import javafx.stage.Stage;
 
 public class App extends Application{
 
-    static MainMenu mainMenu = new MainMenu();
     static UserInterface ui = new UserInterface();
 
     public static void main(String[] args) {
@@ -22,7 +21,7 @@ public class App extends Application{
         stage.setTitle("Acquire");
         stage.show();
         ui.setStage(stage);
-        ui.changeScene(mainMenu.getScene());
+        ui.goToMainMenu();
     }
 
 
