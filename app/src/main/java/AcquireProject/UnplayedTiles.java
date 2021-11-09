@@ -14,7 +14,7 @@ public class UnplayedTiles {
 
     ArrayList<String> tiles = new ArrayList<>();
 
-    private UnplayedTiles() {
+     UnplayedTiles() {
         for (int i = 1; i < 13; i++) {
             for (char alphabet = 'A'; alphabet <= 'I'; alphabet++) {
                 tiles.add(String.valueOf(i) + alphabet);

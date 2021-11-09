@@ -26,10 +26,10 @@ public class HotelChain {
         return 1;
     }
     public Player getMajorityShareholder(){
-        return new Player("Alice");
+        return new Player("");
     }
     public Player getMinorityShareholder() {
-        return new Player("Alice");
+        return new Player("");
     }
     public Boolean isSafe(){
         return true;
