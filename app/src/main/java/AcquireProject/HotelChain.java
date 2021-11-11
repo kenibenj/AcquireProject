@@ -11,8 +11,11 @@ import java.util.List;
 
 public class HotelChain {
     private int tier;
-    private List<String> tiles;
+    private List<Tile> tiles;
+    private String name;
 
+
+    public String getName(){return name;}
     public int getSize(){
         return 1;
     }
