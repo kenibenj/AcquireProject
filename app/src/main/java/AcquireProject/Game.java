@@ -5,10 +5,18 @@ import java.util.List;
 
 /**
  * A facade class to control the game classes
+ *
+ * @author Michael
+ *
+ * @since 1.0.0
  */
 public class Game {
 
+    private List<Player> players;
+
     public Game(){
+
+        this.players = new ArrayList<Player>();
 
     }
 
@@ -26,9 +34,9 @@ public class Game {
      */
     public List<String> getPlayerNames(){
         List<String> names = new ArrayList<>();
-        names.add("Alice");
-        names.add("Bob");
-        names.add("Charlie");
+        for(Player p : players){
+            names.add(p.getPlayerName());
+        }
         return names;
     }
 
@@ -48,9 +56,9 @@ public class Game {
      */
     public List<Integer> getPlayerBalances(){
         List<Integer> balances = new ArrayList<>();
-        balances.add(1355);
-        balances.add(2000);
-        balances.add(4560);
+        for(Player p : players){
+            balances.add(p.getBalance());
+        }
         return balances;
     }
 
@@ -196,6 +204,15 @@ public class Game {
      */
     public int getMergingPlayerStockAmount(){
         return 5;
+    }
+
+    /**
+     * used to add a new player at the start of the game
+     *
+     * @param name the name of the new player
+     */
+    public void addPlayer(String name){
+        this.players.add(new Player(name));
     }
 
 

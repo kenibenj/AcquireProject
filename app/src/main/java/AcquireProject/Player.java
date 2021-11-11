@@ -7,26 +7,27 @@
 package AcquireProject;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Player {
 
 
     private String playerName;
     private int balance;
-    private ArrayList<String> playerTiles;
-    private ArrayList<Stock> playerStocks;
+    private List<String> playerTiles;
+    private List<Stock> playerStocks;
 
     Player(String name) {
-        playerName = name;
-        int balance = 6000;
-        playerTiles = new ArrayList<>();
+        this.playerName = name;
+        this.balance = 6000;
+        this.playerTiles = new ArrayList<>();
     }
 
     public void addTile(String tile){
         playerTiles.add(tile);
     }
 
-    public String getPlayer_name() {
+    public String getPlayerName() {
         return playerName;
     }
 
@@ -38,11 +39,11 @@ public class Player {
         balance += change;
     }
 
-    public ArrayList<String> getPlayer_tiles() {
+    public List<String> getPlayer_tiles() {
         return playerTiles;
     }
 
-    public ArrayList<Stock> getPlayer_stocks() {
+    public List<Stock> getPlayer_stocks() {
         return playerStocks;
     }
 
