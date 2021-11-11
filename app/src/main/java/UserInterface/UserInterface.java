@@ -1,5 +1,6 @@
-package AcquireProject;
+package UserInterface;
 
+import AcquireProject.Game;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import lombok.Setter;

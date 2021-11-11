@@ -137,6 +137,66 @@ public class Game {
 
     }
 
+    /**
+     * a method for getting the names of the unfounded hotel chains
+     *
+     * @return a list of names for the unfounded hotel chains.
+     */
+    public List<String> getUnfoundedChains(){
+        List<String> names = new ArrayList<>();
+        names.add("Worldwide");
+        names.add("Sackson");
+        names.add("Festival");
+        names.add("Imperial");
+        names.add("American");
+        names.add("Continental");
+        names.add("Tower");
+        return names;
+    }
+
+    /**
+     * a method to find how many stock a player is still allowed to buy on their turn
+     *
+     * @return the number of stock a player can still buy this turn
+     */
+    public int getNumberOfStockLeftToBuy(){
+        return 3;
+    }
+
+    /**
+     * a method to find the stocks available stocks and their prices, should be formatted as "HotelChain $price"
+     *
+     * @return a list of stings describing the available stocks and their prices
+     */
+    public List<String> getAvailableStocks(){
+        List<String> stocks = new ArrayList<>();
+        stocks.add("Worldwide" + " $200");
+        stocks.add("Sackson" + " $200");
+        stocks.add("Festival" + " $400");
+        stocks.add("Imperial" + " $400");
+        stocks.add("American" + " $600");
+        stocks.add("Continental" + " $600");
+        stocks.add("Tower" + " $600");
+        return stocks;
+    }
+
+    /**
+     * a method to get the name of the player who is currently deciding what to do with their stock during a merge
+     *
+     * @return the name of the player deciding their stock options
+     */
+    public String getMergingPlayerName(){
+        return "Alice";
+    }
+
+    /**
+     * a method to get how many stocks the player currently making stock options has in the acquired chain
+     *
+     * @return the number of stocks the player has in the acquired chain
+     */
+    public int getMergingPlayerStockAmount(){
+        return 5;
+    }
 
 
 }
