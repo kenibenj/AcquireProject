@@ -63,13 +63,42 @@ class GameBoardTest extends Specification {
     }
 
     def "search vars"(){
-        def tileName = "7A"
+        def tile = new Tile("7A");
+
         expect:
-        gameboard.Scout(tileName).size() == 1;
+        gameboard.Scout(tile).size() == 1;
     }
 
    def "find-mode-in-tile-clump"(){
        given:
-       def clumpOfTiles = new ArrayList<Tile>();
+       def clumpOfTiles = new ArrayList<Tile>()
+       Tile tile1 = new Tile("4E")
+       Tile tile2 = new Tile("5E")
+       Tile tile3 = new Tile("6E")
+       tile1.setChainName("Sackson")
+       tile2.setChainName("Sackson")
+       tile3.setChainName("Sackson")
+       Tile tile4 = new Tile("7E")
+       Tile tile5 = new Tile("8E")
+       Tile tile6 = new Tile("9E")
+       Tile tile7 = new Tile("10E")
+       Tile tile8 = new Tile("11E")
+
+       tile4.setChainName("American")
+       tile5.setChainName("American")
+       tile6.setChainName("American")
+       tile7.setChainName("American")
+       tile8.setChainName("American")
+
+       clumpOfTiles.add(tile1)
+       clumpOfTiles.add(tile2)
+       clumpOfTiles.add(tile3)
+       clumpOfTiles.add(tile4)
+       clumpOfTiles.add(tile4)
+       clumpOfTiles.add(tile5)
+       clumpOfTiles.add(tile6)
+       clumpOfTiles.add(tile7)
+       clumpOfTiles.add(tile8)
+       gameboard.modeInNeighborList(clumpOfTiles)
    }
 }

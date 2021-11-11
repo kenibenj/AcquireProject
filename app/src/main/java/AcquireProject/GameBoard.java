@@ -90,6 +90,7 @@ class GameBoard{
          visited[px][py]=true;
 
          neighborTiles.add(board.get(px).get(py));
+
          queue.add(Arrays.asList(px + 1,py)); //go right
          queue.add(Arrays.asList(px - 1,py)); //go left
          queue.add(Arrays.asList(px,py - 1)); //go up
