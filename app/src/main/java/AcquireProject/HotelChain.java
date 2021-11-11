@@ -1,8 +1,9 @@
-/*
- * Created by Emily Elzinga
- *
- * 11/5/2021
+/**
+ * @author Emily Elzinga
+ * @version v0.1.0
+ * @since 11/7/2021
  */
+
 
 package AcquireProject;
 
@@ -10,8 +11,11 @@ import java.util.List;
 
 public class HotelChain {
     private int tier;
-    private List<String> tiles;
+    private List<Tile> tiles;
+    private String name;
 
+
+    public String getName(){return name;}
     public int getSize(){
         return 1;
     }
