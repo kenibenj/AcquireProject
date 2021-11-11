@@ -102,7 +102,7 @@ class GameBoard{
    private Founder foundNeeded(){
 
 
-      return new Founder(playedTiles, new HotelChain()); //THIS IS A PALCEHOLDER,
+      return new Founder(playedTiles, new HotelChain()); //THIS IS A PLACEHOLDER,
    }
    public boolean moveIsLegal(String tile){
       return true;

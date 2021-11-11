@@ -18,6 +18,14 @@ public class Player {
     private List<Stock> playerStocks;
 
     Player(String name) {
+        playerName = name;
+        int balance = 6000;
+//        player_tiles.add(UnplayedTiles.drawTiles);
+//        player_tiles.add(UnplayedTiles.drawTiles);
+//        player_tiles.add(UnplayedTiles.drawTiles);
+//        player_tiles.add(UnplayedTiles.drawTiles);
+//        player_tiles.add(UnplayedTiles.drawTiles);
+//        player_tiles.add(UnplayedTiles.drawTiles);
         this.playerName = name;
         this.balance = 6000;
         this.playerTiles = new ArrayList<>();
@@ -38,6 +46,13 @@ public class Player {
     public void modifyBalance(int change){
         balance += change;
     }
+
+    public void addTile(String tile){
+        playerTiles.add(tile);
+    }
+
+    public ArrayList<String> getPlayer_tiles() {
+        return playerTiles;
 
     public List<String> getPlayer_tiles() {
         return playerTiles;
