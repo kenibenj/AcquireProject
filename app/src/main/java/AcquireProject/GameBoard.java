@@ -127,7 +127,7 @@ class GameBoard{
 
       Map<HotelChain, Integer> frequencyMap = new HashMap<>();
       for (int i = 0; i < neighbors.size(); i++) {
-         chainName = neighbors.get(i).getChainFlag();
+         chainName = neighbors.get(i).getChainName();
          for (HotelChain chain : foundedChains) {
             if (chainName.equals(chain.getName())){
 

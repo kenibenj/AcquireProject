@@ -34,9 +34,10 @@ class GameBoardTest extends Specification {
         given:
         def tile1 = new Tile("8E")
         def tile2 = new Tile("7F")
-        tile1.setChainFlag("American")
-        matrix.get(7).set(4,new Tile("8E"))
-        matrix.get(6).set(5,new Tile("7F"))
+        tile1.setChainName("American")
+        tile2.setChainName("American")
+        matrix.get(7).set(4,tile1)
+        matrix.get(6).set(5,tile2)
         gameboard.addToPlayedTiles(tile1)
         gameboard.addToPlayedTiles(tile2)
 
@@ -48,6 +49,7 @@ class GameBoardTest extends Specification {
         Queue<List<Integer>> neighbors = new LinkedList<>();
         neighbors.add(pair)
         def tile3 = new Tile("7E")
+        tile3.setChainName("American")
         matrix.get(pair.get(0)).set(pair.get(1), tile3)
         boolean[][] visited = new boolean[matrix.size()][matrix.get(0).size()];
         gameboard.addToPlayedTiles(tile3);
@@ -66,22 +68,8 @@ class GameBoardTest extends Specification {
         gameboard.Scout(tileName).size() == 1;
     }
 
-    def "given-a-tile-name-should-return-a-pair-of-xy-coords"(){
-        given:
-        String tileName = "4C";
-
-        when:
-        List<Integer> coordinates = gameboard.tileToCoords(tileName);
-
-        then:
-        coordinates.get(0) == 3;
-        coordinates.get(1) == 2
-    }
-
-    def "find-nearest-neighbors-for-horizontal-chains-between-7E-and-neighbors"(){
-        def compList = Arrays.asList("4E","SE","6E","7E","8E","9E","10")
-
-        expect:
-        gameboard.findDistance(compList, "7E")
-    }
+   def "find-mode-in-tile-clump"(){
+       given:
+       def clumpOfTiles = new ArrayList<Tile>();
+   }
 }

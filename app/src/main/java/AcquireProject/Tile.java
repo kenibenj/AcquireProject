@@ -16,7 +16,7 @@ public class Tile {
 
     @Getter private final String tileName;
     @Getter private final List<Integer> coordinates;
-    private String chainFlag = "";
+    private String chainName = "";
 
     public String getTileName() {
         return tileName;
@@ -26,12 +26,12 @@ public class Tile {
         return coordinates;
     }
 
-    public String getChainFlag() {
-        return chainFlag;
+    public String getChainName() {
+        return chainName;
     }
 
-    public void setChainFlag(String chainFlag) {
-        this.chainFlag = chainFlag;
+    public void setChainName(String chainFlag) {
+        this.chainName = chainFlag;
     }
 
 
