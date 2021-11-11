@@ -18,12 +18,12 @@ public class Player {
     Player(String name) {
         player_name = name;
         int balance = 6000;
-        player_tiles.add(UnplayedTiles.drawTiles);
-        player_tiles.add(UnplayedTiles.drawTiles);
-        player_tiles.add(UnplayedTiles.drawTiles);
-        player_tiles.add(UnplayedTiles.drawTiles);
-        player_tiles.add(UnplayedTiles.drawTiles);
-        player_tiles.add(UnplayedTiles.drawTiles);
+//        player_tiles.add(UnplayedTiles.drawTiles);
+//        player_tiles.add(UnplayedTiles.drawTiles);
+//        player_tiles.add(UnplayedTiles.drawTiles);
+//        player_tiles.add(UnplayedTiles.drawTiles);
+//        player_tiles.add(UnplayedTiles.drawTiles);
+//        player_tiles.add(UnplayedTiles.drawTiles);
     }
 
     public String getPlayer_name() {
@@ -39,7 +39,7 @@ public class Player {
     }
 
     public void addTile(String tile){
-        player_tiles.add(UnplayedTiles.drawTiles);
+        player_tiles.add(tile);
     }
 
     public ArrayList<String> getPlayer_tiles() {
