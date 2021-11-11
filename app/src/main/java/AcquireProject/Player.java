@@ -18,8 +18,7 @@ public class Player {
     private List<Stock> playerStocks;
 
     Player(String name) {
-<<<<<<< HEAD
-        player_name = name;
+        playerName = name;
         int balance = 6000;
 //        player_tiles.add(UnplayedTiles.drawTiles);
 //        player_tiles.add(UnplayedTiles.drawTiles);
@@ -27,7 +26,6 @@ public class Player {
 //        player_tiles.add(UnplayedTiles.drawTiles);
 //        player_tiles.add(UnplayedTiles.drawTiles);
 //        player_tiles.add(UnplayedTiles.drawTiles);
-=======
         this.playerName = name;
         this.balance = 6000;
         this.playerTiles = new ArrayList<>();
@@ -35,7 +33,6 @@ public class Player {
 
     public void addTile(String tile){
         playerTiles.add(tile);
->>>>>>> a2cd3627087ec2df06a3bb989423f8391e5f4058
     }
 
     public String getPlayerName() {
@@ -50,17 +47,15 @@ public class Player {
         balance += change;
     }
 
-<<<<<<< HEAD
     public void addTile(String tile){
-        player_tiles.add(tile);
+        playerTiles.add(tile);
     }
 
     public ArrayList<String> getPlayer_tiles() {
-        return player_tiles;
-=======
+        return playerTiles;
+
     public List<String> getPlayer_tiles() {
         return playerTiles;
->>>>>>> a2cd3627087ec2df06a3bb989423f8391e5f4058
     }
 
     public List<Stock> getPlayer_stocks() {
