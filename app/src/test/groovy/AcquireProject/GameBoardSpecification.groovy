@@ -1,4 +1,5 @@
 /**
+ * Tests functionality for the Gameboard class methods
  * @author Emily Elzinga
  * @version v0.1.0
  * @since 11/7/2021
@@ -11,18 +12,30 @@ import spock.lang.Specification;
 
 class GameBoardTest extends Specification {
     def gameboard
+    def sackson;
+    def american;
     def matrix
-    def chain
+    /**
+     *Basic variables needed to run each test
+     */
     def setup(){
-        ArrayList<String> foundedChains = new ArrayList<String>()
-        ArrayList<String> unfoundedChains = new ArrayList<String>()
+        ArrayList<HotelChain> foundedChains = new ArrayList<String>()
+
+        sackson = new HotelChain(1,"Sackson")
+        american = new HotelChain(2,"American")
+        ArrayList<HotelChain> unfoundedChains = new ArrayList<String>()
+        unfoundedChains.add(sackson)
+        unfoundedChains.add(american)
         gameboard = new GameBoard(
                 unfoundedChains as List<HotelChain>, foundedChains as List<HotelChain>,
         )
         matrix = gameboard.getGameBoardMatrix();
-//        chain = new HotelChain();
     }
 
+    /**
+     * Create a valid game board
+     * @result a game board with length of 12 and height of 9
+     */
     def "board-specs"(){
         expect:
         matrix.size() == 12
@@ -30,6 +43,10 @@ class GameBoardTest extends Specification {
     }
 
 
+    /**
+     * Search for the 7E tile's neighbors that are on the board already
+     * @result A list containing the tiles 7E, 8E, and 7F
+     */
     def "breadth-first-search-for-a-tiles-neighbors"(){
         given:
         def tile1 = new Tile("8E")
@@ -69,36 +86,62 @@ class GameBoardTest extends Specification {
         gameboard.Scout(tile).size() == 1;
     }
 
-   def "find-mode-in-tile-clump"(){
+    /**
+     * Find the chains that appears with the greatest frequency in linear tile clump
+     * @result should be the american chain, since that is the one with the most tiles
+     */
+   def "find-mode-in-linear-tile-clump"(){
        given:
+       for (int i = 0; i<3; i++){
+           Tile tile = new Tile( i + 4 + "E")
+           tile.setChainName("Sackson")
+           sackson.addTile(tile)
+       }
+
+       for (int i = 0; i< 4; i++){
+           Tile tile = new Tile(i + 5 + "E")
+           tile.setChainName("American")
+           american.addTile(tile)
+       }
+       gameboard.addToFoundedChains(sackson);
+       gameboard.addToFoundedChains(american);
+
        def clumpOfTiles = new ArrayList<Tile>()
-       Tile tile1 = new Tile("4E")
-       Tile tile2 = new Tile("5E")
-       Tile tile3 = new Tile("6E")
-       tile1.setChainName("Sackson")
-       tile2.setChainName("Sackson")
-       tile3.setChainName("Sackson")
-       Tile tile4 = new Tile("7E")
-       Tile tile5 = new Tile("8E")
-       Tile tile6 = new Tile("9E")
-       Tile tile7 = new Tile("10E")
-       Tile tile8 = new Tile("11E")
+       clumpOfTiles.addAll(sackson.getTiles())
+       clumpOfTiles.addAll(american.getTiles())
 
-       tile4.setChainName("American")
-       tile5.setChainName("American")
-       tile6.setChainName("American")
-       tile7.setChainName("American")
-       tile8.setChainName("American")
+       when:
+       def modeList = gameboard.modeInNeighborList(clumpOfTiles)
 
-       clumpOfTiles.add(tile1)
-       clumpOfTiles.add(tile2)
-       clumpOfTiles.add(tile3)
-       clumpOfTiles.add(tile4)
-       clumpOfTiles.add(tile4)
-       clumpOfTiles.add(tile5)
-       clumpOfTiles.add(tile6)
-       clumpOfTiles.add(tile7)
-       clumpOfTiles.add(tile8)
-       gameboard.modeInNeighborList(clumpOfTiles)
+       then:
+       modeList.get(0).getName() == "American";
    }
+    def "find-mode-in-corner-tile-clump-with-two-chains-of-the-same-size"(){
+        given:
+        for (int i = 0; i<3; i++){
+            Tile tile = new Tile( i + 4 + "A")
+            tile.setChainName("Sackson")
+            sackson.addTile(tile)
+        }
+
+        for (int i = 0; i< 3; i++){
+            Tile tile = new Tile(i + 5 + "A")
+            tile.setChainName("American")
+            american.addTile(tile)
+        }
+        gameboard.addToFoundedChains(sackson);
+        gameboard.addToFoundedChains(american);
+
+        def clumpOfTiles = new ArrayList<Tile>()
+        clumpOfTiles.addAll(sackson.getTiles())
+        clumpOfTiles.addAll(american.getTiles())
+
+        when:
+        def modeList = gameboard.modeInNeighborList(clumpOfTiles)
+
+        then:
+        modeList.get(0).getTiles().size() == 3;
+        modeList.get(1).getTiles().size() == 3;
+    }
+
 }

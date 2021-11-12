@@ -37,9 +37,8 @@ public class HotelChain {
     }
 
     public String getName(){return name;}
-
     public int getSize(){
-        return tiles.size();
+        return 1;
     }
 
     public void addTile(Tile tile){
