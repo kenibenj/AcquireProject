@@ -7,6 +7,7 @@
 
 package AcquireProject;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class HotelChain {
@@ -14,12 +15,28 @@ public class HotelChain {
     private List<Tile> tiles;
     private String name;
 
+    private final int SAFE_SIZE = 11;
+
+    public static final int TIER_ONE = 0;
+    public static final int TIER_TWO = 1;
+    public static final int TIER_THREE = 2;
+
+    public HotelChain(String name, int tier){
+        this.name = name;
+        this.tier = tier;
+        this.tiles = new ArrayList<>();
+    }
 
     public String getName(){return name;}
+
     public int getSize(){
-        return 1;
+        return tiles.size();
     }
-    public void addTile(String tile){}
+
+    public void addTile(Tile tile){
+        tiles.add(tile);
+    }
+
     public int getStockPrice(){
         return 1;
     }
@@ -35,7 +52,12 @@ public class HotelChain {
     public Player getMinorityShareholder() {
         return new Player("");
     }
+
     public Boolean isSafe(){
-        return true;
+        if(getSize() >= SAFE_SIZE) {
+            return true;
+        }else{
+            return false;
+        }
     }
 }

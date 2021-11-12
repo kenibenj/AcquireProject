@@ -60,6 +60,10 @@ class GameBoard{
       this.foundedChains = foundedChains;
    }
 
+   public GameBoard(List<HotelChain> unfoundedChains){
+      this(unfoundedChains, new ArrayList<HotelChain>());
+   }
+
    /**
     * This method uses a breadth-first-search algorithm to count the number of tiles
     * part of a one that has just been laid. Because the new tile is part of the hotel chain,

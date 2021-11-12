@@ -13,10 +13,23 @@ import java.util.List;
 public class Game {
 
     private List<Player> players;
+    private GameBoard gameBoard;
+    private Player currentPlayer;
 
     public Game(){
 
         this.players = new ArrayList<Player>();
+
+        List<HotelChain> hotelChains = new ArrayList<>();
+        hotelChains.add(new HotelChain("Worldwide", HotelChain.TIER_ONE));
+        hotelChains.add(new HotelChain("Sackson", HotelChain.TIER_ONE));
+        hotelChains.add(new HotelChain("Festival", HotelChain.TIER_TWO));
+        hotelChains.add(new HotelChain("Imperial", HotelChain.TIER_TWO));
+        hotelChains.add(new HotelChain("American", HotelChain.TIER_TWO));
+        hotelChains.add(new HotelChain("Continental", HotelChain.TIER_THREE));
+        hotelChains.add(new HotelChain("Tower", HotelChain.TIER_THREE));
+        this.gameBoard = new GameBoard(hotelChains);
+
 
     }
 
@@ -92,11 +105,16 @@ public class Game {
     /**
      * adds a tile to the game board, removes the tile from the players hand and gives the player a new tile
      *
-     * @param tile the tile to be placed
+     * @param tileIndex the index in the players list of tiles that should be placed
      */
-    public void placeTile(String tile){
+    public void placeTile(int tileIndex){
+
+        gameBoard.placeTile(currentPlayer.getPlayerTiles().get(tileIndex));
 
         addTileToCurrentPlayer();
+
+        System.out.println("Tried to place tile number: " + tileIndex);
+
     }
 
     /**
@@ -213,6 +231,10 @@ public class Game {
      */
     public void addPlayer(String name){
         this.players.add(new Player(name));
+    }
+
+    public void handleMerger(Merger merge){
+
     }
 
 

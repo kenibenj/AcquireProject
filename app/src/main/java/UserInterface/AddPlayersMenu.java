@@ -38,6 +38,11 @@ public class AddPlayersMenu extends ActionMenu{
 
         Button continueButton = new Button("Add next player");
         menu.getChildren().add(continueButton);
+
+        Button finishButton = new Button("Start the game");
+        finishButton.setDisable(true);
+        menu.getChildren().add(finishButton);
+
         continueButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -48,12 +53,11 @@ public class AddPlayersMenu extends ActionMenu{
                     if (numberOfPlayers >= MAX_PLAYERS - 1) {
                         continueButton.setDisable(true);
                     }
+                    finishButton.setDisable(false);
                 }
             }
         });
 
-        Button finishButton = new Button("Start the game");
-        menu.getChildren().add(finishButton);
         finishButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
