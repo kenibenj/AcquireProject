@@ -69,6 +69,7 @@ public class GameUI {
 
         border.setBottom(makePlayerInfo());
 
+        actionMenus.get(ADD_PLAYERS).updateMenu();
         border.setRight(actionMenus.get(ADD_PLAYERS).getMenu());
 
         return scene;
@@ -161,6 +162,7 @@ public class GameUI {
     public void changeActionMenu(int menuOption) throws IndexOutOfBoundsException{
         if(menuOption >= 0 && menuOption < actionMenus.size()){
             actionMenus.get(menuOption).updateMenu();
+            updatePlayerInfo();
             border.setRight(actionMenus.get(menuOption).getMenu());
             return;
         }

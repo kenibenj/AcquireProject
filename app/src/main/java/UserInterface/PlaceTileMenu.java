@@ -14,12 +14,6 @@ public class PlaceTileMenu extends ActionMenu{
     
     public PlaceTileMenu(Game game, GameUI ui){
         super(game, ui);
-        createMenu();
-    }
-
-    @Override
-    public void updateMenu() {
-
     }
 
     @Override
@@ -27,7 +21,8 @@ public class PlaceTileMenu extends ActionMenu{
         return menu;
     }
 
-    private void createMenu(){
+    @Override
+    public void updateMenu() {
         menu = new VBox();
 
         Text title = new Text("Which tile would you like to place?");
@@ -48,6 +43,8 @@ public class PlaceTileMenu extends ActionMenu{
                 public void handle(ActionEvent event) {
                     int tileIndex = index;
                     game.placeTile(tileIndex);
+                    game.goToNextPlayer();
+                    ui.changeActionMenu(GameUI.PLACE_TILE);
                 }
             });
 

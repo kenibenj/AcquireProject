@@ -45,9 +45,9 @@ public class Tile {
 
 
 
-    public Tile(String tileName) {
-        this.tileName = tileName;
-        this.coordinates = tileToCoords();
+    public Tile(List<Integer> coordinates) {
+        this.tileName = tileToString(coordinates);
+        this.coordinates = coordinates;
     }
 
     /**
@@ -60,5 +60,13 @@ public class Tile {
         coordinates.add(0,Character.getNumericValue(tileName.charAt(0)) - 1);
         coordinates.add(1,y_coords.indexOf(tileName.charAt(1)));
         return coordinates;
+    }
+
+    private String tileToString(List<Integer> coordinates){
+        List<Character> y_coords = Arrays.asList('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I');
+        int xCoord = coordinates.get(0)+1;
+        String name = Integer.toString(xCoord);
+        name += y_coords.get(coordinates.get(1));
+        return name;
     }
 }

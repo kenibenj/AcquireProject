@@ -16,15 +16,10 @@ public class AddPlayersMenu extends ActionMenu{
     public AddPlayersMenu(Game game, GameUI ui){
         super(game, ui);
         numberOfPlayers = 0;
-        createMenu();
     }
 
     @Override
-    public void updateMenu() {
-
-    }
-
-    private void createMenu(){
+    public void updateMenu(){
         this.menu = new VBox();
 
         Text title = new Text("Add Players");
@@ -71,6 +66,7 @@ public class AddPlayersMenu extends ActionMenu{
                     }
                 }
 
+                game.goToNextPlayer();
                 ui.updatePlayerInfo();
                 ui.changeActionMenu(ui.PLACE_TILE);
             }

@@ -20,6 +20,7 @@ public abstract class ActionMenu {
     public ActionMenu(Game game, GameUI ui){
         this.game = game;
         this.ui = ui;
+        this.menu = new VBox();
     }
 
     public void updateMenu(){}

@@ -16,9 +16,12 @@ public  class UnplayedTiles {
     private static ArrayList<Tile> tiles = new ArrayList<>();
 
      UnplayedTiles() {
-        for (int i = 1; i < 13; i++) {
-            for (char alphabet = 'A'; alphabet <= 'I'; alphabet++) {
-                tiles.add(new Tile(String.valueOf(i) + alphabet));
+        for (int i = 0; i < 12; i++) {
+            for (int j = 0; j < 9; j++) {
+                ArrayList<Integer> coords = new ArrayList<>();
+                coords.add(i);
+                coords.add(j);
+                tiles.add(new Tile(coords));
             }
         }
     }

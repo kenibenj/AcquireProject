@@ -11,12 +11,6 @@ public class FoundChainMenu extends ActionMenu{
 
     public FoundChainMenu(Game game, GameUI ui){
         super(game, ui);
-        createMenu();
-    }
-
-    @Override
-    public void updateMenu() {
-
     }
 
     @Override
@@ -24,7 +18,8 @@ public class FoundChainMenu extends ActionMenu{
         return menu;
     }
 
-    private void createMenu(){
+    @Override
+    public void updateMenu() {
         menu = new VBox();
 
         Text title = new Text("Which hotel chain would you like to found?");

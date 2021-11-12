@@ -20,6 +20,9 @@ public class Player {
     Player(String name) {
         playerName = name;
         int balance = 6000;
+
+        this.playerTiles = new ArrayList<>();
+
         playerTiles.add(UnplayedTiles.drawTile());
         playerTiles.add(UnplayedTiles.drawTile());
         playerTiles.add(UnplayedTiles.drawTile());
@@ -28,7 +31,6 @@ public class Player {
         playerTiles.add(UnplayedTiles.drawTile());
         this.playerName = name;
         this.balance = 6000;
-        this.playerTiles = new ArrayList<>();
     }
 
 
@@ -48,7 +50,7 @@ public class Player {
         balance += change;
     }
 
-    public List<Tile> getPlayer_tiles() {
+    public List<Tile> getPlayerTiles() {
         return playerTiles;
     }
 
