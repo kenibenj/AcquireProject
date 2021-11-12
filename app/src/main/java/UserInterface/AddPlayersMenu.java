@@ -16,15 +16,10 @@ public class AddPlayersMenu extends ActionMenu{
     public AddPlayersMenu(Game game, GameUI ui){
         super(game, ui);
         numberOfPlayers = 0;
-        createMenu();
     }
 
     @Override
-    public void updateMenu() {
-
-    }
-
-    private void createMenu(){
+    public void updateMenu(){
         this.menu = new VBox();
 
         Text title = new Text("Add Players");
@@ -38,6 +33,11 @@ public class AddPlayersMenu extends ActionMenu{
 
         Button continueButton = new Button("Add next player");
         menu.getChildren().add(continueButton);
+
+        Button finishButton = new Button("Start the game");
+        finishButton.setDisable(true);
+        menu.getChildren().add(finishButton);
+
         continueButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -48,12 +48,12 @@ public class AddPlayersMenu extends ActionMenu{
                     if (numberOfPlayers >= MAX_PLAYERS - 1) {
                         continueButton.setDisable(true);
                     }
+                    finishButton.setDisable(false);
+                    name.requestFocus();
                 }
             }
         });
 
-        Button finishButton = new Button("Start the game");
-        menu.getChildren().add(finishButton);
         finishButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -67,6 +67,7 @@ public class AddPlayersMenu extends ActionMenu{
                     }
                 }
 
+                game.goToNextPlayer();
                 ui.updatePlayerInfo();
                 ui.changeActionMenu(ui.PLACE_TILE);
             }

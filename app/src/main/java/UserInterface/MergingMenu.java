@@ -9,12 +9,6 @@ public class MergingMenu extends ActionMenu{
 
     public MergingMenu(Game game, GameUI ui){
         super(game, ui);
-        createMenu();
-    }
-
-    @Override
-    public void updateMenu() {
-
     }
 
     @Override
@@ -22,7 +16,8 @@ public class MergingMenu extends ActionMenu{
         return menu;
     }
 
-    private void createMenu(){
+    @Override
+    public void updateMenu(){
         menu = new VBox();
 
         Text title = new Text("Merging");

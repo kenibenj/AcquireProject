@@ -11,6 +11,8 @@
 package AcquireProject;
 
 
+import lombok.Getter;
+
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -23,26 +25,11 @@ class GameBoard{
    private List<Tile> playedTiles;
    private ArrayList<ArrayList<Tile>> board;
 
-
    private List<HotelChain> unfoundedChains;
    private List<HotelChain> foundedChains;
 
-   public ArrayList<ArrayList<Tile>> getGameBoardMatrix(){
-      return board;
-   }
+  private Founder currentFounder = null;
 
-   public List<Tile> getPlayedTiles() {
-      return playedTiles;
-   }
-
-   public void addToPlayedTiles(Tile playedTile) {
-      playedTiles.add(playedTile);
-   }
-
-   public void addToFoundedChains(HotelChain newChain) {
-      foundedChains.add(newChain);
-      unfoundedChains.removeIf(s -> s.equals(newChain));
-   }
 
    /**
     * Initializes the game board. The board matrix will always have a height of 9 and a
@@ -64,6 +51,22 @@ class GameBoard{
       this.playedTiles = new ArrayList<>();
       this.unfoundedChains = unfoundedChains;
       this.foundedChains = foundedChains;
+   }
+
+   public GameBoard(List<HotelChain> unfoundedChains){
+      this(unfoundedChains, new ArrayList<HotelChain>());
+   }
+
+   public void addToPlayedTiles(Tile playedTile) {
+      playedTiles.add(playedTile);
+   }
+
+   public ArrayList<ArrayList<Tile>> getGameBoardMatrix(){
+      return board;
+   }
+
+   public List<Tile> getPlayedTiles() {
+      return playedTiles;
    }
 
    /**
@@ -163,29 +166,52 @@ class GameBoard{
       playedTiles.add(tile);
       List<Tile> chain = Scout(tile);
       List<HotelChain> modeChain = modeInNeighborList(chain);
-      if(modeChain.size() == 1){
-         Founder founder = new Founder();
-         founder.foundChain();
-      }
-
-      else if (modeChain.size() > 1) {
+      if(modeChain.size() == 0 && chain.size() > 1){
+         currentFounder = new Founder(chain);
+      }else if(modeChain.size() == 1){
+          tile.setChainName(modeChain.get(0).getName());
+      }else if (modeChain.size() > 1) {
          HotelChain mode = modeChain.remove(0);
-         for (HotelChain aquiredChain : modeChain){
-            Merger merger = mergeNeeded(mode, aquiredChain);
+         for (HotelChain acquiredChain : modeChain){
+            Merger merger = mergeNeeded(mode, acquiredChain);
          }
       }
 
    }
+
    private void addChain(){
 
    }
+
    private Merger mergeNeeded(HotelChain acquiringChain,HotelChain acquiredChain){
-      return new Merger(acquiringChain,acquiredChain);
+       return new Merger(acquiringChain,acquiredChain);
    }
-   //   private Founder foundNeeded(){
-//      return new Founder();
-//   }
+
+   public Founder foundNeeded(){
+       return currentFounder;
+   }
+
+   public void FoundChain(String chain){
+       for(Tile t : currentFounder.getChainTiles()){
+           t.setChainName(chain);
+       }
+
+       HotelChain chainToFound = null;
+
+       for(HotelChain c : unfoundedChains){
+           if(c.getName() == chain){
+               chainToFound = c;
+           }
+       }
+
+       foundedChains.add(chainToFound);
+       unfoundedChains.remove(chainToFound);
+
+       currentFounder = null;
+   }
+
    public boolean moveIsLegal(String tile){
       return true;
    }
+
 }

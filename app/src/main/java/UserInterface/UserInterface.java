@@ -5,6 +5,14 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import lombok.Setter;
 
+
+/**
+ * proveds the functionality to switch between scenes in the ui
+ *
+ * @author Michael Collier
+ *
+ * @since 1.0.0
+ */
 public class UserInterface {
 
     @Setter private Stage stage;

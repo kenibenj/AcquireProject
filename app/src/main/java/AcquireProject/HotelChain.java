@@ -15,16 +15,27 @@ public class HotelChain {
     private List<Tile> tiles;
     private String name;
 
-    public HotelChain(int tier, String name) {
+    private final int SAFE_SIZE = 11;
+
+    public static final int TIER_ONE = 0;
+    public static final int TIER_TWO = 1;
+    public static final int TIER_THREE = 2;
+
+    public HotelChain(String name, int tier){
+        this.name = name;
         this.tier = tier;
         this.tiles = new ArrayList<>();
-        this.name = name;
     }
+
     public String getName(){return name;}
-    public List<Tile> getTiles(){ return tiles;}
+    public int getSize(){
+        return 1;
+    }
+
     public void addTile(Tile tile){
         tiles.add(tile);
     }
+
     public int getStockPrice(){
         return 1;
     }
@@ -35,12 +46,18 @@ public class HotelChain {
         return 1;
     }
     public Player getMajorityShareholder(){
-        return new Player("");
+        return new Player("", new ArrayList<Tile>() {
+        });
     }
     public Player getMinorityShareholder() {
-        return new Player("");
+        return new Player("", new ArrayList<>());
     }
+
     public Boolean isSafe(){
-        return true;
+        if(getSize() >= SAFE_SIZE) {
+            return true;
+        }else{
+            return false;
+        }
     }
 }

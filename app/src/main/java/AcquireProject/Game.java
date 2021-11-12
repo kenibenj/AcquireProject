@@ -1,7 +1,6 @@
 package AcquireProject;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 /**
  * A facade class to control the game classes
@@ -12,11 +11,27 @@ import java.util.List;
  */
 public class Game {
 
-    private List<Player> players;
+
+    private Queue<Player> players;
+    private GameBoard gameBoard;
+    private Player currentPlayer;
+    private UnplayedTiles unplayedTiles;
 
     public Game(){
 
-        this.players = new ArrayList<Player>();
+        this.players = new LinkedList<>();
+
+        this.unplayedTiles = new UnplayedTiles();
+
+        List<HotelChain> hotelChains = new ArrayList<>();
+        hotelChains.add(new HotelChain("Worldwide", HotelChain.TIER_ONE));
+        hotelChains.add(new HotelChain("Sackson", HotelChain.TIER_ONE));
+        hotelChains.add(new HotelChain("Festival", HotelChain.TIER_TWO));
+        hotelChains.add(new HotelChain("Imperial", HotelChain.TIER_TWO));
+        hotelChains.add(new HotelChain("American", HotelChain.TIER_TWO));
+        hotelChains.add(new HotelChain("Continental", HotelChain.TIER_THREE));
+        hotelChains.add(new HotelChain("Tower", HotelChain.TIER_THREE));
+        this.gameBoard = new GameBoard(hotelChains);
 
     }
 
@@ -79,24 +94,34 @@ public class Game {
      * @return a list of strings representing the tiles a player can play
      */
     public List<String> getCurrentPlayerTiles(){
-        List<String> tiles = new ArrayList<>();
-        tiles.add("4A");
-        tiles.add("7B");
-        tiles.add("1C");
-        tiles.add("7F");
-        tiles.add("12D");
-        tiles.add("5G");
-        return tiles;
+
+        if(currentPlayer.equals(null)){
+            return new ArrayList<>();
+        }
+
+        List<String> tileNames = new ArrayList<>();
+
+        List<Tile> currentPlayerTiles = currentPlayer.getPlayerTiles();
+
+        for(Tile t : currentPlayerTiles){
+            tileNames.add(t.getTileName());
+        }
+
+        return tileNames;
     }
 
     /**
      * adds a tile to the game board, removes the tile from the players hand and gives the player a new tile
      *
-     * @param tile the tile to be placed
+     * @param tileIndex the index in the players list of tiles that should be placed
      */
-    public void placeTile(String tile){
+    public void placeTile(int tileIndex){
 
-        addTileToCurrentPlayer();
+        gameBoard.placeTile(currentPlayer.getPlayerTiles().get(tileIndex));
+        currentPlayer.getPlayerTiles().remove(tileIndex);
+
+        //addTileToCurrentPlayer();
+
     }
 
     /**
@@ -111,7 +136,8 @@ public class Game {
      * adds a tile to the current players hand from the list of available tiles
      */
     private void addTileToCurrentPlayer(){
-
+        Tile givenTile = unplayedTiles.drawTile();
+        currentPlayer.addTile(givenTile);
     }
 
     /**
@@ -129,13 +155,8 @@ public class Game {
      * get the tiles that have already been placed
      * @return
      */
-    public List<int[]> getPlayedTiles(){
-        List<int[]> tiles = new ArrayList<>();
-        tiles.add(new int[]{1, 3});
-        tiles.add(new int[]{5, 6});
-        tiles.add(new int[]{2, 2});
-        tiles.add(new int[]{6, 1});
-        return tiles;
+    public List<Tile> getPlayedTiles(){
+        return gameBoard.getPlayedTiles();
     }
 
     /**
@@ -152,13 +173,10 @@ public class Game {
      */
     public List<String> getUnfoundedChains(){
         List<String> names = new ArrayList<>();
-        names.add("Worldwide");
-        names.add("Sackson");
-        names.add("Festival");
-        names.add("Imperial");
-        names.add("American");
-        names.add("Continental");
-        names.add("Tower");
+        List<HotelChain> chains = gameBoard.getUnfoundedChains();
+        for(HotelChain c : chains){
+            names.add(c.getName());
+        }
         return names;
     }
 
@@ -212,7 +230,33 @@ public class Game {
      * @param name the name of the new player
      */
     public void addPlayer(String name){
-        this.players.add(new Player(name));
+        this.players.add(new Player(name, unplayedTiles.drawStartingTiles()));
+    }
+
+    public void handleMerger(Merger merge){
+
+    }
+
+    public void goToNextPlayer(){
+        if(this.players.size() > 0){
+            if(Objects.isNull(this.currentPlayer)){
+                currentPlayer = players.peek();
+            }else{
+                players.offer(players.poll());
+                currentPlayer = players.peek();
+            }
+
+
+
+        }
+    }
+
+    public Founder foundNeeded(){
+        return gameBoard.foundNeeded();
+    }
+
+    public void foundChain(String chain){
+        gameBoard.FoundChain(chain);
     }
 
 

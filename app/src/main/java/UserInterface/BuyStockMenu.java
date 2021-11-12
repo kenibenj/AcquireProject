@@ -11,12 +11,6 @@ public class BuyStockMenu extends ActionMenu{
 
     public BuyStockMenu(Game game, GameUI ui){
         super(game, ui);
-        createMenu();
-    }
-
-    @Override
-    public void updateMenu() {
-
     }
 
     @Override
@@ -24,7 +18,8 @@ public class BuyStockMenu extends ActionMenu{
         return menu;
     }
 
-    private void createMenu(){
+    @Override
+    public void updateMenu() {
         menu = new VBox();
 
         Text title = new Text("Buy stock");

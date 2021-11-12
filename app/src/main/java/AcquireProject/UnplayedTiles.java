@@ -10,29 +10,43 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class UnplayedTiles {
+public  class UnplayedTiles {
 
 
-    ArrayList<String> tiles = new ArrayList<>();
+    private static List<Tile> tiles = new ArrayList<>();
 
      UnplayedTiles() {
-        for (int i = 1; i < 13; i++) {
-            for (char alphabet = 'A'; alphabet <= 'I'; alphabet++) {
-                tiles.add(String.valueOf(i) + alphabet);
+        for (int i = 0; i < 12; i++) {
+            for (int j = 0; j < 9; j++) {
+                ArrayList<Integer> coords = new ArrayList<>();
+                coords.add(i);
+                coords.add(j);
+                tiles.add(new Tile(coords));
             }
         }
     }
 
-    public ArrayList<String> getTiles(){
+    public List<Tile> getTiles(){
         return tiles;
     }
 
 
-    public String drawTile(){
+    public Tile drawTile(){
         int random = (int)((Math.random()*getTiles().size()));
-        String return_string = getTiles().get(random);
+        Tile returnTile = getTiles().get(random);
         getTiles().remove(random);
 
-        return return_string;
+        return returnTile;
+    }
+
+    public ArrayList<Tile> drawStartingTiles(){
+         ArrayList<Tile> startingTiles = new ArrayList<Tile>();
+         for(int i =0;i<6;i++) {
+             int random = (int) ((Math.random() * getTiles().size()));
+             Tile returnTile = getTiles().get(random);
+             getTiles().remove(random);
+             startingTiles.add(returnTile);
+         }
+         return startingTiles;
     }
 }
