@@ -55,7 +55,7 @@
 
 .Tower{
     -fx-border-color: black;
-    -fx-background-color: grey;
+    -fx-background-color: #71788f;
     -fx-text-fill: white;
     -fx-padding: 10;
 }

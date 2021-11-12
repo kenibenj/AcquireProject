@@ -26,7 +26,7 @@ class GameBoard{
    private ArrayList<ArrayList<Tile>> board;
 
    @Getter private List<HotelChain> unfoundedChains;
-   private List<HotelChain> foundedChains;
+   @Getter private List<HotelChain> foundedChains;
 
   private Founder currentFounder = null;
 
@@ -169,7 +169,10 @@ class GameBoard{
       if(modeChain.size() == 0 && chain.size() > 1){
          currentFounder = new Founder(chain);
       }else if(modeChain.size() == 1){
-          tile.setChainName(modeChain.get(0).getName());
+          //tile.setChainName(modeChain.get(0).getName());
+          for(Tile t : chain){
+              t.setChainName(modeChain.get(0).getName());
+          }
       }else if (modeChain.size() > 1) {
          HotelChain mode = modeChain.remove(0);
          for (HotelChain acquiredChain : modeChain){

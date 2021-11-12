@@ -1,6 +1,8 @@
 package UserInterface;
 
 import AcquireProject.Game;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
@@ -37,6 +39,13 @@ public class BuyStockMenu extends ActionMenu{
 
         Button continueButton = new Button("Continue");
         menu.getChildren().add(continueButton);
+        continueButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                game.goToNextPlayer();
+                ui.changeActionMenu(GameUI.PLACE_TILE);
+            }
+        });
     }
 
 }

@@ -132,10 +132,11 @@ public class Game {
 
     }
 
+
     /**
      * adds a tile to the current players hand from the list of available tiles
      */
-    private void addTileToCurrentPlayer(){
+    public void addTileToCurrentPlayer(){
         Tile givenTile = unplayedTiles.drawTile();
         currentPlayer.addTile(givenTile);
     }
@@ -196,13 +197,9 @@ public class Game {
      */
     public List<String> getAvailableStocks(){
         List<String> stocks = new ArrayList<>();
-        stocks.add("Worldwide" + " $200");
-        stocks.add("Sackson" + " $200");
-        stocks.add("Festival" + " $400");
-        stocks.add("Imperial" + " $400");
-        stocks.add("American" + " $600");
-        stocks.add("Continental" + " $600");
-        stocks.add("Tower" + " $600");
+        for(HotelChain chain : gameBoard.getFoundedChains()){
+            stocks.add(chain.getName() + ": $" + chain.getStockPrice());
+        }
         return stocks;
     }
 

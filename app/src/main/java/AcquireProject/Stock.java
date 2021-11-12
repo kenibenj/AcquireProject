@@ -1,17 +1,19 @@
 package AcquireProject;
 
 import lombok.Getter;
+import lombok.Setter;
 
 public class Stock {
 
     @Getter private HotelChain chain;
-    @Getter private Player owner;
+    @Getter @Setter private Player owner;
 
-    public Stock(){
-        //this.chain = chain;
+    public Stock(HotelChain chain){
+        this.chain = chain;
     }
 
     public int getValue() {
-        return 1;
+        return chain.getStockPrice();
     }
+
 }
