@@ -37,13 +37,13 @@ public  class UnplayedTiles {
     }
 
     public ArrayList<Tile> drawStartingTiles(){
-         ArrayList<Tile> StartingTiles = new ArrayList<Tile>();
+         ArrayList<Tile> startingTiles = new ArrayList<Tile>();
          for(int i =0;i<6;i++) {
              int random = (int) ((Math.random() * getTiles().size()));
              Tile returnTile = getTiles().get(random);
              getTiles().remove(random);
-             StartingTiles.add(returnTile);
+             startingTiles.add(returnTile);
          }
-         return StartingTiles;
+         return startingTiles;
     }
 }
