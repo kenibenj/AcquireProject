@@ -11,6 +11,7 @@ import java.util.*;
  */
 public class Game {
 
+
     private Queue<Player> players;
     private GameBoard gameBoard;
     private Player currentPlayer;
@@ -135,7 +136,8 @@ public class Game {
      * adds a tile to the current players hand from the list of available tiles
      */
     private void addTileToCurrentPlayer(){
-
+        Tile givenTile = unplayedTiles.drawTile();
+        currentPlayer.addTile(givenTile);
     }
 
     /**
@@ -236,7 +238,7 @@ public class Game {
      * @param name the name of the new player
      */
     public void addPlayer(String name){
-        this.players.add(new Player(name));
+        this.players.add(new Player(name, unplayedTiles.drawStartingTiles()));
     }
 
     public void handleMerger(Merger merge){

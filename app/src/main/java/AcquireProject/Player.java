@@ -17,18 +17,9 @@ public class Player {
     private List<Tile> playerTiles;
     private List<Stock> playerStocks;
 
-    Player(String name) {
-        playerName = name;
-        int balance = 6000;
 
-        this.playerTiles = new ArrayList<>();
-
-        playerTiles.add(UnplayedTiles.drawTile());
-        playerTiles.add(UnplayedTiles.drawTile());
-        playerTiles.add(UnplayedTiles.drawTile());
-        playerTiles.add(UnplayedTiles.drawTile());
-        playerTiles.add(UnplayedTiles.drawTile());
-        playerTiles.add(UnplayedTiles.drawTile());
+    Player(String name, List<Tile> startingTiles) {
+        this.playerTiles = startingTiles;
         this.playerName = name;
         this.balance = 6000;
     }
