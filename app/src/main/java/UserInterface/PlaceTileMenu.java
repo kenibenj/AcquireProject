@@ -1,6 +1,8 @@
 package UserInterface;
 
 import AcquireProject.Game;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
@@ -38,6 +40,17 @@ public class PlaceTileMenu extends ActionMenu{
 
         for(int i = 0; i < tileNames.size(); i++){
             Button t = new Button(tileNames.get(i));
+
+            int index = i;
+
+            t.setOnAction(new EventHandler<ActionEvent>() {
+                @Override
+                public void handle(ActionEvent event) {
+                    int tileIndex = index;
+                    game.placeTile(tileIndex);
+                }
+            });
+
             tileGrid.add(t, i % numberOfColumns, i / numberOfColumns, 1, 1);
         }
 

@@ -31,6 +31,7 @@ public class Player {
         this.playerTiles = new ArrayList<>();
     }
 
+
     public void addTile(Tile tile){
         playerTiles.add(tile);
     }
@@ -51,7 +52,7 @@ public class Player {
         return playerTiles;
     }
 
-    public List<Stock> getPlayer_stocks() {
+    public List<Stock> getPlayerStocks() {
         return playerStocks;
     }
 
@@ -62,4 +63,5 @@ public class Player {
     public void removeStock(Stock stock){
         playerStocks.remove(stock);
     }
+
 }
