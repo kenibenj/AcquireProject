@@ -155,13 +155,8 @@ public class Game {
      * get the tiles that have already been placed
      * @return
      */
-    public List<int[]> getPlayedTiles(){
-        List<int[]> tiles = new ArrayList<>();
-        tiles.add(new int[]{1, 3});
-        tiles.add(new int[]{5, 6});
-        tiles.add(new int[]{2, 2});
-        tiles.add(new int[]{6, 1});
-        return tiles;
+    public List<Tile> getPlayedTiles(){
+        return gameBoard.getPlayedTiles();
     }
 
     /**
@@ -178,13 +173,10 @@ public class Game {
      */
     public List<String> getUnfoundedChains(){
         List<String> names = new ArrayList<>();
-        names.add("Worldwide");
-        names.add("Sackson");
-        names.add("Festival");
-        names.add("Imperial");
-        names.add("American");
-        names.add("Continental");
-        names.add("Tower");
+        List<HotelChain> chains = gameBoard.getUnfoundedChains();
+        for(HotelChain c : chains){
+            names.add(c.getName());
+        }
         return names;
     }
 
@@ -257,6 +249,14 @@ public class Game {
 
 
         }
+    }
+
+    public Founder foundNeeded(){
+        return gameBoard.foundNeeded();
+    }
+
+    public void foundChain(String chain){
+        gameBoard.FoundChain(chain);
     }
 
 

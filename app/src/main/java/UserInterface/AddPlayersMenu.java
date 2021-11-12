@@ -49,6 +49,7 @@ public class AddPlayersMenu extends ActionMenu{
                         continueButton.setDisable(true);
                     }
                     finishButton.setDisable(false);
+                    name.requestFocus();
                 }
             }
         });

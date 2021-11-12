@@ -6,14 +6,16 @@
 
 package AcquireProject;
 
+import lombok.Getter;
+
 import java.util.List;
 
 public class Founder {
     private HotelChain foundedChain;
-    private List<String> chainTiles;
+    @Getter private List<Tile> chainTiles;
 
 
-    public Founder(List<String> tiles, HotelChain chain){
+    public Founder(List<Tile> tiles){
         chainTiles = tiles;
     }
 
@@ -22,7 +24,4 @@ public class Founder {
 
     }
 
-    public int calculateShareholderBonus(){
-        return 1;
-    }
 }

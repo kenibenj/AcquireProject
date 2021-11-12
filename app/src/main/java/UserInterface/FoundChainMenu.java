@@ -1,6 +1,9 @@
 package UserInterface;
 
 import AcquireProject.Game;
+import AcquireProject.HotelChain;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
@@ -29,6 +32,18 @@ public class FoundChainMenu extends ActionMenu{
 
         for(int i = 0; i < names.size(); i++){
             Button b = new Button(names.get(i));
+
+            int index = i;
+
+            b.setOnAction(new EventHandler<ActionEvent>() {
+                @Override
+                public void handle(ActionEvent event) {
+                    game.foundChain(game.getUnfoundedChains().get(index));
+                    ui.changeActionMenu(GameUI.PLACE_TILE);
+                    ui.updateGameBoard();
+                }
+            });
+
             menu.getChildren().add(b);
         }
 

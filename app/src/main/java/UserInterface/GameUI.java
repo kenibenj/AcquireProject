@@ -1,6 +1,8 @@
 package UserInterface;
 
+import AcquireProject.Founder;
 import AcquireProject.Game;
+import AcquireProject.Tile;
 import javafx.scene.Scene;
 import javafx.scene.layout.*;
 import javafx.scene.text.Text;
@@ -24,6 +26,7 @@ public class GameUI {
     @Setter private Game game;
 
     private BorderPane border;
+    private GridPane gameBoard;
 
     public static final int PLACE_TILE = 0;
     public static final int BUY_STOCK = 1;
@@ -118,7 +121,7 @@ public class GameUI {
      * @return a GridPane of elements describing the game board squares
      */
     private GridPane makeGameBoard(){
-        GridPane gameBoard =new GridPane();
+        gameBoard = new GridPane();
 
         String[] letters = new String[]{"A", "B", "C", "D", "E", "F", "G", "H", "I"};
 
@@ -169,5 +172,26 @@ public class GameUI {
         throw new IndexOutOfBoundsException("The requested menu was not recognized while trying to switch action menus");
     }
 
+    public void updateGameBoard(){
+        List<Tile> playedTiles = game.getPlayedTiles();
+
+        for(Tile t :playedTiles){
+            int xCoord = t.getCoordinates().get(0);
+            int yCoord = t.getCoordinates().get(1);
+
+            int index = xCoord * 9 + yCoord;
+
+            String style = t.getChainName();
+            if(style == "") {
+                gameBoard.getChildren().get(index).getStyleClass().add("playedTile");
+            }else{
+                gameBoard.getChildren().get(index).getStyleClass().add(style);
+            }
+        }
+    }
+
+    public void chooseChainToFound(Founder founder){
+        changeActionMenu(FOUND_CHAIN);
+    }
 
 }

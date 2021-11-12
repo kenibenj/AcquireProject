@@ -1,5 +1,6 @@
 package UserInterface;
 
+import AcquireProject.Founder;
 import AcquireProject.Game;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -9,6 +10,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
 import java.util.List;
+import java.util.Objects;
 
 public class PlaceTileMenu extends ActionMenu{
     
@@ -43,6 +45,16 @@ public class PlaceTileMenu extends ActionMenu{
                 public void handle(ActionEvent event) {
                     int tileIndex = index;
                     game.placeTile(tileIndex);
+                    ui.updateGameBoard();
+
+                    Founder needFounder = game.foundNeeded();
+
+                    if(!Objects.isNull(needFounder)){
+                        ui.chooseChainToFound(needFounder);
+                        return;
+                    }
+
+
                     game.goToNextPlayer();
                     ui.changeActionMenu(GameUI.PLACE_TILE);
                 }

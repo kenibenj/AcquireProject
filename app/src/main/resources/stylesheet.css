@@ -1,15 +1,84 @@
 
+
+.tile{
+    -fx-border-color: black;
+    -fx-padding: 10;
+}
+
+.playedTile{
+    -fx-border-color: black;
+    -fx-background-color: lightgrey;
+    -fx-padding: 10;
+}
+
+.Worldwide{
+    -fx-border-color: black;
+    -fx-background-color: #a800a8;
+    -fx-text-fill: white;
+    -fx-padding: 10;
+}
+
+.Sackson{
+    -fx-border-color: black;
+    -fx-background-color: #ff6729;
+    -fx-text-fill: white;
+    -fx-padding: 10;
+}
+
+.Festival{
+    -fx-border-color: black;
+    -fx-background-color: green;
+    -fx-text-fill: white;
+    -fx-padding: 10;
+}
+
+.Imperial{
+    -fx-border-color: black;
+    -fx-background-color: #f1c100;
+    -fx-text-fill: white;
+    -fx-padding: 10;
+}
+
+.American{
+    -fx-border-color: black;
+    -fx-background-color: #0000d3;
+    -fx-text-fill: white;
+    -fx-padding: 10;
+}
+
+.Continental{
+    -fx-border-color: black;
+    -fx-background-color: #af0c0c;
+    -fx-text-fill: white;
+    -fx-padding: 10;
+}
+
+.Tower{
+    -fx-border-color: black;
+    -fx-background-color: grey;
+    -fx-text-fill: white;
+    -fx-padding: 10;
+}
+
+.button{
+    -fx-padding: 5;
+}
+
+.largeText{
+    -fx-font-size: 40;
+}
+
+.buttonBox{
+    -fx-padding: 10;
+    -fx-spacing: 5;
+}
+
 .hbox {
     -fx-padding: 15;
     -fx-spacing: 10;
 }
 
 .infoBox {
-    -fx-border-color: black;
-    -fx-padding: 10;
-}
-
-.tile{
     -fx-border-color: black;
     -fx-padding: 10;
 }
