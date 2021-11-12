@@ -21,6 +21,11 @@ public class Player {
         playerName = name;
         int balance = 6000;
         playerTiles.add(UnplayedTiles.drawTile());
+        playerTiles.add(UnplayedTiles.drawTile());
+        playerTiles.add(UnplayedTiles.drawTile());
+        playerTiles.add(UnplayedTiles.drawTile());
+        playerTiles.add(UnplayedTiles.drawTile());
+        playerTiles.add(UnplayedTiles.drawTile());
         this.playerName = name;
         this.balance = 6000;
         this.playerTiles = new ArrayList<>();
