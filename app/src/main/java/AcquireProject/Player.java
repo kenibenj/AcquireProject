@@ -20,12 +20,12 @@ public class Player {
     Player(String name) {
         playerName = name;
         int balance = 6000;
-        playerTiles.add(UnplayedTiles.drawTile());
-        playerTiles.add(UnplayedTiles.drawTile());
-        playerTiles.add(UnplayedTiles.drawTile());
-        playerTiles.add(UnplayedTiles.drawTile());
-        playerTiles.add(UnplayedTiles.drawTile());
-        playerTiles.add(UnplayedTiles.drawTile());
+        playerTiles.add(Game.unplayedTiles.drawTile());
+        playerTiles.add(Game.unplayedTiles.drawTile());
+        playerTiles.add(Game.unplayedTiles.drawTile());
+        playerTiles.add(Game.unplayedTiles.drawTile());
+        playerTiles.add(Game.unplayedTiles.drawTile());
+        playerTiles.add(Game.unplayedTiles.drawTile());
         this.playerName = name;
         this.balance = 6000;
         this.playerTiles = new ArrayList<>();

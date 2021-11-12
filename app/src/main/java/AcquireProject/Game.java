@@ -13,6 +13,8 @@ import java.util.List;
 public class Game {
 
     private List<Player> players;
+    static UnplayedTiles unplayedTiles = new UnplayedTiles();
+    Player currentPlayer = new Player("Benjamin");
 
     public Game(){
 
@@ -96,7 +98,6 @@ public class Game {
      */
     public void placeTile(String tile){
 
-        addTileToCurrentPlayer();
     }
 
     /**
@@ -111,7 +112,8 @@ public class Game {
      * adds a tile to the current players hand from the list of available tiles
      */
     private void addTileToCurrentPlayer(){
-
+        Tile givenTile = unplayedTiles.drawTile();
+        currentPlayer.addTile(givenTile);
     }
 
     /**

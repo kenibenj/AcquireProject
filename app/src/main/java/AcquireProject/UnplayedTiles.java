@@ -23,12 +23,12 @@ public  class UnplayedTiles {
         }
     }
 
-    public static ArrayList<Tile> getTiles(){
+    public ArrayList<Tile> getTiles(){
         return tiles;
     }
 
 
-    public static Tile drawTile(){
+    public Tile drawTile(){
         int random = (int)((Math.random()*getTiles().size()));
         Tile returnTile = getTiles().get(random);
         getTiles().remove(random);
