@@ -13,7 +13,7 @@ import java.util.List;
 public  class UnplayedTiles {
 
 
-    private static ArrayList<Tile> tiles = new ArrayList<>();
+    private static List<Tile> tiles = new ArrayList<>();
 
      UnplayedTiles() {
         for (int i = 1; i < 13; i++) {
@@ -23,7 +23,7 @@ public  class UnplayedTiles {
         }
     }
 
-    public ArrayList<Tile> getTiles(){
+    public List<Tile> getTiles(){
         return tiles;
     }
 
@@ -34,5 +34,16 @@ public  class UnplayedTiles {
         getTiles().remove(random);
 
         return returnTile;
+    }
+
+    public ArrayList<Tile> drawStartingTiles(){
+         ArrayList<Tile> StartingTiles = new ArrayList<Tile>();
+         for(int i =0;i<6;i++) {
+             int random = (int) ((Math.random() * getTiles().size()));
+             Tile returnTile = getTiles().get(random);
+             getTiles().remove(random);
+             StartingTiles.add(returnTile);
+         }
+         return StartingTiles;
     }
 }

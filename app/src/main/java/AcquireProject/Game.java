@@ -232,7 +232,7 @@ public class Game {
      * @param name the name of the new player
      */
     public void addPlayer(String name){
-        this.players.add(new Player(name));
+        this.players.add(new Player(name, unplayedTiles.drawStartingTiles()));
     }
 
     public void handleMerger(Merger merge){

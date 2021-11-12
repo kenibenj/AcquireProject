@@ -17,7 +17,7 @@ public class Player {
     private List<Tile> playerTiles;
     private List<Stock> playerStocks;
 
-    Player(String name) {
+    Player(String name, List<Tile> sartingTiles) {
         playerName = name;
         int balance = 6000;
         playerTiles.add(Game.unplayedTiles.drawTile());
