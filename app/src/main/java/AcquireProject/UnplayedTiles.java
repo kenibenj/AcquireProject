@@ -10,29 +10,29 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class UnplayedTiles {
+public  class UnplayedTiles {
 
 
-    ArrayList<String> tiles = new ArrayList<>();
+    private static ArrayList<Tile> tiles = new ArrayList<>();
 
      UnplayedTiles() {
         for (int i = 1; i < 13; i++) {
             for (char alphabet = 'A'; alphabet <= 'I'; alphabet++) {
-                tiles.add(String.valueOf(i) + alphabet);
+                tiles.add(new Tile(String.valueOf(i) + alphabet));
             }
         }
     }
 
-    public ArrayList<String> getTiles(){
+    public static ArrayList<Tile> getTiles(){
         return tiles;
     }
 
 
-    public String drawTile(){
+    public static Tile drawTile(){
         int random = (int)((Math.random()*getTiles().size()));
-        String return_string = getTiles().get(random);
+        Tile returnTile = getTiles().get(random);
         getTiles().remove(random);
 
-        return return_string;
+        return returnTile;
     }
 }
