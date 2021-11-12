@@ -13,13 +13,9 @@ import java.util.List;
 public class Game {
 
     private List<Player> players;
-<<<<<<< HEAD
     static UnplayedTiles unplayedTiles = new UnplayedTiles();
-    Player currentPlayer = new Player("Benjamin");
-=======
     private GameBoard gameBoard;
     private Player currentPlayer;
->>>>>>> a5cebcfb15aa51fcf5b9e68a12b4838dac142af3
 
     public Game(){
 
@@ -116,13 +112,10 @@ public class Game {
 
         gameBoard.placeTile(currentPlayer.getPlayerTiles().get(tileIndex));
 
-<<<<<<< HEAD
-=======
         addTileToCurrentPlayer();
 
         System.out.println("Tried to place tile number: " + tileIndex);
 
->>>>>>> a5cebcfb15aa51fcf5b9e68a12b4838dac142af3
     }
 
     /**

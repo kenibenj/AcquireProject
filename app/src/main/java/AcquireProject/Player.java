@@ -48,7 +48,7 @@ public class Player {
         balance += change;
     }
 
-    public List<Tile> getPlayer_tiles() {
+    public List<Tile> getPlayerTiles() {
         return playerTiles;
     }
 
