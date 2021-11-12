@@ -7,6 +7,7 @@
 
 package AcquireProject;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class HotelChain {
@@ -14,12 +15,16 @@ public class HotelChain {
     private List<Tile> tiles;
     private String name;
 
-
-    public String getName(){return name;}
-    public int getSize(){
-        return 1;
+    public HotelChain(int tier, String name) {
+        this.tier = tier;
+        this.tiles = new ArrayList<>();
+        this.name = name;
     }
-    public void addTile(String tile){}
+    public String getName(){return name;}
+    public List<Tile> getTiles(){ return tiles;}
+    public void addTile(Tile tile){
+        tiles.add(tile);
+    }
     public int getStockPrice(){
         return 1;
     }

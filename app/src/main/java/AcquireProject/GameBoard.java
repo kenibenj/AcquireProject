@@ -23,6 +23,7 @@ class GameBoard{
    private List<Tile> playedTiles;
    private ArrayList<ArrayList<Tile>> board;
 
+
    private List<HotelChain> unfoundedChains;
    private List<HotelChain> foundedChains;
 
@@ -36,6 +37,11 @@ class GameBoard{
 
    public void addToPlayedTiles(Tile playedTile) {
       playedTiles.add(playedTile);
+   }
+
+   public void addToFoundedChains(HotelChain newChain) {
+      foundedChains.add(newChain);
+      unfoundedChains.removeIf(s -> s.equals(newChain));
    }
 
    /**
@@ -158,8 +164,8 @@ class GameBoard{
       List<Tile> chain = Scout(tile);
       List<HotelChain> modeChain = modeInNeighborList(chain);
       if(modeChain.size() == 1){
-//         Founder founder = new Founder(chain,);
-//         founder.foundChain();
+         Founder founder = new Founder();
+         founder.foundChain();
       }
 
       else if (modeChain.size() > 1) {
