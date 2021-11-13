@@ -44,7 +44,7 @@ public class Loader {
      * Loads a game object from a text file.
      * @return game object
      */
-    private Game loadGame(){
+    public Game loadGame(){
         Game savedGame = null;
         try {
             String json = String.join("\n", Files.readAllLines(Paths.get("gameData.txt")));

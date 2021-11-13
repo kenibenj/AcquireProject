@@ -77,7 +77,8 @@ public class MainMenu {
         loadButton.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {
-
+                    ui.loadGame();
+                    ui.goToGame();
                 }
             }
         );

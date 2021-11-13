@@ -45,6 +45,7 @@ public class PlaceTileMenu extends ActionMenu{
                 public void handle(ActionEvent event) {
                     int tileIndex = index;
                     game.placeTile(tileIndex);
+                    game.addTileToCurrentPlayer();
                     ui.updateGameBoard();
 
                     Founder needFounder = game.foundNeeded();
@@ -54,9 +55,7 @@ public class PlaceTileMenu extends ActionMenu{
                         return;
                     }
 
-
-                    game.goToNextPlayer();
-                    ui.changeActionMenu(GameUI.PLACE_TILE);
+                    ui.changeActionMenu(GameUI.BUY_STOCK);
                 }
             });
 

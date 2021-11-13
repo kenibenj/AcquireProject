@@ -16,8 +16,6 @@ import lombok.Getter;
 import java.util.*;
 import java.util.stream.Collectors;
 
-import static java.lang.Math.abs;
-
 
 class GameBoard{
 
@@ -26,9 +24,9 @@ class GameBoard{
    private ArrayList<ArrayList<Tile>> board;
 
    @Getter private List<HotelChain> unfoundedChains;
-   private List<HotelChain> foundedChains;
+   @Getter private List<HotelChain> foundedChains;
 
-   private Founder currentFounder = null;
+  private Founder currentFounder = null;
 
 
    /**
@@ -148,9 +146,9 @@ class GameBoard{
                } else {
                   frequencyMap.put(chain, 1);
                }
-
             }
          }
+
       }
 
       return frequencyMap.entrySet().stream()
@@ -160,8 +158,11 @@ class GameBoard{
    }
 
 
-
-
+    /**
+     * places a tile on the board and checks if a founding or merger are needed
+     *
+     * @param tile the tile that will be added to the board
+     */
    public void placeTile(Tile tile){
       playedTiles.add(tile);
       List<Tile> chain = Scout(tile);
@@ -169,7 +170,12 @@ class GameBoard{
       if(modeChain.size() == 0 && chain.size() > 1){
          currentFounder = new Founder(chain);
       }else if(modeChain.size() == 1){
-          tile.setChainName(modeChain.get(0).getName());
+          for(Tile t : chain){
+              t.setChainName(modeChain.get(0).getName());
+              if(!modeChain.get(0).getTiles().contains(t)){
+                  modeChain.get(0).getTiles().add(t);
+              }
+          }
       }else if (modeChain.size() > 1) {
          HotelChain mode = modeChain.remove(0);
          for (HotelChain acquiredChain : modeChain){
@@ -187,14 +193,25 @@ class GameBoard{
        return new Merger(acquiringChain,acquiredChain);
    }
 
+    /**
+     * checks if there is a founding that needs to be handled
+     *
+     * @return the founder if there is a founding required or null if not
+     */
    public Founder foundNeeded(){
        return currentFounder;
    }
 
-   public void FoundChain(String chain){
-       for(Tile t : currentFounder.getChainTiles()){
-           t.setChainName(chain);
-       }
+    /**
+     * founds a new hotel chain by adding tiles to the chain, giving the player who founded it stock,
+     * and moving the chain into the founded list
+     *
+     * @param chain the name of the chain that needs to be founded
+     * @param founder the player who founded the chain
+     *
+     * @author Michael Collier
+     */
+   public void FoundChain(String chain, Player founder){
 
        HotelChain chainToFound = null;
 
@@ -204,10 +221,19 @@ class GameBoard{
            }
        }
 
+       for(Tile t : currentFounder.getChainTiles()){
+           t.setChainName(chain);
+           chainToFound.addTile(t);
+       }
+
        foundedChains.add(chainToFound);
        unfoundedChains.remove(chainToFound);
 
        currentFounder = null;
+
+       if(chainToFound.getNumberOfUnsoldStock() > 0){
+           chainToFound.giveStock(founder);
+       }
    }
 
    public boolean moveIsLegal(String tile){

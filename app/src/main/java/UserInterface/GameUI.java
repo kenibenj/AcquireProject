@@ -2,8 +2,14 @@ package UserInterface;
 
 import AcquireProject.Founder;
 import AcquireProject.Game;
+import AcquireProject.StockProfiler;
 import AcquireProject.Tile;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.*;
 import javafx.scene.text.Text;
 import lombok.Getter;
@@ -11,6 +17,7 @@ import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 
 /**
@@ -66,7 +73,15 @@ public class GameUI {
         Text title = new Text();
         title.setText("Acquire Game");
 
-        border.setTop(title);
+        Button saveGameButton = new Button("Save");
+        saveGameButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                ui.saveGame(game);
+            }
+        });
+
+        border.setTop(saveGameButton);
 
         border.setCenter(makeGameBoard());
 
@@ -89,6 +104,7 @@ public class GameUI {
 
         List<String> playerNames = game.getPlayerNames();
         List<Integer> playerBalances = game.getPlayerBalances();
+        List<Map<String, Integer>> profiles = game.getPlayerStockProfiles();
 
         for(int i = 0; i < playerNames.size(); i++){
 
@@ -99,7 +115,22 @@ public class GameUI {
             Text balance = new Text("$" + playerBalances.get(i).toString());
 
             info.getChildren().add(name);
-            info.getChildren().add(balance);
+
+            GridPane finance = new GridPane();
+            finance.add(balance, 0, 0, 2, 1);
+
+            Map<String, Integer> stockProfile = profiles.get(i);
+
+
+            List<String> keys = StockProfiler.getChains();
+            for(int j = 0; j < keys.size(); j++){
+                Label stock = new Label(keys.get(j).charAt(0) + ": " + stockProfile.get(keys.get(j)).toString());
+                stock.getStyleClass().add("stockDisplay");
+                stock.getStyleClass().add(keys.get(j));
+                finance.add(stock, (j+2)%3, (j+2)/3, 1, 1);
+            }
+
+            info.getChildren().add(finance);
 
             playerInfo.getChildren().add(info);
 
@@ -128,12 +159,9 @@ public class GameUI {
         for(int i = 0; i < 12; i++){
             for(int j = 0; j < 9; j++){
 
-                VBox tile = new VBox();
+                Label tile = new Label(Integer.toString(i + 1) + letters[j]);
                 tile.getStyleClass().add("tile");
-
-                Text name = new Text(Integer.toString(i + 1) + letters[j]);
-
-                tile.getChildren().add(name);
+                tile.setAlignment(Pos.CENTER);
 
                 gameBoard.add(tile, i, j, 1, 1);
 

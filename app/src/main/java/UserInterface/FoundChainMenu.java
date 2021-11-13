@@ -39,7 +39,7 @@ public class FoundChainMenu extends ActionMenu{
                 @Override
                 public void handle(ActionEvent event) {
                     game.foundChain(game.getUnfoundedChains().get(index));
-                    ui.changeActionMenu(GameUI.PLACE_TILE);
+                    ui.changeActionMenu(GameUI.BUY_STOCK);
                     ui.updateGameBoard();
                 }
             });
