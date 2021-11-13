@@ -145,104 +145,79 @@
         "name": "Worldwide",
         "unownedStock": [
           {
-            "chain": "Worldwide",
-            "chainStockPrice": 200
+            "chainName": "Worldwide"
           },
           {
-            "chain": "Worldwide",
-            "chainStockPrice": 200
+            "chainName": "Worldwide"
           },
           {
-            "chain": "Worldwide",
-            "chainStockPrice": 200
+            "chainName": "Worldwide"
           },
           {
-            "chain": "Worldwide",
-            "chainStockPrice": 200
+            "chainName": "Worldwide"
           },
           {
-            "chain": "Worldwide",
-            "chainStockPrice": 200
+            "chainName": "Worldwide"
           },
           {
-            "chain": "Worldwide",
-            "chainStockPrice": 200
+            "chainName": "Worldwide"
           },
           {
-            "chain": "Worldwide",
-            "chainStockPrice": 200
+            "chainName": "Worldwide"
           },
           {
-            "chain": "Worldwide",
-            "chainStockPrice": 200
+            "chainName": "Worldwide"
           },
           {
-            "chain": "Worldwide",
-            "chainStockPrice": 200
+            "chainName": "Worldwide"
           },
           {
-            "chain": "Worldwide",
-            "chainStockPrice": 200
+            "chainName": "Worldwide"
           },
           {
-            "chain": "Worldwide",
-            "chainStockPrice": 200
+            "chainName": "Worldwide"
           },
           {
-            "chain": "Worldwide",
-            "chainStockPrice": 200
+            "chainName": "Worldwide"
           },
           {
-            "chain": "Worldwide",
-            "chainStockPrice": 200
+            "chainName": "Worldwide"
           },
           {
-            "chain": "Worldwide",
-            "chainStockPrice": 200
+            "chainName": "Worldwide"
           },
           {
-            "chain": "Worldwide",
-            "chainStockPrice": 200
+            "chainName": "Worldwide"
           },
           {
-            "chain": "Worldwide",
-            "chainStockPrice": 200
+            "chainName": "Worldwide"
           },
           {
-            "chain": "Worldwide",
-            "chainStockPrice": 200
+            "chainName": "Worldwide"
           },
           {
-            "chain": "Worldwide",
-            "chainStockPrice": 200
+            "chainName": "Worldwide"
           },
           {
-            "chain": "Worldwide",
-            "chainStockPrice": 200
+            "chainName": "Worldwide"
           },
           {
-            "chain": "Worldwide",
-            "chainStockPrice": 200
+            "chainName": "Worldwide"
           },
           {
-            "chain": "Worldwide",
-            "chainStockPrice": 200
+            "chainName": "Worldwide"
           },
           {
-            "chain": "Worldwide",
-            "chainStockPrice": 200
+            "chainName": "Worldwide"
           },
           {
-            "chain": "Worldwide",
-            "chainStockPrice": 200
+            "chainName": "Worldwide"
           },
           {
-            "chain": "Worldwide",
-            "chainStockPrice": 200
+            "chainName": "Worldwide"
           },
           {
-            "chain": "Worldwide",
-            "chainStockPrice": 200
+            "chainName": "Worldwide"
           }
         ],
         "ownedStock": []
@@ -255,104 +230,79 @@
         "name": "Sackson",
         "unownedStock": [
           {
-            "chain": "Sackson",
-            "chainStockPrice": 200
+            "chainName": "Sackson"
           },
           {
-            "chain": "Sackson",
-            "chainStockPrice": 200
+            "chainName": "Sackson"
           },
           {
-            "chain": "Sackson",
-            "chainStockPrice": 200
+            "chainName": "Sackson"
           },
           {
-            "chain": "Sackson",
-            "chainStockPrice": 200
+            "chainName": "Sackson"
           },
           {
-            "chain": "Sackson",
-            "chainStockPrice": 200
+            "chainName": "Sackson"
           },
           {
-            "chain": "Sackson",
-            "chainStockPrice": 200
+            "chainName": "Sackson"
           },
           {
-            "chain": "Sackson",
-            "chainStockPrice": 200
+            "chainName": "Sackson"
           },
           {
-            "chain": "Sackson",
-            "chainStockPrice": 200
+            "chainName": "Sackson"
           },
           {
-            "chain": "Sackson",
-            "chainStockPrice": 200
+            "chainName": "Sackson"
           },
           {
-            "chain": "Sackson",
-            "chainStockPrice": 200
+            "chainName": "Sackson"
           },
           {
-            "chain": "Sackson",
-            "chainStockPrice": 200
+            "chainName": "Sackson"
           },
           {
-            "chain": "Sackson",
-            "chainStockPrice": 200
+            "chainName": "Sackson"
           },
           {
-            "chain": "Sackson",
-            "chainStockPrice": 200
+            "chainName": "Sackson"
           },
           {
-            "chain": "Sackson",
-            "chainStockPrice": 200
+            "chainName": "Sackson"
           },
           {
-            "chain": "Sackson",
-            "chainStockPrice": 200
+            "chainName": "Sackson"
           },
           {
-            "chain": "Sackson",
-            "chainStockPrice": 200
+            "chainName": "Sackson"
           },
           {
-            "chain": "Sackson",
-            "chainStockPrice": 200
+            "chainName": "Sackson"
           },
           {
-            "chain": "Sackson",
-            "chainStockPrice": 200
+            "chainName": "Sackson"
           },
           {
-            "chain": "Sackson",
-            "chainStockPrice": 200
+            "chainName": "Sackson"
           },
           {
-            "chain": "Sackson",
-            "chainStockPrice": 200
+            "chainName": "Sackson"
           },
           {
-            "chain": "Sackson",
-            "chainStockPrice": 200
+            "chainName": "Sackson"
           },
           {
-            "chain": "Sackson",
-            "chainStockPrice": 200
+            "chainName": "Sackson"
           },
           {
-            "chain": "Sackson",
-            "chainStockPrice": 200
+            "chainName": "Sackson"
           },
           {
-            "chain": "Sackson",
-            "chainStockPrice": 200
+            "chainName": "Sackson"
           },
           {
-            "chain": "Sackson",
-            "chainStockPrice": 200
+            "chainName": "Sackson"
           }
         ],
         "ownedStock": []
@@ -365,104 +315,79 @@
         "name": "Festival",
         "unownedStock": [
           {
-            "chain": "Festival",
-            "chainStockPrice": 300
+            "chainName": "Festival"
           },
           {
-            "chain": "Festival",
-            "chainStockPrice": 300
+            "chainName": "Festival"
           },
           {
-            "chain": "Festival",
-            "chainStockPrice": 300
+            "chainName": "Festival"
           },
           {
-            "chain": "Festival",
-            "chainStockPrice": 300
+            "chainName": "Festival"
           },
           {
-            "chain": "Festival",
-            "chainStockPrice": 300
+            "chainName": "Festival"
           },
           {
-            "chain": "Festival",
-            "chainStockPrice": 300
+            "chainName": "Festival"
           },
           {
-            "chain": "Festival",
-            "chainStockPrice": 300
+            "chainName": "Festival"
           },
           {
-            "chain": "Festival",
-            "chainStockPrice": 300
+            "chainName": "Festival"
           },
           {
-            "chain": "Festival",
-            "chainStockPrice": 300
+            "chainName": "Festival"
           },
           {
-            "chain": "Festival",
-            "chainStockPrice": 300
+            "chainName": "Festival"
           },
           {
-            "chain": "Festival",
-            "chainStockPrice": 300
+            "chainName": "Festival"
           },
           {
-            "chain": "Festival",
-            "chainStockPrice": 300
+            "chainName": "Festival"
           },
           {
-            "chain": "Festival",
-            "chainStockPrice": 300
+            "chainName": "Festival"
           },
           {
-            "chain": "Festival",
-            "chainStockPrice": 300
+            "chainName": "Festival"
           },
           {
-            "chain": "Festival",
-            "chainStockPrice": 300
+            "chainName": "Festival"
           },
           {
-            "chain": "Festival",
-            "chainStockPrice": 300
+            "chainName": "Festival"
           },
           {
-            "chain": "Festival",
-            "chainStockPrice": 300
+            "chainName": "Festival"
           },
           {
-            "chain": "Festival",
-            "chainStockPrice": 300
+            "chainName": "Festival"
           },
           {
-            "chain": "Festival",
-            "chainStockPrice": 300
+            "chainName": "Festival"
           },
           {
-            "chain": "Festival",
-            "chainStockPrice": 300
+            "chainName": "Festival"
           },
           {
-            "chain": "Festival",
-            "chainStockPrice": 300
+            "chainName": "Festival"
           },
           {
-            "chain": "Festival",
-            "chainStockPrice": 300
+            "chainName": "Festival"
           },
           {
-            "chain": "Festival",
-            "chainStockPrice": 300
+            "chainName": "Festival"
           },
           {
-            "chain": "Festival",
-            "chainStockPrice": 300
+            "chainName": "Festival"
           },
           {
-            "chain": "Festival",
-            "chainStockPrice": 300
+            "chainName": "Festival"
           }
         ],
         "ownedStock": []
@@ -475,104 +400,79 @@
         "name": "Imperial",
         "unownedStock": [
           {
-            "chain": "Imperial",
-            "chainStockPrice": 300
+            "chainName": "Imperial"
           },
           {
-            "chain": "Imperial",
-            "chainStockPrice": 300
+            "chainName": "Imperial"
           },
           {
-            "chain": "Imperial",
-            "chainStockPrice": 300
+            "chainName": "Imperial"
           },
           {
-            "chain": "Imperial",
-            "chainStockPrice": 300
+            "chainName": "Imperial"
           },
           {
-            "chain": "Imperial",
-            "chainStockPrice": 300
+            "chainName": "Imperial"
           },
           {
-            "chain": "Imperial",
-            "chainStockPrice": 300
+            "chainName": "Imperial"
           },
           {
-            "chain": "Imperial",
-            "chainStockPrice": 300
+            "chainName": "Imperial"
           },
           {
-            "chain": "Imperial",
-            "chainStockPrice": 300
+            "chainName": "Imperial"
           },
           {
-            "chain": "Imperial",
-            "chainStockPrice": 300
+            "chainName": "Imperial"
           },
           {
-            "chain": "Imperial",
-            "chainStockPrice": 300
+            "chainName": "Imperial"
           },
           {
-            "chain": "Imperial",
-            "chainStockPrice": 300
+            "chainName": "Imperial"
           },
           {
-            "chain": "Imperial",
-            "chainStockPrice": 300
+            "chainName": "Imperial"
           },
           {
-            "chain": "Imperial",
-            "chainStockPrice": 300
+            "chainName": "Imperial"
           },
           {
-            "chain": "Imperial",
-            "chainStockPrice": 300
+            "chainName": "Imperial"
           },
           {
-            "chain": "Imperial",
-            "chainStockPrice": 300
+            "chainName": "Imperial"
           },
           {
-            "chain": "Imperial",
-            "chainStockPrice": 300
+            "chainName": "Imperial"
           },
           {
-            "chain": "Imperial",
-            "chainStockPrice": 300
+            "chainName": "Imperial"
           },
           {
-            "chain": "Imperial",
-            "chainStockPrice": 300
+            "chainName": "Imperial"
           },
           {
-            "chain": "Imperial",
-            "chainStockPrice": 300
+            "chainName": "Imperial"
           },
           {
-            "chain": "Imperial",
-            "chainStockPrice": 300
+            "chainName": "Imperial"
           },
           {
-            "chain": "Imperial",
-            "chainStockPrice": 300
+            "chainName": "Imperial"
           },
           {
-            "chain": "Imperial",
-            "chainStockPrice": 300
+            "chainName": "Imperial"
           },
           {
-            "chain": "Imperial",
-            "chainStockPrice": 300
+            "chainName": "Imperial"
           },
           {
-            "chain": "Imperial",
-            "chainStockPrice": 300
+            "chainName": "Imperial"
           },
           {
-            "chain": "Imperial",
-            "chainStockPrice": 300
+            "chainName": "Imperial"
           }
         ],
         "ownedStock": []
@@ -585,104 +485,79 @@
         "name": "American",
         "unownedStock": [
           {
-            "chain": "American",
-            "chainStockPrice": 300
+            "chainName": "American"
           },
           {
-            "chain": "American",
-            "chainStockPrice": 300
+            "chainName": "American"
           },
           {
-            "chain": "American",
-            "chainStockPrice": 300
+            "chainName": "American"
           },
           {
-            "chain": "American",
-            "chainStockPrice": 300
+            "chainName": "American"
           },
           {
-            "chain": "American",
-            "chainStockPrice": 300
+            "chainName": "American"
           },
           {
-            "chain": "American",
-            "chainStockPrice": 300
+            "chainName": "American"
           },
           {
-            "chain": "American",
-            "chainStockPrice": 300
+            "chainName": "American"
           },
           {
-            "chain": "American",
-            "chainStockPrice": 300
+            "chainName": "American"
           },
           {
-            "chain": "American",
-            "chainStockPrice": 300
+            "chainName": "American"
           },
           {
-            "chain": "American",
-            "chainStockPrice": 300
+            "chainName": "American"
           },
           {
-            "chain": "American",
-            "chainStockPrice": 300
+            "chainName": "American"
           },
           {
-            "chain": "American",
-            "chainStockPrice": 300
+            "chainName": "American"
           },
           {
-            "chain": "American",
-            "chainStockPrice": 300
+            "chainName": "American"
           },
           {
-            "chain": "American",
-            "chainStockPrice": 300
+            "chainName": "American"
           },
           {
-            "chain": "American",
-            "chainStockPrice": 300
+            "chainName": "American"
           },
           {
-            "chain": "American",
-            "chainStockPrice": 300
+            "chainName": "American"
           },
           {
-            "chain": "American",
-            "chainStockPrice": 300
+            "chainName": "American"
           },
           {
-            "chain": "American",
-            "chainStockPrice": 300
+            "chainName": "American"
           },
           {
-            "chain": "American",
-            "chainStockPrice": 300
+            "chainName": "American"
           },
           {
-            "chain": "American",
-            "chainStockPrice": 300
+            "chainName": "American"
           },
           {
-            "chain": "American",
-            "chainStockPrice": 300
+            "chainName": "American"
           },
           {
-            "chain": "American",
-            "chainStockPrice": 300
+            "chainName": "American"
           },
           {
-            "chain": "American",
-            "chainStockPrice": 300
+            "chainName": "American"
           },
           {
-            "chain": "American",
-            "chainStockPrice": 300
+            "chainName": "American"
           },
           {
-            "chain": "American",
-            "chainStockPrice": 300
+            "chainName": "American"
           }
         ],
         "ownedStock": []
@@ -695,104 +570,79 @@
         "name": "Continental",
         "unownedStock": [
           {
-            "chain": "Continental",
-            "chainStockPrice": 400
+            "chainName": "Continental"
           },
           {
-            "chain": "Continental",
-            "chainStockPrice": 400
+            "chainName": "Continental"
           },
           {
-            "chain": "Continental",
-            "chainStockPrice": 400
+            "chainName": "Continental"
           },
           {
-            "chain": "Continental",
-            "chainStockPrice": 400
+            "chainName": "Continental"
           },
           {
-            "chain": "Continental",
-            "chainStockPrice": 400
+            "chainName": "Continental"
           },
           {
-            "chain": "Continental",
-            "chainStockPrice": 400
+            "chainName": "Continental"
           },
           {
-            "chain": "Continental",
-            "chainStockPrice": 400
+            "chainName": "Continental"
           },
           {
-            "chain": "Continental",
-            "chainStockPrice": 400
+            "chainName": "Continental"
           },
           {
-            "chain": "Continental",
-            "chainStockPrice": 400
+            "chainName": "Continental"
           },
           {
-            "chain": "Continental",
-            "chainStockPrice": 400
+            "chainName": "Continental"
           },
           {
-            "chain": "Continental",
-            "chainStockPrice": 400
+            "chainName": "Continental"
           },
           {
-            "chain": "Continental",
-            "chainStockPrice": 400
+            "chainName": "Continental"
           },
           {
-            "chain": "Continental",
-            "chainStockPrice": 400
+            "chainName": "Continental"
           },
           {
-            "chain": "Continental",
-            "chainStockPrice": 400
+            "chainName": "Continental"
           },
           {
-            "chain": "Continental",
-            "chainStockPrice": 400
+            "chainName": "Continental"
           },
           {
-            "chain": "Continental",
-            "chainStockPrice": 400
+            "chainName": "Continental"
           },
           {
-            "chain": "Continental",
-            "chainStockPrice": 400
+            "chainName": "Continental"
           },
           {
-            "chain": "Continental",
-            "chainStockPrice": 400
+            "chainName": "Continental"
           },
           {
-            "chain": "Continental",
-            "chainStockPrice": 400
+            "chainName": "Continental"
           },
           {
-            "chain": "Continental",
-            "chainStockPrice": 400
+            "chainName": "Continental"
           },
           {
-            "chain": "Continental",
-            "chainStockPrice": 400
+            "chainName": "Continental"
           },
           {
-            "chain": "Continental",
-            "chainStockPrice": 400
+            "chainName": "Continental"
           },
           {
-            "chain": "Continental",
-            "chainStockPrice": 400
+            "chainName": "Continental"
           },
           {
-            "chain": "Continental",
-            "chainStockPrice": 400
+            "chainName": "Continental"
           },
           {
-            "chain": "Continental",
-            "chainStockPrice": 400
+            "chainName": "Continental"
           }
         ],
         "ownedStock": []
@@ -805,110 +655,86 @@
         "name": "Tower",
         "unownedStock": [
           {
-            "chain": "Tower",
-            "chainStockPrice": 400
+            "chainName": "Tower"
           },
           {
-            "chain": "Tower",
-            "chainStockPrice": 400
+            "chainName": "Tower"
           },
           {
-            "chain": "Tower",
-            "chainStockPrice": 400
+            "chainName": "Tower"
           },
           {
-            "chain": "Tower",
-            "chainStockPrice": 400
+            "chainName": "Tower"
           },
           {
-            "chain": "Tower",
-            "chainStockPrice": 400
+            "chainName": "Tower"
           },
           {
-            "chain": "Tower",
-            "chainStockPrice": 400
+            "chainName": "Tower"
           },
           {
-            "chain": "Tower",
-            "chainStockPrice": 400
+            "chainName": "Tower"
           },
           {
-            "chain": "Tower",
-            "chainStockPrice": 400
+            "chainName": "Tower"
           },
           {
-            "chain": "Tower",
-            "chainStockPrice": 400
+            "chainName": "Tower"
           },
           {
-            "chain": "Tower",
-            "chainStockPrice": 400
+            "chainName": "Tower"
           },
           {
-            "chain": "Tower",
-            "chainStockPrice": 400
+            "chainName": "Tower"
           },
           {
-            "chain": "Tower",
-            "chainStockPrice": 400
+            "chainName": "Tower"
           },
           {
-            "chain": "Tower",
-            "chainStockPrice": 400
+            "chainName": "Tower"
           },
           {
-            "chain": "Tower",
-            "chainStockPrice": 400
+            "chainName": "Tower"
           },
           {
-            "chain": "Tower",
-            "chainStockPrice": 400
+            "chainName": "Tower"
           },
           {
-            "chain": "Tower",
-            "chainStockPrice": 400
+            "chainName": "Tower"
           },
           {
-            "chain": "Tower",
-            "chainStockPrice": 400
+            "chainName": "Tower"
           },
           {
-            "chain": "Tower",
-            "chainStockPrice": 400
+            "chainName": "Tower"
           },
           {
-            "chain": "Tower",
-            "chainStockPrice": 400
+            "chainName": "Tower"
           },
           {
-            "chain": "Tower",
-            "chainStockPrice": 400
+            "chainName": "Tower"
           },
           {
-            "chain": "Tower",
-            "chainStockPrice": 400
+            "chainName": "Tower"
           },
           {
-            "chain": "Tower",
-            "chainStockPrice": 400
+            "chainName": "Tower"
           },
           {
-            "chain": "Tower",
-            "chainStockPrice": 400
+            "chainName": "Tower"
           },
           {
-            "chain": "Tower",
-            "chainStockPrice": 400
+            "chainName": "Tower"
           },
           {
-            "chain": "Tower",
-            "chainStockPrice": 400
+            "chainName": "Tower"
           }
         ],
         "ownedStock": []
       }
     ],
-    "foundedChains": []
+    "foundedChains": [],
+    "mergersToHandle": []
   },
   "stockLeftToBuy": 3,
   "unplayedTiles": {}

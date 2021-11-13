@@ -4,20 +4,24 @@ import spock.lang.Specification
 
 
 class LoaderSpecification extends Specification {
-    def game
-    def loader
-    def setup(){
-        loader = new Loader();
-    }
+
     /**
      * @result serialize a game object's data and save it in a text file
      */
     def "save-game"() {
-        Game game = new Game();
-        expect:
-        loader.saveGame(game);
+//        def loader = new Loader()
+//        Game game = new Game();
+//        expect:
+//        loader.saveGame(game);
     }
-//     def "load-game"(){
-//         loader.get
-//     }
+
+    /**
+     *
+     * @result game object from a json file
+     */
+     def "load-game"(){
+         def loader = new Loader()
+         expect:
+         loader.loadGame() instanceof Game
+     }
 }
