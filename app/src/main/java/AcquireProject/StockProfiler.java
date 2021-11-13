@@ -24,7 +24,7 @@ public class StockProfiler {
         chains.add(name);
     }
 
-    public Map<String, Integer> createProfile(Player player){
+    public Map<String, Integer> createPlayerProfile(Player player){
         Map<String, Integer> profile = new HashMap<>();
 
         List<Stock> stocks = player.getPlayerStocks();
@@ -34,8 +34,25 @@ public class StockProfiler {
         }
 
         for(Stock stock : stocks){
-            String name = stock.getChain().getName();
+            String name = stock.getChainName();
             profile.put(name, profile.get(name) + 1);
+        }
+
+        return profile;
+    }
+
+    public Map<Player, Integer> createChainProfile(HotelChain chain){
+        Map<Player, Integer> profile = new HashMap<>();
+
+        List<Stock> stocks = chain.getOwnedStock();
+
+        for(Stock s : stocks){
+            Player player = s.getOwner();
+            if(profile.containsKey(player)){
+                profile.put(player, profile.get(player) + 1);
+            }else{
+                profile.put(player, 1);
+            }
         }
 
         return profile;

@@ -27,6 +27,7 @@ class GameBoard{
    @Getter private List<HotelChain> foundedChains;
 
   private Founder currentFounder = null;
+  private List<Merger> mergersToHandle;
 
 
    /**
@@ -49,6 +50,8 @@ class GameBoard{
       this.playedTiles = new ArrayList<>();
       this.unfoundedChains = unfoundedChains;
       this.foundedChains = foundedChains;
+
+      this.mergersToHandle = new ArrayList<>();
    }
 
    public GameBoard(List<HotelChain> unfoundedChains){
@@ -179,7 +182,8 @@ class GameBoard{
       }else if (modeChain.size() > 1) {
          HotelChain mode = modeChain.remove(0);
          for (HotelChain acquiredChain : modeChain){
-            Merger merger = mergeNeeded(mode, acquiredChain);
+            Merger merger = new Merger(mode, acquiredChain);
+            mergersToHandle.add(merger);
          }
       }
 
@@ -189,8 +193,19 @@ class GameBoard{
 
    }
 
-   private Merger mergeNeeded(HotelChain acquiringChain,HotelChain acquiredChain){
-       return new Merger(acquiringChain,acquiredChain);
+   public Boolean mergeNeeded(){
+       if(mergersToHandle.size() > 0){
+           return true;
+       }
+       return false;
+   }
+
+   public Merger getCurrentMerger(){
+       return mergersToHandle.get(0);
+   }
+
+   public void MergeChains(Merger merger){
+
    }
 
     /**

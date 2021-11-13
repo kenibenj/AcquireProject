@@ -2,6 +2,7 @@ package UserInterface;
 
 import AcquireProject.Founder;
 import AcquireProject.Game;
+import AcquireProject.Merger;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
@@ -51,7 +52,13 @@ public class PlaceTileMenu extends ActionMenu{
                     Founder needFounder = game.foundNeeded();
 
                     if(!Objects.isNull(needFounder)){
-                        ui.chooseChainToFound(needFounder);
+                        ui.changeActionMenu(GameUI.FOUND_CHAIN);
+                        return;
+                    }
+
+
+                    if(game.mergeNeeded()){
+                        ui.changeActionMenu(GameUI.MERGING);
                         return;
                     }
 

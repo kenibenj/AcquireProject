@@ -5,7 +5,7 @@ import lombok.Setter;
 
 public class Stock {
 
-    @Getter private HotelChain chain;
+    @Getter private String chainName;
     @Getter @Setter private Player owner;
 
     /**
@@ -13,17 +13,9 @@ public class Stock {
      *
      * @param chain the hotel chain that owns the stock
      */
-    public Stock(HotelChain chain){
-        this.chain = chain;
+    public Stock(String chain){
+        this.chainName = chain;
     }
 
-    /**
-     * calculate and return the purchase value of the stock
-     *
-     * @return the value of the stock based on the chain size
-     */
-    public int getValue() {
-        return chain.getStockPrice();
-    }
 
 }

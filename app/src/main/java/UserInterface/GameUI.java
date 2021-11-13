@@ -1,9 +1,6 @@
 package UserInterface;
 
-import AcquireProject.Founder;
-import AcquireProject.Game;
-import AcquireProject.StockProfiler;
-import AcquireProject.Tile;
+import AcquireProject.*;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
@@ -218,8 +215,6 @@ public class GameUI {
         }
     }
 
-    public void chooseChainToFound(Founder founder){
-        changeActionMenu(FOUND_CHAIN);
-    }
+
 
 }
