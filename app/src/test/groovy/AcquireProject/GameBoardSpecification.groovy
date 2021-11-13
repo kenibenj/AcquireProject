@@ -21,8 +21,8 @@ class GameBoardTest extends Specification {
     def setup(){
         ArrayList<HotelChain> foundedChains = new ArrayList<String>()
 
-        sackson = new HotelChain(1,"Sackson")
-        american = new HotelChain(2,"American")
+        sackson = new HotelChain("Sackson",1)
+        american = new HotelChain("American",2)
         ArrayList<HotelChain> unfoundedChains = new ArrayList<String>()
         unfoundedChains.add(sackson)
         unfoundedChains.add(american)
@@ -49,8 +49,8 @@ class GameBoardTest extends Specification {
      */
     def "breadth-first-search-for-a-tiles-neighbors"(){
         given:
-        def tile1 = new Tile("8E")
-        def tile2 = new Tile("7F")
+        def tile1 = new Tile(Arrays.asList(7,4));
+        def tile2 = new Tile(Arrays.asList(6,5))
         tile1.setChainName("American")
         tile2.setChainName("American")
         matrix.get(7).set(4,tile1)
@@ -80,7 +80,7 @@ class GameBoardTest extends Specification {
     }
 
     def "search vars"(){
-        def tile = new Tile("7A");
+        def tile = new Tile(Arrays.asList(6,0));
 
         expect:
         gameboard.Scout(tile).size() == 1;
