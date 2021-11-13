@@ -5,7 +5,7 @@ import java.util.*;
 /**
  * A facade class to control the game classes
  *
- * @author Michael
+ * @author Michael Collier
  *
  * @since 1.0.0
  */

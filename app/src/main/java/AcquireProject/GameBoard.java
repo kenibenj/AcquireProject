@@ -16,8 +16,6 @@ import lombok.Getter;
 import java.util.*;
 import java.util.stream.Collectors;
 
-import static java.lang.Math.abs;
-
 
 class GameBoard{
 
@@ -160,8 +158,11 @@ class GameBoard{
    }
 
 
-
-
+    /**
+     * places a tile on the board and checks if a founding or merger are needed
+     *
+     * @param tile the tile that will be added to the board
+     */
    public void placeTile(Tile tile){
       playedTiles.add(tile);
       List<Tile> chain = Scout(tile);
@@ -192,10 +193,24 @@ class GameBoard{
        return new Merger(acquiringChain,acquiredChain);
    }
 
+    /**
+     * checks if there is a founding that needs to be handled
+     *
+     * @return the founder if there is a founding required or null if not
+     */
    public Founder foundNeeded(){
        return currentFounder;
    }
 
+    /**
+     * founds a new hotel chain by adding tiles to the chain, giving the player who founded it stock,
+     * and moving the chain into the founded list
+     *
+     * @param chain the name of the chain that needs to be founded
+     * @param founder the player who founded the chain
+     *
+     * @author Michael Collier
+     */
    public void FoundChain(String chain, Player founder){
 
        HotelChain chainToFound = null;
