@@ -169,7 +169,12 @@ class GameBoard{
       if(modeChain.size() == 0 && chain.size() > 1){
          currentFounder = new Founder(chain);
       }else if(modeChain.size() == 1){
-          tile.setChainName(modeChain.get(0).getName());
+          for(Tile t : chain){
+              t.setChainName(modeChain.get(0).getName());
+              if(!modeChain.get(0).getTiles().contains(t)){
+                  modeChain.get(0).getTiles().add(t);
+              }
+          }
       }else if (modeChain.size() > 1) {
          HotelChain mode = modeChain.remove(0);
          for (HotelChain acquiredChain : modeChain){
@@ -191,10 +196,7 @@ class GameBoard{
        return currentFounder;
    }
 
-   public void FoundChain(String chain){
-       for(Tile t : currentFounder.getChainTiles()){
-           t.setChainName(chain);
-       }
+   public void FoundChain(String chain, Player founder){
 
        HotelChain chainToFound = null;
 
@@ -204,10 +206,19 @@ class GameBoard{
            }
        }
 
+       for(Tile t : currentFounder.getChainTiles()){
+           t.setChainName(chain);
+           chainToFound.addTile(t);
+       }
+
        foundedChains.add(chainToFound);
        unfoundedChains.remove(chainToFound);
 
        currentFounder = null;
+
+       if(chainToFound.getNumberOfUnsoldStock() > 0){
+           chainToFound.giveStock(founder);
+       }
    }
 
    public boolean moveIsLegal(String tile){

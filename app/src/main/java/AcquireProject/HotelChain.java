@@ -7,6 +7,8 @@
 
 package AcquireProject;
 
+import lombok.Getter;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,9 +17,10 @@ public class HotelChain {
     private final int NUMBER_OF_STOCK = 25;
 
     private int tier;
-    private List<Tile> tiles;
+    @Getter private List<Tile> tiles;
     private String name;
     private List<Stock> unownedStock;
+    private List<Stock> ownedStock;
 
     private final int SAFE_SIZE = 11;
 
@@ -34,6 +37,9 @@ public class HotelChain {
         this.tier = tier;
         this.tiles = new ArrayList<>();
         this.unownedStock = generateStock();
+        this.ownedStock = new ArrayList<>();
+
+        StockProfiler.instance().addChain(name);
     }
 
     public String getName(){return name;}
@@ -92,5 +98,22 @@ public class HotelChain {
         index += tier;
 
         return stockPrices[index];
+    }
+
+    public void sellStock(Player player){
+        giveStock(player);
+        player.modifyBalance(-getStockPrice());
+    }
+
+    public void giveStock(Player player){
+        Stock stock = unownedStock.get(0);
+        unownedStock.remove(stock);
+        ownedStock.add(stock);
+        stock.setOwner(player);
+        player.addStock(stock);
+    }
+
+    public int getNumberOfUnsoldStock(){
+        return unownedStock.size();
     }
 }

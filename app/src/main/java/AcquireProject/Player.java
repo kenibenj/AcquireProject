@@ -7,6 +7,7 @@
  */
 
 package AcquireProject;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Player {
@@ -28,6 +29,7 @@ public class Player {
         this.playerTiles = startingTiles;
         this.playerName = name;
         this.balance = 6000;
+        this.playerStocks = new ArrayList<>();
     }
 
     /**

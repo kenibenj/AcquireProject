@@ -33,8 +33,24 @@ public class BuyStockMenu extends ActionMenu{
         List<String> stocks = game.getAvailableStocks();
 
         for(int i = 0; i < stocks.size(); i++){
+
+            int index = i;
+
             Button s = new Button(stocks.get(i));
             menu.getChildren().add(s);
+            s.setOnAction(new EventHandler<ActionEvent>() {
+                @Override
+                public void handle(ActionEvent event) {
+                    game.buyStock(index);
+                    ui.updatePlayerInfo();
+                    ui.changeActionMenu(GameUI.BUY_STOCK);
+                }
+            });
+
+            if(!game.playerCanBuyStock(index)){
+                s.setDisable(true);
+            }
+
         }
 
         Button continueButton = new Button("Continue");

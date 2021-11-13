@@ -15,9 +15,12 @@ public class Game {
     private Queue<Player> players;
     private GameBoard gameBoard;
     private Player currentPlayer;
+    private int stockLeftToBuy;
     private UnplayedTiles unplayedTiles;
 
     public Game(){
+
+        stockLeftToBuy = 3;
 
         this.players = new LinkedList<>();
 
@@ -75,6 +78,14 @@ public class Game {
             balances.add(p.getBalance());
         }
         return balances;
+    }
+
+    public List<Map<String, Integer>> getPlayerStockProfiles(){
+        List<Map<String, Integer>> profiles = new ArrayList<>();
+        for(Player p: players){
+            profiles.add(StockProfiler.instance().createProfile(p));
+        }
+        return profiles;
     }
 
     /**
@@ -187,7 +198,7 @@ public class Game {
      * @return the number of stock a player can still buy this turn
      */
     public int getNumberOfStockLeftToBuy(){
-        return 3;
+        return stockLeftToBuy;
     }
 
     /**
@@ -202,6 +213,27 @@ public class Game {
         }
         return stocks;
     }
+
+    public void buyStock(int chainIndex){
+        stockLeftToBuy--;
+        HotelChain chain = gameBoard.getFoundedChains().get(chainIndex);
+        chain.sellStock(currentPlayer);
+    }
+
+    public Boolean playerCanBuyStock(int chainIndex){
+        HotelChain chain = gameBoard.getFoundedChains().get(chainIndex);
+        if(currentPlayer.getBalance() < chain.getStockPrice()){
+            return false;
+        }
+        if(chain.getNumberOfUnsoldStock() <= 0){
+            return false;
+        }
+        if(stockLeftToBuy <= 0){
+            return false;
+        }
+        return true;
+    }
+
 
     /**
      * a method to get the name of the player who is currently deciding what to do with their stock during a merge
@@ -243,7 +275,7 @@ public class Game {
                 currentPlayer = players.peek();
             }
 
-
+            stockLeftToBuy = 3;
 
         }
     }
@@ -253,7 +285,8 @@ public class Game {
     }
 
     public void foundChain(String chain){
-        gameBoard.FoundChain(chain);
+        gameBoard.FoundChain(chain, currentPlayer);
+
     }
 
 
