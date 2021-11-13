@@ -11,9 +11,4 @@ import spock.lang.Specification
 
 class HotelChainSpecification extends Specification {
 
-
-
-
-
-
 }

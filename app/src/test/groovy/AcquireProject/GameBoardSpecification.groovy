@@ -49,7 +49,7 @@ class GameBoardTest extends Specification {
      */
     def "breadth-first-search-for-a-tiles-neighbors"(){
         given:
-        def tile1 = new Tile(Arrays.asList(7,4));
+        def tile1 = new Tile(Arrays.asList(7,4))
         def tile2 = new Tile(Arrays.asList(6,5))
         tile1.setChainName("American")
         tile2.setChainName("American")
@@ -63,27 +63,27 @@ class GameBoardTest extends Specification {
         ArrayList<Integer> pair = new ArrayList<>()
         pair.add(0,6)
         pair.add(1,4)
-        Queue<List<Integer>> neighbors = new LinkedList<>();
+        Queue<List<Integer>> neighbors = new LinkedList<>()
         neighbors.add(pair)
-        def tile3 = new Tile("7E")
+        def tile3 = new Tile(Arrays.asList(6,4))
         tile3.setChainName("American")
         matrix.get(pair.get(0)).set(pair.get(1), tile3)
-        boolean[][] visited = new boolean[matrix.size()][matrix.get(0).size()];
-        gameboard.addToPlayedTiles(tile3);
+        boolean[][] visited = new boolean[matrix.size()][matrix.get(0).size()]
+        gameboard.addToPlayedTiles(tile3)
 
         when:
         List<Integer> tally = gameboard.breadthFirstSearch(neighbors,visited)
 
         then:
-        tally.size() == 3;
+        tally.size() == 3
 
     }
 
     def "search vars"(){
-        def tile = new Tile(Arrays.asList(6,0));
+        def tile = new Tile(Arrays.asList(6,0))
 
         expect:
-        gameboard.Scout(tile).size() == 1;
+        gameboard.Scout(tile).size() == 1
     }
 
     /**
@@ -92,19 +92,19 @@ class GameBoardTest extends Specification {
      */
    def "find-mode-in-linear-tile-clump"(){
        given:
-       for (int i = 0; i<3; i++){
-           Tile tile = new Tile( i + 4 + "E")
+       for (int i = 4; i<7; i++){
+           Tile tile = new Tile( Arrays.asList(i,4))
            tile.setChainName("Sackson")
            sackson.addTile(tile)
        }
 
-       for (int i = 0; i< 4; i++){
-           Tile tile = new Tile(i + 5 + "E")
+       for (int i = 5; i< 9; i++){
+           Tile tile = new Tile(Arrays.asList(i,4))
            tile.setChainName("American")
            american.addTile(tile)
        }
-       gameboard.addToFoundedChains(sackson);
-       gameboard.addToFoundedChains(american);
+       gameboard.getFoundedChains().add(sackson);
+       gameboard.getFoundedChains().add(american);
 
        def clumpOfTiles = new ArrayList<Tile>()
        clumpOfTiles.addAll(sackson.getTiles())
@@ -118,19 +118,19 @@ class GameBoardTest extends Specification {
    }
     def "find-mode-in-corner-tile-clump-with-two-chains-of-the-same-size"(){
         given:
-        for (int i = 0; i<3; i++){
-            Tile tile = new Tile( i + 4 + "A")
+        for (int i = 4; i<7; i++){
+            Tile tile = new Tile(Arrays.asList(i,0))
             tile.setChainName("Sackson")
             sackson.addTile(tile)
         }
 
-        for (int i = 0; i< 3; i++){
-            Tile tile = new Tile(i + 5 + "A")
+        for (int i = 5; i< 8; i++){
+            Tile tile = new Tile(Arrays.asList(i,0))
             tile.setChainName("American")
             american.addTile(tile)
         }
-        gameboard.addToFoundedChains(sackson);
-        gameboard.addToFoundedChains(american);
+        gameboard.getFoundedChains().add(sackson);
+        gameboard.getFoundedChains().add(american);
 
         def clumpOfTiles = new ArrayList<Tile>()
         clumpOfTiles.addAll(sackson.getTiles())

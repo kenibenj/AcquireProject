@@ -20,6 +20,17 @@ public class Tile {
     @Getter @Setter private String chainName = "";
 
 
+
+//    public String getTileName() {
+//        return tileName;
+//    }
+//
+//    public int[] getCoordinates() {
+//        return coordinates;
+//    }
+
+
+
     public Tile(List<Integer> coordinates) {
         this.tileName = tileToString(coordinates);
         this.coordinates = coordinates;

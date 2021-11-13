@@ -89,7 +89,7 @@ public class HotelChain {
         List<Stock> stock = new ArrayList<>();
 
         for(int i = 0; i < NUMBER_OF_STOCK; i++){
-            stock.add(new Stock(this));
+            stock.add(new Stock(this.name, this.getStockPrice()));
         }
 
         return stock;

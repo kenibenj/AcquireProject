@@ -34,7 +34,7 @@ public class StockProfiler {
         }
 
         for(Stock stock : stocks){
-            String name = stock.getChain().getName();
+            String name = stock.getChain();
             profile.put(name, profile.get(name) + 1);
         }
 
