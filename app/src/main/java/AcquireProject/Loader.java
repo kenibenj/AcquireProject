@@ -11,7 +11,11 @@ package AcquireProject;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import java.io.*;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.FileOutputStream;
+import java.io.Writer;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -28,8 +32,7 @@ public class Loader {
      * Constructor that forces singleton
      */
     public Loader (){
-        super();
-        synchronized(App.class){
+        synchronized(Loader.class){
             if(INSTANCE != null) throw new UnsupportedOperationException(
                     getClass() + " is singleton but constructor called more than once");
             INSTANCE = this;

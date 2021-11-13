@@ -7,13 +7,15 @@
 
 package AcquireProject;
 
+import lombok.Getter;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class HotelChain {
     private int tier;
     private List<Tile> tiles;
-    private String name;
+    @Getter private String name;
 
     private final int SAFE_SIZE = 11;
 
@@ -27,7 +29,7 @@ public class HotelChain {
         this.tiles = new ArrayList<>();
     }
 
-    public String getName(){return name;}
+  //  public String getName(){return name;}
     public int getSize(){
         return 1;
     }
@@ -54,10 +56,6 @@ public class HotelChain {
     }
 
     public Boolean isSafe(){
-        if(getSize() >= SAFE_SIZE) {
-            return true;
-        }else{
-            return false;
-        }
+        return getSize() >= SAFE_SIZE;
     }
 }

@@ -7,6 +7,7 @@
 package AcquireProject;
 
 import lombok.Getter;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -16,33 +17,7 @@ public class Tile {
 
     @Getter private final String tileName;
     @Getter private final List<Integer> coordinates;
-    private String chainName = "";
-
-    public String getTileName() {
-        return tileName;
-    }
-
-    public List<Integer> getCoordinates() {
-        return coordinates;
-    }
-
-    public String getChainName() {
-        return chainName;
-    }
-
-    public void setChainName(String chainFlag) {
-        this.chainName = chainFlag;
-    }
-
-
-//    public String getTileName() {
-//        return tileName;
-//    }
-//
-//    public int[] getCoordinates() {
-//        return coordinates;
-//    }
-
+    @Getter @Setter private String chainName = "";
 
 
     public Tile(List<Integer> coordinates) {

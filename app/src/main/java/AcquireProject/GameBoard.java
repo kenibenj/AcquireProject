@@ -25,10 +25,10 @@ class GameBoard{
    private List<Tile> playedTiles;
    private ArrayList<ArrayList<Tile>> board;
 
-   private List<HotelChain> unfoundedChains;
+   @Getter private List<HotelChain> unfoundedChains;
    private List<HotelChain> foundedChains;
 
-  private Founder currentFounder = null;
+   private Founder currentFounder = null;
 
 
    /**
@@ -148,9 +148,9 @@ class GameBoard{
                } else {
                   frequencyMap.put(chain, 1);
                }
+
             }
          }
-
       }
 
       return frequencyMap.entrySet().stream()
