@@ -3,7 +3,10 @@ package UserInterface;
 import AcquireProject.Founder;
 import AcquireProject.Game;
 import AcquireProject.Tile;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.layout.*;
 import javafx.scene.text.Text;
 import lombok.Getter;
@@ -66,7 +69,15 @@ public class GameUI {
         Text title = new Text();
         title.setText("Acquire Game");
 
-        border.setTop(title);
+        Button saveGameButton = new Button("Save");
+        saveGameButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                ui.saveGame(game);
+            }
+        });
+
+        border.setTop(saveGameButton);
 
         border.setCenter(makeGameBoard());
 

@@ -28,8 +28,7 @@ public class Loader {
      * Constructor that forces singleton
      */
     public Loader (){
-        super();
-        synchronized(App.class){
+        synchronized(Loader.class){
             if(INSTANCE != null) throw new UnsupportedOperationException(
                     getClass() + " is singleton but constructor called more than once");
             INSTANCE = this;
@@ -41,7 +40,7 @@ public class Loader {
      * Loads a game object from a text file.
      * @return game object
      */
-    private Game loadGame(){
+    public Game loadGame(){
         Game savedGame = null;
         try {
             String json = String.join("\n", Files.readAllLines(Paths.get("gameData.txt")));

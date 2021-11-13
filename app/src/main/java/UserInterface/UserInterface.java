@@ -1,9 +1,12 @@
 package UserInterface;
 
 import AcquireProject.Game;
+import AcquireProject.Loader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import lombok.Setter;
+
+import java.io.IOException;
 
 
 /**
@@ -19,8 +22,10 @@ public class UserInterface {
 
     private MainMenu mainMenu;
     private GameUI gameui;
+    private Loader loader;
 
     public UserInterface(Stage stage){
+        loader = new Loader();
         this.stage = stage;
         this.mainMenu = new MainMenu(this);
         Game game = new Game();
@@ -43,6 +48,17 @@ public class UserInterface {
         changeScene(mainMenu.getScene());
     }
 
+    public void loadGame(){
+        gameui.setGame(loader.loadGame());
+    }
 
+    public void saveGame(Game game){
+        try {
+            loader.saveGame(game);
+        }catch(IOException e){
+            System.out.println("Problem when saving the game");
+            e.printStackTrace();
+        }
+    }
 
 }
