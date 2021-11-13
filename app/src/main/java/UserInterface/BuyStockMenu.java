@@ -31,6 +31,10 @@ public class BuyStockMenu extends ActionMenu{
         menu.getChildren().add(prompt);
 
         List<String> stocks = game.getAvailableStocks();
+        if(stocks.size() == 0){
+            game.goToNextPlayer();
+            ui.changeActionMenu(GameUI.PLACE_TILE);
+        }
 
         for(int i = 0; i < stocks.size(); i++){
 

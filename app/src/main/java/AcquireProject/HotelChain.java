@@ -21,7 +21,7 @@ public class HotelChain {
     @Getter private List<Tile> tiles;
     private String name;
     private List<Stock> unownedStock;
-    private List<Stock> ownedStock;
+    @Getter private List<Stock> ownedStock;
 
     public static final int TIER_ONE = 0;
     public static final int TIER_TWO = 1;
@@ -53,15 +53,17 @@ public class HotelChain {
     }
 
     public int getMajorityShareholderBonus(){
-        return 1;
+        return getStockPrice() * 10;
     }
+
     public int getMinorityShareholderBonus(){
-        return 1;
+        return getMajorityShareholderBonus() / 2;
     }
     public Player getMajorityShareholder(){
         return new Player("", new ArrayList<Tile>() {
         });
     }
+
     public Player getMinorityShareholder() {
         return new Player("", new ArrayList<>());
     }
@@ -89,7 +91,7 @@ public class HotelChain {
         List<Stock> stock = new ArrayList<>();
 
         for(int i = 0; i < NUMBER_OF_STOCK; i++){
-            stock.add(new Stock(this.name, this.getStockPrice()));
+            stock.add(new Stock(name));
         }
 
         return stock;
@@ -117,6 +119,7 @@ public class HotelChain {
 
         return stockPrices[index];
     }
+
 
     /**
      * sells a stock to a player and charges their account

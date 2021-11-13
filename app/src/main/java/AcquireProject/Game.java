@@ -83,7 +83,7 @@ public class Game {
     public List<Map<String, Integer>> getPlayerStockProfiles(){
         List<Map<String, Integer>> profiles = new ArrayList<>();
         for(Player p: players){
-            profiles.add(StockProfiler.instance().createProfile(p));
+            profiles.add(StockProfiler.instance().createPlayerProfile(p));
         }
         return profiles;
     }
@@ -282,6 +282,14 @@ public class Game {
 
     public Founder foundNeeded(){
         return gameBoard.foundNeeded();
+    }
+
+    public Boolean mergeNeeded(){
+        return gameBoard.mergeNeeded();
+    }
+
+    public Merger getCurrentMerger(){
+        return gameBoard.getCurrentMerger();
     }
 
     public void foundChain(String chain){
