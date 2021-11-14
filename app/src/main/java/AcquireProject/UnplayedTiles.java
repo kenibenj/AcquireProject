@@ -44,12 +44,15 @@ public  class UnplayedTiles {
      *
      * @return the Tile object that was selected from the list
      */
-    public Tile drawTile(){
-        int random = (int)((Math.random()*getTiles().size()));
-        Tile returnTile = getTiles().get(random);
-        getTiles().remove(random);
+    public List<Tile> drawTile(){
+        List<Tile> tile = new ArrayList<>();
 
-        return returnTile;
+        if(allTiles.size() > 0) {
+            int random = (int) ((Math.random() * getTiles().size()));
+            tile.add(getTiles().remove(random));
+        }
+
+        return tile;
     }
 
     /**

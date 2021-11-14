@@ -1,3 +1,11 @@
+/**
+ * Runs all the user interface elements during gameplay
+ *
+ * @author Michael Collier
+ *
+ * @since 1.0.0
+ */
+
 package UserInterface;
 
 import AcquireProject.*;
@@ -16,14 +24,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-
-/**
- * Runs all the user interface elements during gameplay
- *
- * @author Michael Collier
- *
- * @since 1.0.0
- */
 public class GameUI {
 
     @Getter private Scene scene;
@@ -55,6 +55,7 @@ public class GameUI {
         makeActionMenus();
 
         border = new BorderPane();
+        border.getStyleClass().add("gameBorder");
 
         this.scene = makeScene();
     }
@@ -200,6 +201,9 @@ public class GameUI {
         throw new IndexOutOfBoundsException("The requested menu was not recognized while trying to switch action menus");
     }
 
+    /**
+     * updates the game board for any changes in the color of tiles
+     */
     public void updateGameBoard(){
         List<Tile> playedTiles = game.getPlayedTiles();
 
@@ -221,6 +225,9 @@ public class GameUI {
         }
     }
 
+    /**
+     * loads the state that was saved in the game
+     */
     public void loadState(){
         changeActionMenu(game.getUIState());
     }

@@ -1,9 +1,17 @@
 /**
+<<<<<<< HEAD
  * Application class that runs the main method of the program
  *
  * @author Benjamin, Emily, Michael
  *
  * @since 1.0.0
+=======
+ * A remake of the Acquire board game in java
+ *
+ * @author Michael Collier
+ * @author Emily Elzinga
+ * @author Benjamin Keninger
+>>>>>>> 88fb7b2a25f93406ef6f57beb56b7fb2ad339b54
  */
 
 package AcquireProject;

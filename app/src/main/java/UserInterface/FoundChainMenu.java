@@ -1,3 +1,11 @@
+/**
+ * Gives the options for which chain to found
+ *
+ * @author Michael Collier
+ *
+ * @since 1.0.0
+ */
+
 package UserInterface;
 
 import AcquireProject.Game;
@@ -24,6 +32,7 @@ public class FoundChainMenu extends ActionMenu{
     @Override
     public void updateMenu() {
         menu = new VBox();
+        menu.getStyleClass().add("actionMenu");
 
         Text title = new Text("Which hotel chain would you like to found?");
         menu.getChildren().add(title);
@@ -32,6 +41,7 @@ public class FoundChainMenu extends ActionMenu{
 
         for(int i = 0; i < names.size(); i++){
             Button b = new Button(names.get(i));
+            b.getStyleClass().add(names.get(i));
 
             int index = i;
 
@@ -40,6 +50,9 @@ public class FoundChainMenu extends ActionMenu{
                 public void handle(ActionEvent event) {
                     game.foundChain(game.getUnfoundedChains().get(index));
                     ui.changeActionMenu(GameUI.BUY_STOCK);
+                    if(game.gameCanEnd()){
+                        ui.changeActionMenu(GameUI.END_GAME);
+                    }
                     ui.updateGameBoard();
                 }
             });

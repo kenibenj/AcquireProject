@@ -1,9 +1,20 @@
 /**
+<<<<<<< HEAD
  * Application class that runs the main method of the program
  *
  * @author Benjamin, Emily, Michael
  *
  * @since 1.0.0
+=======
+ * Created by Emily Elzinga
+ *
+ * 11/5/2021
+ *
+ * performs all the functions and steps when merging two hotel chains.
+ *
+ * @since 1.0.0
+ * @author Michael Collier
+>>>>>>> 88fb7b2a25f93406ef6f57beb56b7fb2ad339b54
  */
 
 
@@ -27,6 +38,9 @@ public class Merger {
         this.gameBoard = gameBoard;
     }
 
+    /**
+     * gives the majority and minority shareholders their bonus at the beginning of the merge
+     */
     public void giveShareholderBonus(){
 
         List<Player> majority = getMajorityShareHolder();
@@ -88,30 +102,53 @@ public class Merger {
         return players;
     }
 
+    /**
+     * checks if there are players that needed handled
+     *
+     * @return true if there are still players to make choices about their stocks
+     */
     public Boolean morePlayersToHandle(){
         return playersToMakeDecision.size() > 0;
     }
 
+    /**
+     * steps the next player in the list of those to be handled
+     */
     public void goToNextPlayer(){
         playersToMakeDecision.remove(0);
     }
 
+    /**
+     * @return the name of the player currently being handled
+     */
     public String getPlayerName(){
         return playersToMakeDecision.get(0).getPlayerName();
     }
 
+    /**
+     * @return the omount of stock the current player owns in the hotel chain being acquired
+     */
     public int getPlayerStockCount(){
         return StockProfiler.instance().createPlayerProfile(playersToMakeDecision.get(0)).get(acquiredChain.getName());
     }
 
+    /**
+     * @return the price of stock in the acquired chain
+     */
     public int getStockPrice(){
         return acquiredChain.getStockPrice();
     }
 
+    /**
+     * sells one stock back to the chain being acquired
+     */
     public void sellStock(){
         acquiredChain.buyStock(playersToMakeDecision.get(0));
     }
 
+    /**
+     * trades two stock in the acquired chain for one in the acquiring chain
+     */
     public void tradeStock(){
         Player player = playersToMakeDecision.get(0);
         acquiredChain.takeStock(player);
@@ -119,6 +156,9 @@ public class Merger {
         acquiringChain.giveStock(player);
     }
 
+    /**
+     * merges the two chains tiles together
+     */
     public void mergeChains(){
         gameBoard.mergeChains(this);
     }

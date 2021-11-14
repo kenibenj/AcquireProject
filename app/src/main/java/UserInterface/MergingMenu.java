@@ -1,3 +1,11 @@
+/**
+ * Gives the options for trading or selling stock when merging
+ *
+ * @author Michael Collier
+ *
+ * @since 1.0.0
+ */
+
 package UserInterface;
 
 import AcquireProject.Game;
@@ -27,6 +35,7 @@ public class MergingMenu extends ActionMenu{
     @Override
     public void updateMenu(){
         menu = new VBox();
+        menu.getStyleClass().add("actionMenu");
 
         if(Objects.isNull(currentMerger)){
             currentMerger = game.getCurrentMerger();
@@ -86,6 +95,9 @@ public class MergingMenu extends ActionMenu{
                     currentMerger.mergeChains();
                     ui.updateGameBoard();
                     ui.changeActionMenu(GameUI.BUY_STOCK);
+                    if(game.gameCanEnd()){
+                        ui.changeActionMenu(GameUI.END_GAME);
+                    }
                     currentMerger = null;
                 }
             }

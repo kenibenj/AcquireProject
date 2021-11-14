@@ -19,18 +19,6 @@ public class Tile {
     @Getter private final List<Integer> coordinates;
     @Getter @Setter private String chainName = "";
 
-
-
-//    public String getTileName() {
-//        return tileName;
-//    }
-//
-//    public int[] getCoordinates() {
-//        return coordinates;
-//    }
-
-
-
     public Tile(List<Integer> coordinates) {
         this.tileName = tileToString(coordinates);
         this.coordinates = coordinates;
@@ -48,6 +36,12 @@ public class Tile {
         return coordinates;
     }
 
+    /**
+     * converts a list of coordinates to a string
+     * @param coordinates the coordinates of the tile
+     * @return the string name of the tile
+     * @author Michael Collier
+     */
     private String tileToString(List<Integer> coordinates){
         List<Character> y_coords = Arrays.asList('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I');
         int xCoord = coordinates.get(0)+1;

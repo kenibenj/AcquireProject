@@ -1,3 +1,11 @@
+/**
+ * Gives the options for adding new players at the beginning of the game
+ *
+ * @author Michael Collier
+ *
+ * @since 1.0.0
+ */
+
 package UserInterface;
 
 import AcquireProject.Game;
@@ -21,6 +29,7 @@ public class AddPlayersMenu extends ActionMenu{
     @Override
     public void updateMenu(){
         this.menu = new VBox();
+        menu.getStyleClass().add("actionMenu");
 
         Text title = new Text("Add Players");
         menu.getChildren().add(title);

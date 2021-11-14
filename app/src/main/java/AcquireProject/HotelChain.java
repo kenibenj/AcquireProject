@@ -148,6 +148,8 @@ public class HotelChain {
      * sells a stock to a player and charges their account
      *
      * @param player the player to sell the stock to
+     *
+     * @author Michael Collier
      */
     public void sellStock(Player player){
         giveStock(player);
@@ -173,6 +175,8 @@ public class HotelChain {
      * buys a stock from a player
      *
      * @param player the player selling the stock back to the chain
+     *
+     * @author Michael Collier
      */
     public void buyStock(Player player){
         takeStock(player);
@@ -180,9 +184,17 @@ public class HotelChain {
     }
 
     /**
+<<<<<<< HEAD
      * method for the player to take stock
      *
      * @param player that is taking the stock
+=======
+     * takes a stock from a player and lists it as unowned
+     *
+     * @param player the player to take the stock from
+     *
+     * @author Michael Collier
+>>>>>>> 88fb7b2a25f93406ef6f57beb56b7fb2ad339b54
      */
     public void takeStock(Player player){
         Stock stock = null;

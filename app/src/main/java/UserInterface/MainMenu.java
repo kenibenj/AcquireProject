@@ -1,3 +1,11 @@
+/**
+ * Runs all the UI elements when in the main menu
+ *
+ * @author Michael Collier
+ *
+ * @since 1.0.0
+ */
+
 package UserInterface;
 
 import UserInterface.UserInterface;

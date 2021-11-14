@@ -1,3 +1,11 @@
+/**
+ * Gives the options which tile to place in each turn
+ *
+ * @author Michael Collier
+ *
+ * @since 1.0.0
+ */
+
 package UserInterface;
 
 import AcquireProject.Founder;
@@ -27,18 +35,25 @@ public class PlaceTileMenu extends ActionMenu{
     @Override
     public void updateMenu() {
         menu = new VBox();
+        menu.getStyleClass().add("actionMenu");
 
         Text title = new Text("Which tile would you like to place?");
         menu.getChildren().add(title);
 
         GridPane tileGrid = new GridPane();
+        tileGrid.setStyle("-fx-padding: 20");
         List<String> tileNames = game.getCurrentPlayerTiles();
 
         int numberOfColumns = 3;
 
+        int numberOfPlayableTiles = 0;
+
         for(int i = 0; i < tileNames.size(); i++){
             Button t = new Button(tileNames.get(i));
+            if(game.moveIsLegal(i)) numberOfPlayableTiles++;
             t.setDisable(!game.moveIsLegal(i));
+            t.getStyleClass().add("tile");
+            t.getStyleClass().add("playedTile");
 
             int index = i;
 
@@ -64,6 +79,10 @@ public class PlaceTileMenu extends ActionMenu{
                     }
 
                     ui.changeActionMenu(GameUI.BUY_STOCK);
+
+                    if(game.gameCanEnd()){
+                        ui.changeActionMenu(GameUI.END_GAME);
+                    }
                 }
             });
 
@@ -71,5 +90,18 @@ public class PlaceTileMenu extends ActionMenu{
         }
 
         menu.getChildren().add(tileGrid);
+
+        if(numberOfPlayableTiles == 0){
+            Button getNewHandButton = new Button("Get a new hand");
+            getNewHandButton.setOnAction(new EventHandler<ActionEvent>() {
+                @Override
+                public void handle(ActionEvent event) {
+                    game.giveCurrentPlayerNewHand();
+                    ui.changeActionMenu(GameUI.PLACE_TILE);
+                }
+            });
+            menu.getChildren().add(getNewHandButton);
+        }
+
     }
 }

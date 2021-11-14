@@ -37,8 +37,8 @@ public class Player {
      *
      * @param tile that will be added to the player's list of tiles
      */
-    public void addTile(Tile tile){
-        playerTiles.add(tile);
+    public void addTile(List<Tile> tile){
+        playerTiles.addAll(tile);
     }
 
     /**
@@ -111,6 +111,15 @@ public class Player {
      */
     public void removeStock(Stock stock){
         playerStocks.remove(stock);
+    }
+
+    /**
+     * replaces the players hand with a new set of tiles
+     *
+     * @param newHand the new list of tiles
+     */
+    public void giveNewHand(List<Tile> newHand){
+        playerTiles = newHand;
     }
 
 }

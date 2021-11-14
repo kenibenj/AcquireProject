@@ -1,3 +1,11 @@
+/**
+ * Gives the options for buying stock at the end of each turn
+ *
+ * @author Michael Collier
+ *
+ * @since 1.0.0
+ */
+
 package UserInterface;
 
 import AcquireProject.Game;
@@ -23,6 +31,7 @@ public class BuyStockMenu extends ActionMenu{
     @Override
     public void updateMenu() {
         menu = new VBox();
+        menu.getStyleClass().add("actionMenu");
 
         Text title = new Text("Buy stock");
         menu.getChildren().add(title);
@@ -38,6 +47,8 @@ public class BuyStockMenu extends ActionMenu{
             int index = i;
 
             Button s = new Button(stocks.get(i));
+            String name = stocks.get(i).split(":")[0];
+            s.getStyleClass().add(name);
             menu.getChildren().add(s);
             s.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
