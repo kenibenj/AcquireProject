@@ -1,11 +1,4 @@
 /**
-<<<<<<< HEAD
- * Application class that runs the main method of the program
- *
- * @author Benjamin, Emily, Michael
- *
- * @since 1.0.0
-=======
  * Created by Emily Elzinga
  *
  * 11/5/2021
@@ -14,7 +7,6 @@
  *
  * @since 1.0.0
  * @author Michael Collier
->>>>>>> 88fb7b2a25f93406ef6f57beb56b7fb2ad339b54
  */
 
 

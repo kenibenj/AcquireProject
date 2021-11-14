@@ -1,3 +1,11 @@
+/**
+ * Stock class that holds methods and attributes relevant to stock objects
+ *
+ * @author Benjamin, Emily, Michael
+ *
+ * @since 1.0.0
+ */
+
 package AcquireProject;
 
 import lombok.Getter;

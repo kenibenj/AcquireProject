@@ -184,17 +184,11 @@ public class HotelChain {
     }
 
     /**
-<<<<<<< HEAD
-     * method for the player to take stock
-     *
-     * @param player that is taking the stock
-=======
      * takes a stock from a player and lists it as unowned
      *
      * @param player the player to take the stock from
      *
      * @author Michael Collier
->>>>>>> 88fb7b2a25f93406ef6f57beb56b7fb2ad339b54
      */
     public void takeStock(Player player){
         Stock stock = null;
