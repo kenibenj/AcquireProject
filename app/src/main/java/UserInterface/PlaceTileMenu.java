@@ -46,8 +46,11 @@ public class PlaceTileMenu extends ActionMenu{
 
         int numberOfColumns = 3;
 
+        int numberOfPlayableTiles = 0;
+
         for(int i = 0; i < tileNames.size(); i++){
             Button t = new Button(tileNames.get(i));
+            if(game.moveIsLegal(i)) numberOfPlayableTiles++;
             t.setDisable(!game.moveIsLegal(i));
             t.getStyleClass().add("tile");
             t.getStyleClass().add("playedTile");
@@ -83,5 +86,19 @@ public class PlaceTileMenu extends ActionMenu{
         }
 
         menu.getChildren().add(tileGrid);
+
+        if(numberOfPlayableTiles == 0){
+            Button getNewHandButton = new Button("Get a new hand");
+            getNewHandButton.setOnAction(new EventHandler<ActionEvent>() {
+                @Override
+                public void handle(ActionEvent event) {
+                    game.giveCurrentPlayerNewHand();
+                    ui.changeActionMenu(GameUI.PLACE_TILE);
+                }
+            });
+            menu.getChildren().add(getNewHandButton);
+        }
+
+
     }
 }

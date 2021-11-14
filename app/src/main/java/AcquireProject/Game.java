@@ -144,8 +144,6 @@ public class Game {
         gameBoard.placeTile(currentPlayer.getPlayerTiles().get(tileIndex));
         currentPlayer.getPlayerTiles().remove(tileIndex);
 
-        //addTileToCurrentPlayer();
-
     }
 
     /**
@@ -154,6 +152,13 @@ public class Game {
      */
     public void giveCurrentPlayerNewHand(){
 
+        List<Tile> newHand = new ArrayList<>();
+        for(int i = 0; i < 6; i++){
+            newHand.addAll(unplayedTiles.drawTile());
+        }
+
+        currentPlayer.giveNewHand(newHand);
+
     }
 
 
@@ -161,7 +166,7 @@ public class Game {
      * adds a tile to the current players hand from the list of available tiles
      */
     public void addTileToCurrentPlayer(){
-        Tile givenTile = unplayedTiles.drawTile();
+        List<Tile> givenTile = unplayedTiles.drawTile();
         currentPlayer.addTile(givenTile);
     }
 
