@@ -209,6 +209,9 @@ public class GameUI {
 
             int index = xCoord * 9 + yCoord;
 
+            gameBoard.getChildren().get(index).getStyleClass().clear();
+            gameBoard.getChildren().get(index).getStyleClass().add("tile");
+
             String style = t.getChainName();
             if(style == "") {
                 gameBoard.getChildren().get(index).getStyleClass().add("playedTile");

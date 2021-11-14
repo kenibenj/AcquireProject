@@ -81,7 +81,7 @@ class GameBoard{
     * @return the newly laid tile's neighbors.
     * @author Emily Elzinga
     */
-   public List<Tile> breadthFirstSearch(
+   private List<Tile> breadthFirstSearch(
            Queue<List<Integer>> queue,
            boolean[][] visited
    ) {
@@ -120,9 +120,9 @@ class GameBoard{
     * @author Emily Elzinga
     */
    private List<Tile> Scout(Tile tile){
+       board.get(tile.getCoordinates().get(0)).set(tile.getCoordinates().get(1), tile);
       Queue<List<Integer>> neighbors = new LinkedList<>();
       neighbors.add(tile.getCoordinates());
-      board.get(tile.getCoordinates().get(0)).set(tile.getCoordinates().get(1), tile);
       boolean[][] visited = new boolean[board.size()][board.get(0).size()];
 
       return breadthFirstSearch(neighbors,visited);
@@ -172,11 +172,8 @@ class GameBoard{
      */
    public boolean mergeIsLegal(List<HotelChain> frequencyChains){
        boolean legalMerge = true;
-       HotelChain acquiringChain = frequencyChains.remove(0);
-       if (acquiringChain.isSafe()) {
-           for (HotelChain chain : frequencyChains) {
-               if (chain.isSafe()) legalMerge = false;
-           }
+       for (int i = 1; i < frequencyChains.size(); i++) {
+           if (frequencyChains.get(i).isSafe()) legalMerge = false;
        }
        return legalMerge;
    }
@@ -200,7 +197,7 @@ class GameBoard{
                   modeChain.get(0).getTiles().add(t);
               }
           }
-      }else if (modeChain.size() > 1 && mergeIsLegal(modeChain)) {
+      }else if (modeChain.size() > 1 /*&& mergeIsLegal(modeChain)*/) {
          HotelChain mode = modeChain.remove(0);
          for (HotelChain acquiredChain : modeChain){
             Merger merger = new Merger(mode, acquiredChain, this);
@@ -230,12 +227,12 @@ class GameBoard{
             }
         }
 
-        for(Tile t : merger.getAcquiredChain().getTiles()){
+        /*for(Tile t : merger.getAcquiredChain().getTiles()){
             t.setChainName(merger.getAcquiringChain().getName());
             if(!merger.getAcquiringChain().getTiles().contains(t)){
                 merger.getAcquiringChain().addTile(t);
             }
-        }
+        }*/
 
         merger.getAcquiredChain().getTiles().clear();
         unfoundedChains.add(merger.getAcquiredChain());
@@ -285,8 +282,29 @@ class GameBoard{
        }
    }
 
-   public boolean moveIsLegal(String tile){
-      return true;
+   public boolean moveIsLegal(Tile tile){
+       boolean legal = true;
+       Queue<List<Integer>> neighbors = new LinkedList<>();
+       neighbors.add(tile.getCoordinates());
+       int x = tile.getCoordinates().get(0);
+       int y = tile.getCoordinates().get(1);
+       neighbors.add(Arrays.asList(x+1, y));
+       neighbors.add(Arrays.asList(x-1, y));
+       neighbors.add(Arrays.asList(x, y+1));
+       neighbors.add(Arrays.asList(x, y-1));
+       boolean[][] visited = new boolean[board.size()][board.get(0).size()];
+
+       List<Tile> chain = breadthFirstSearch(neighbors,visited);
+       List<HotelChain> modeChain = modeInNeighborList(chain);
+
+
+       if(modeChain.size() == 0 && chain.size() > 0 && unfoundedChains.isEmpty()){
+           legal = false;
+       }else if (modeChain.size() > 1 && !mergeIsLegal(modeChain)) {
+           legal = false;
+       }
+
+       return legal;
    }
 
 }

@@ -45,7 +45,7 @@ public class HotelChain {
 
     public String getName(){return name;}
     public int getSize(){
-        return 1;
+        return tiles.size();
     }
 
     public void addTile(Tile tile){
@@ -59,14 +59,6 @@ public class HotelChain {
     public int getMinorityShareholderBonus(){
         return getMajorityShareholderBonus() / 2;
     }
-    public Player getMajorityShareholder(){
-        return new Player("", new ArrayList<Tile>() {
-        });
-    }
-
-    public Player getMinorityShareholder() {
-        return new Player("", new ArrayList<>());
-    }
 
     /**
      * tests if the chain is safe from being acquired
@@ -74,11 +66,7 @@ public class HotelChain {
      * @return if the chain can not be acquired
      */
     public Boolean isSafe(){
-        if(getSize() >= SAFE_SIZE) {
-            return true;
-        }else{
-            return false;
-        }
+        return tiles.size() >= SAFE_SIZE;
     }
 
     /**

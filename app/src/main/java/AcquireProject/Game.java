@@ -300,7 +300,10 @@ public class Game {
 
     public void foundChain(String chain){
         gameBoard.FoundChain(chain, currentPlayer);
+    }
 
+    public boolean moveIsLegal(int tileIndex){
+        return gameBoard.moveIsLegal(currentPlayer.getPlayerTiles().get(tileIndex));
     }
 
 

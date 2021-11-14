@@ -38,6 +38,7 @@ public class PlaceTileMenu extends ActionMenu{
 
         for(int i = 0; i < tileNames.size(); i++){
             Button t = new Button(tileNames.get(i));
+            t.setDisable(!game.moveIsLegal(i));
 
             int index = i;
 
