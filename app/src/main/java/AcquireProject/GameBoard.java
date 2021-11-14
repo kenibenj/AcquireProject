@@ -1,4 +1,3 @@
-
 /**
  * The game board class has the characteristics of a physical acquire game
  * board, with a matrix representing the physical board.
@@ -55,18 +54,38 @@ class GameBoard{
       this.mergersToHandle = new ArrayList<>();
    }
 
+    /**
+     * Constructor that incorperates a list of unfounded chains and creates a list of all hotel chains
+     *
+     * @param unfoundedChains that keeps track of hotel chains that haven't been founded yet
+     */
    public GameBoard(List<HotelChain> unfoundedChains){
       this(unfoundedChains, new ArrayList<HotelChain>());
    }
 
+    /**
+     * a method that adds a tile to the list of player's tiles
+     *
+     * @param playedTile that is added to the player's list of tiles
+     */
    public void addToPlayedTiles(Tile playedTile) {
       playedTiles.add(playedTile);
    }
 
+    /**
+     * retrieves the matrix of the board in a 2-by-2 matrix of Tile objects
+     *
+     * @return the board matrix
+     */
    public ArrayList<ArrayList<Tile>> getGameBoardMatrix(){
       return board;
    }
 
+    /**
+     * a method that retrieves the list of all played tiles on the board
+     *
+     * @return list of played tiles
+     */
    public List<Tile> getPlayedTiles() {
       return playedTiles;
    }
@@ -136,7 +155,6 @@ class GameBoard{
     * @return ordered list of hotel chains in the clump ordered in frequency
     * @author Emily Elzinga
     */
-
    public List<HotelChain> modeInNeighborList(List<Tile> neighbors) {
       String chainName;
 
@@ -207,7 +225,11 @@ class GameBoard{
 
    }
 
-
+    /**
+     * a method that determines if a merge is needed on the game board
+     *
+     * @return boolean value on if a merge is needed
+     */
    public Boolean mergeNeeded(){
        if(mergersToHandle.size() > 0){
            return true;
@@ -215,10 +237,20 @@ class GameBoard{
        return false;
    }
 
+    /**
+     * a method that finds and returns the merger object currently being used
+     *
+     * @return Merger object that is currently occurring
+     */
    public Merger getCurrentMerger(){
        return mergersToHandle.remove(0);
    }
 
+    /**
+     * a method that merges hotel chains on the board
+     *
+     * @param merger object that is being used to merge hotel chains
+     */
    public void mergeChains(Merger merger){
         for(Tile t : Scout(playedTiles.get(playedTiles.size()-1))){
             t.setChainName(merger.getAcquiringChain().getName());
@@ -282,6 +314,13 @@ class GameBoard{
        }
    }
 
+    /**
+     * a method that determines if a placed tile is a legal move by viewing the position of its neighbors
+     *
+     * @param tile object that is being placed
+     *
+     * @return boolean vlaue on if the move is legal
+     */
    public boolean moveIsLegal(Tile tile){
        boolean legal = true;
        Queue<List<Integer>> neighbors = new LinkedList<>();

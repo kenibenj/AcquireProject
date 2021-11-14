@@ -1,11 +1,3 @@
-package AcquireProject;
-
-import UserInterface.GameUI;
-import lombok.Getter;
-import lombok.Setter;
-
-import java.util.*;
-
 /**
  * A facade class to control the game classes
  *
@@ -13,6 +5,14 @@ import java.util.*;
  *
  * @since 1.0.0
  */
+
+package AcquireProject;
+
+import UserInterface.GameUI;
+import lombok.Getter;
+import lombok.Setter;
+import java.util.*;
+
 public class Game {
 
 
@@ -24,6 +24,9 @@ public class Game {
 
     @Getter @Setter private int UIState = GameUI.ADD_PLAYERS;
 
+    /**
+     * Constructor that creates list of hotel chains and their respective tiers
+     */
     public Game(){
 
         stockLeftToBuy = 3;
@@ -86,6 +89,11 @@ public class Game {
         return balances;
     }
 
+    /**
+     * gets
+     *
+     * @return a list of player balances in turn order
+     */
     public List<Map<String, Integer>> getPlayerStockProfiles(){
         List<Map<String, Integer>> profiles = new ArrayList<>();
         for(Player p: players){
@@ -220,12 +228,22 @@ public class Game {
         return stocks;
     }
 
+    /**
+     * a method to give stock to a player and decreases how much is left to buy
+     */
     public void buyStock(int chainIndex){
         stockLeftToBuy--;
         HotelChain chain = gameBoard.getFoundedChains().get(chainIndex);
         chain.sellStock(currentPlayer);
     }
 
+    /**
+     * a method to see if a player is able to buy stock based on availability and price
+     *
+     * @param
+     *
+     * @return boolean value on whether player can buy stock
+     */
     public Boolean playerCanBuyStock(int chainIndex){
         HotelChain chain = gameBoard.getFoundedChains().get(chainIndex);
         if(currentPlayer.getBalance() < chain.getStockPrice()){
@@ -268,10 +286,18 @@ public class Game {
         this.players.add(new Player(name, unplayedTiles.drawStartingTiles()));
     }
 
+    /**
+     * a method handle the merging of hotel chains
+     *
+     * @param merge object of the hotel chains getting merged
+     */
     public void handleMerger(Merger merge){
 
     }
 
+    /**
+     * a method that sets the next player as the current player in order to progess the turn cycle
+     */
     public void goToNextPlayer(){
         if(this.players.size() > 0){
             if(Objects.isNull(this.currentPlayer)){
@@ -286,22 +312,47 @@ public class Game {
         }
     }
 
+    /**
+     * a method handle the merging of hotel chains
+     *
+     * @return
+     */
     public Founder foundNeeded(){
         return gameBoard.foundNeeded();
     }
 
+    /**
+     * a method that determines if a merge is needed between 2 chains when a tile is played
+     *
+     * @return boolen value on if a merge is needed
+     */
     public Boolean mergeNeeded(){
         return gameBoard.mergeNeeded();
     }
 
+    /**
+     * a method that returns the merger object that is currently being used to merge hotel chains
+     *
+     * @return Merger object that is currently being used
+     */
     public Merger getCurrentMerger(){
         return gameBoard.getCurrentMerger();
     }
 
+    /**
+     * a method that founds a chain when tiles are placed next to each other
+     *
+     * @param chain object that is being formed
+     */
     public void foundChain(String chain){
         gameBoard.FoundChain(chain, currentPlayer);
     }
 
+    /**
+     * method that determines if placing a tile on the board would be a legal move
+     *
+     * @param tileIndex that is being placed
+     */
     public boolean moveIsLegal(int tileIndex){
         return gameBoard.moveIsLegal(currentPlayer.getPlayerTiles().get(tileIndex));
     }

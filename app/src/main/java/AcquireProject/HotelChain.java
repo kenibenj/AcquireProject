@@ -1,6 +1,8 @@
 /**
  * @author Emily Elzinga
+ *
  * @version v0.1.0
+ *
  * @since 11/7/2021
  */
 
@@ -32,7 +34,13 @@ public class HotelChain {
             , new int[]{6, 10}, new int[]{11, 20}, new int[]{21, 30}, new int[]{31, 40}, new int[]{41, 42069}};
 
 
-
+    /**
+     * Constructor that initializes HotelChain object with a name and its financial tier
+     *
+     * @param name the name of the HotelChain
+     *
+     * @param tier the tier of the Hotelchain that determines its cost and payout
+     */
     public HotelChain(String name, int tier){
         this.name = name;
         this.tier = tier;
@@ -43,19 +51,46 @@ public class HotelChain {
         StockProfiler.instance().addChain(name);
     }
 
-    public String getName(){return name;}
+    /**
+     * getter method that gets the name of HotelChain
+     *
+     * @return name of the HotelChain
+     */
+    public String getName(){
+        return name;}
+
+    /**
+     * getter method that gets an integer amount of how many tiles are in the HotelChain
+     *
+     * @return integer size of the HotelChain
+     */
     public int getSize(){
         return tiles.size();
     }
 
+    /**
+     * method that adds a tile to the list of Tile objects the HotelChain contains
+     *
+     * @param tile being added to HotelChain
+     */
     public void addTile(Tile tile){
         tiles.add(tile);
     }
 
+    /**
+     * method that gets the majority shareholder bonus
+     *
+     * @return int value of the majority shareholder bonus
+     */
     public int getMajorityShareholderBonus(){
         return getStockPrice() * 10;
     }
 
+    /**
+     * method that gets the minority shareholder bonus
+     *
+     * @return int value of the minority shareholder bonus
+     */
     public int getMinorityShareholderBonus(){
         return getMajorityShareholderBonus() / 2;
     }
@@ -144,6 +179,11 @@ public class HotelChain {
         player.modifyBalance(getStockPrice());
     }
 
+    /**
+     * method for the player to take stock
+     *
+     * @param player that is taking the stock
+     */
     public void takeStock(Player player){
         Stock stock = null;
         for(Stock s : ownedStock){
@@ -160,6 +200,11 @@ public class HotelChain {
         player.removeStock(stock);
     }
 
+    /**
+     * gets the amount of stock yet to be sold to a player
+     *
+     * @return integer amount of unsold stock
+     */
     public int getNumberOfUnsoldStock(){
         return unownedStock.size();
     }

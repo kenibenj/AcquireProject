@@ -1,7 +1,9 @@
-/*
- * Created by Emily Elzinga
+/**
+ * Founder class that handles the formation of hotel chains in the game
  *
- * 11/5/2021
+ * @author Michael, Emily, Benjamin
+ *
+ * @since 1.0.0
  */
 
 package AcquireProject;

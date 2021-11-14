@@ -10,7 +10,7 @@ package AcquireProject
 
 import spock.lang.Specification;
 
-class GameBoardTest extends Specification {
+class  GameBoardTest extends Specification {
     def gameboard
     def sackson;
     def american;

@@ -1,8 +1,11 @@
-/*
- * Created by Emily Elzinga
+/**
+ * Application class that runs the main method of the program
  *
- * 11/5/2021
+ * @author Benjamin, Emily, Michael
+ *
+ * @since 1.0.0
  */
+
 
 package AcquireProject;
 
