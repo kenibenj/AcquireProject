@@ -55,6 +55,7 @@ public class GameUI {
         makeActionMenus();
 
         border = new BorderPane();
+        border.getStyleClass().add("gameBorder");
 
         this.scene = makeScene();
     }

@@ -73,3 +73,17 @@
     -fx-border-color: black;
     -fx-padding: 10;
 }
+
+.actionMenu{
+    -fx-padding: 5;
+    -fx-border-color: black;
+    -fx-spacing: 2;
+    -fx-min-width: 360;
+    -fx-max-height: 360;
+    -fx-min-width: 280;
+    -fx-max-width: 280;
+}
+
+.gameBorder{
+    -fx-padding: 10;
+}

@@ -29,6 +29,7 @@ public class AddPlayersMenu extends ActionMenu{
     @Override
     public void updateMenu(){
         this.menu = new VBox();
+        menu.getStyleClass().add("actionMenu");
 
         Text title = new Text("Add Players");
         menu.getChildren().add(title);

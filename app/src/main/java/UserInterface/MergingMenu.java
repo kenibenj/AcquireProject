@@ -35,6 +35,7 @@ public class MergingMenu extends ActionMenu{
     @Override
     public void updateMenu(){
         menu = new VBox();
+        menu.getStyleClass().add("actionMenu");
 
         if(Objects.isNull(currentMerger)){
             currentMerger = game.getCurrentMerger();

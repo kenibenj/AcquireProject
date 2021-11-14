@@ -27,6 +27,7 @@ public class EndGameMenu extends ActionMenu{
     @Override
     public void updateMenu(){
         menu = new VBox();
+        menu.getStyleClass().add("actionMenu");
 
         Text title = new Text("Would you like to end the game?");
         menu.getChildren().add(title);

@@ -10,7 +10,7 @@
 package AcquireProject;
 
 import lombok.Getter;
-import org.jetbrains.annotations.NotNull;
+import lombok.NonNull;
 
 import java.util.*;
 
@@ -45,7 +45,7 @@ public class StockProfiler {
      * @param player the player to create the profile for
      * @return a map of chains to the amount of stock owned
      */
-    public Map<String, Integer> createPlayerProfile(@NotNull Player player){
+    public Map<String, Integer> createPlayerProfile(@NonNull Player player){
         Map<String, Integer> profile = new HashMap<>();
 
         List<Stock> stocks = player.getPlayerStocks();
@@ -68,7 +68,7 @@ public class StockProfiler {
      * @param chain the chain to create a profile for
      * @return a map of players to the amount of stock owned
      */
-    public Map<Player, Integer> createChainProfile(@NotNull HotelChain chain){
+    public Map<Player, Integer> createChainProfile(@NonNull HotelChain chain){
         Map<Player, Integer> profile = new HashMap<>();
 
         List<Stock> stocks = chain.getOwnedStock();

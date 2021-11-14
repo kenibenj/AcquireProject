@@ -35,11 +35,13 @@ public class PlaceTileMenu extends ActionMenu{
     @Override
     public void updateMenu() {
         menu = new VBox();
+        menu.getStyleClass().add("actionMenu");
 
         Text title = new Text("Which tile would you like to place?");
         menu.getChildren().add(title);
 
         GridPane tileGrid = new GridPane();
+        tileGrid.setStyle("-fx-padding: 20");
         List<String> tileNames = game.getCurrentPlayerTiles();
 
         int numberOfColumns = 3;
@@ -47,6 +49,8 @@ public class PlaceTileMenu extends ActionMenu{
         for(int i = 0; i < tileNames.size(); i++){
             Button t = new Button(tileNames.get(i));
             t.setDisable(!game.moveIsLegal(i));
+            t.getStyleClass().add("tile");
+            t.getStyleClass().add("playedTile");
 
             int index = i;
 

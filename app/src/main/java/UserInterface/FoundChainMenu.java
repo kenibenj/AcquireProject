@@ -32,6 +32,7 @@ public class FoundChainMenu extends ActionMenu{
     @Override
     public void updateMenu() {
         menu = new VBox();
+        menu.getStyleClass().add("actionMenu");
 
         Text title = new Text("Which hotel chain would you like to found?");
         menu.getChildren().add(title);
@@ -40,6 +41,7 @@ public class FoundChainMenu extends ActionMenu{
 
         for(int i = 0; i < names.size(); i++){
             Button b = new Button(names.get(i));
+            b.getStyleClass().add(names.get(i));
 
             int index = i;
 
