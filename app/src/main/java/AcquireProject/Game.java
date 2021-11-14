@@ -65,6 +65,30 @@ public class Game {
     }
 
     /**
+     * tests if the conditions are met for the game to end
+     *
+     * @return true if the game can end
+     */
+    public boolean gameCanEnd(){
+        boolean allChainsSafe = true;
+
+        boolean thereIsALargeChain = false;
+
+        for(HotelChain chain : gameBoard.getFoundedChains()){
+            if(!chain.isSafe()){
+                allChainsSafe = false;
+                break;
+            }
+            if(chain.getSize() >= 41){
+                thereIsALargeChain = true;
+            }
+        }
+
+        return (allChainsSafe || thereIsALargeChain) && (gameBoard.getFoundedChains().size() > 0);
+
+    }
+
+    /**
      * Puts together a list of the players names
      *
      * @return a list of player names in turn order
@@ -75,15 +99,6 @@ public class Game {
             names.add(p.getPlayerName());
         }
         return names;
-    }
-
-    /**
-     * gets the balance for the current player
-     *
-     * @return an integer value for the balance of the player who's turn it is
-     */
-    public int getCurrentPlayerBalance(){
-        return 2000;
     }
 
     /**
@@ -183,6 +198,40 @@ public class Game {
      */
     public void endGame(){
 
+        for(HotelChain chain : gameBoard.getFoundedChains()){
+            Map<Player, Integer> profile = StockProfiler.instance().createChainProfile(chain);
+            for(Player player : profile.keySet()){
+                for(int i = 0; i < profile.get(player); i++){
+                    chain.buyStock(player);
+                }
+            }
+        }
+
+    }
+
+    /**
+     * creates a message describing the winner of the game
+     *
+     * @return a string in the form "Player is the winner with $cash"
+     */
+    public String getWinner(){
+        String message = "";
+
+        int maxCash = 0;
+        Player winner = currentPlayer;
+
+        for(Player player : players){
+            if(player.getBalance() > maxCash){
+                maxCash = player.getBalance();
+                winner = player;
+            }
+        }
+
+        message += winner.getPlayerName();
+        message += " is the winner with $";
+        message += winner.getBalance();
+
+        return message;
     }
 
     /**

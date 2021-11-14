@@ -95,6 +95,9 @@ public class MergingMenu extends ActionMenu{
                     currentMerger.mergeChains();
                     ui.updateGameBoard();
                     ui.changeActionMenu(GameUI.BUY_STOCK);
+                    if(game.gameCanEnd()){
+                        ui.changeActionMenu(GameUI.END_GAME);
+                    }
                     currentMerger = null;
                 }
             }

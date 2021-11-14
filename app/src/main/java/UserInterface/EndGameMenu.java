@@ -9,11 +9,15 @@
 package UserInterface;
 
 import AcquireProject.Game;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
 public class EndGameMenu extends ActionMenu{
+
+    String winnerMessage = "";
 
     public EndGameMenu(Game game, GameUI ui){
         super(game, ui);
@@ -35,8 +39,30 @@ public class EndGameMenu extends ActionMenu{
         Button endGameButton = new Button("End Game");
         Button continueButton = new Button("Continue Playing");
 
-        menu.getChildren().add(endGameButton);
-        menu.getChildren().add(continueButton);
+        endGameButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                game.endGame();
+                winnerMessage = game.getWinner();
+                ui.updatePlayerInfo();
+                ui.changeActionMenu(GameUI.END_GAME);
+            }
+        });
+
+        continueButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                ui.changeActionMenu(GameUI.BUY_STOCK);
+            }
+        });
+
+        if(winnerMessage.equals("")) {
+            menu.getChildren().add(endGameButton);
+            menu.getChildren().add(continueButton);
+        }else{
+            Text message = new Text(winnerMessage);
+            menu.getChildren().add(message);
+        }
 
     }
 

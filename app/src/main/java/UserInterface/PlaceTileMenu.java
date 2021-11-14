@@ -79,6 +79,10 @@ public class PlaceTileMenu extends ActionMenu{
                     }
 
                     ui.changeActionMenu(GameUI.BUY_STOCK);
+
+                    if(game.gameCanEnd()){
+                        ui.changeActionMenu(GameUI.END_GAME);
+                    }
                 }
             });
 
@@ -98,7 +102,6 @@ public class PlaceTileMenu extends ActionMenu{
             });
             menu.getChildren().add(getNewHandButton);
         }
-
 
     }
 }

@@ -50,6 +50,9 @@ public class FoundChainMenu extends ActionMenu{
                 public void handle(ActionEvent event) {
                     game.foundChain(game.getUnfoundedChains().get(index));
                     ui.changeActionMenu(GameUI.BUY_STOCK);
+                    if(game.gameCanEnd()){
+                        ui.changeActionMenu(GameUI.END_GAME);
+                    }
                     ui.updateGameBoard();
                 }
             });
