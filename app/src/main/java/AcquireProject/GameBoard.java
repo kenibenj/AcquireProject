@@ -59,6 +59,11 @@ class GameBoard{
       this(unfoundedChains, new ArrayList<HotelChain>());
    }
 
+    /**
+     * adds a tile to the list of tiles that have already been played
+     *
+     * @param playedTile the tile that has just been played
+     */
    public void addToPlayedTiles(Tile playedTile) {
       playedTiles.add(playedTile);
    }
@@ -208,6 +213,11 @@ class GameBoard{
    }
 
 
+    /**
+     * checks if there is a merger that has not yet been handled
+     *
+     * @return true if there is a merger waiting to be handled
+     */
    public Boolean mergeNeeded(){
        if(mergersToHandle.size() > 0){
            return true;
@@ -215,10 +225,21 @@ class GameBoard{
        return false;
    }
 
+    /**
+     *
+     * @return the next merger to be handled
+     */
    public Merger getCurrentMerger(){
        return mergersToHandle.remove(0);
    }
 
+    /**
+     * merges two chains and updates all the needed fields
+     *
+     * @param merger the Merger object holding all the information for the merge
+     *
+     * @author Michael Collier
+     */
    public void mergeChains(Merger merger){
         for(Tile t : Scout(playedTiles.get(playedTiles.size()-1))){
             t.setChainName(merger.getAcquiringChain().getName());
@@ -226,13 +247,6 @@ class GameBoard{
                 merger.getAcquiringChain().addTile(t);
             }
         }
-
-        /*for(Tile t : merger.getAcquiredChain().getTiles()){
-            t.setChainName(merger.getAcquiringChain().getName());
-            if(!merger.getAcquiringChain().getTiles().contains(t)){
-                merger.getAcquiringChain().addTile(t);
-            }
-        }*/
 
         merger.getAcquiredChain().getTiles().clear();
         unfoundedChains.add(merger.getAcquiredChain());
@@ -282,6 +296,15 @@ class GameBoard{
        }
    }
 
+    /**
+     * checks if a tile can be placed
+     *
+     * @param tile the tile to be checked
+     *
+     * @return true if the placing the tile would not cause a founding or merging that would be illegal
+     *
+     * @author Michael Collier
+     */
    public boolean moveIsLegal(Tile tile){
        boolean legal = true;
        Queue<List<Integer>> neighbors = new LinkedList<>();

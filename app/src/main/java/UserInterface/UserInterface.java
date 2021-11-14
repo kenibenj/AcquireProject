@@ -1,3 +1,11 @@
+/**
+ * proveds the functionality to switch between scenes in the ui
+ *
+ * @author Michael Collier
+ *
+ * @since 1.0.0
+ */
+
 package UserInterface;
 
 import AcquireProject.Game;
@@ -8,14 +16,6 @@ import lombok.Setter;
 
 import java.io.IOException;
 
-
-/**
- * proveds the functionality to switch between scenes in the ui
- *
- * @author Michael Collier
- *
- * @since 1.0.0
- */
 public class UserInterface {
 
     @Setter private Stage stage;
@@ -40,19 +40,33 @@ public class UserInterface {
         this.stage.setScene(newScene);
     }
 
+    /**
+     * changes the scene to the game
+     */
     public void goToGame(){
         changeScene(gameui.getScene());
     }
 
+    /**
+     * changes the scene to the main menu
+     */
     public void goToMainMenu(){
         changeScene(mainMenu.getScene());
     }
 
+    /**
+     * loads a game from the file
+     */
     public void loadGame(){
         gameui.setGame(loader.loadGame());
         gameui.loadState();
     }
 
+    /**
+     * saves a game to the file
+     *
+     * @param game the game to be saved
+     */
     public void saveGame(Game game){
         try {
             loader.saveGame(game);

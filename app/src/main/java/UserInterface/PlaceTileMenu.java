@@ -1,3 +1,11 @@
+/**
+ * Gives the options which tile to place in each turn
+ *
+ * @author Michael Collier
+ *
+ * @since 1.0.0
+ */
+
 package UserInterface;
 
 import AcquireProject.Founder;

@@ -1,3 +1,11 @@
+/**
+ * Gives the options for trading or selling stock when merging
+ *
+ * @author Michael Collier
+ *
+ * @since 1.0.0
+ */
+
 package UserInterface;
 
 import AcquireProject.Game;

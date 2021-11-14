@@ -1,3 +1,11 @@
+/**
+ * Gives the options for adding new players at the beginning of the game
+ *
+ * @author Michael Collier
+ *
+ * @since 1.0.0
+ */
+
 package UserInterface;
 
 import AcquireProject.Game;

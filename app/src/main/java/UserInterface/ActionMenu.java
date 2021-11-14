@@ -1,8 +1,3 @@
-package UserInterface;
-
-import AcquireProject.Game;
-import javafx.scene.layout.VBox;
-
 /**
  * an action menu is switched out to change the options that a user is given during each step of the turn cycle
  *
@@ -10,6 +5,12 @@ import javafx.scene.layout.VBox;
  *
  * @since 1.0.0
  */
+
+package UserInterface;
+
+import AcquireProject.Game;
+import javafx.scene.layout.VBox;
+
 public abstract class ActionMenu {
 
     protected VBox menu;
@@ -23,8 +24,14 @@ public abstract class ActionMenu {
         this.menu = new VBox();
     }
 
+    /**
+     * updates the elements in the menu to reflect current gameplay
+     */
     public void updateMenu(){}
 
+    /**
+     * @return the menu contained in a VBox
+     */
     public VBox getMenu(){
         return menu;
     }

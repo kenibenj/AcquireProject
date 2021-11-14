@@ -1,3 +1,11 @@
+/**
+ * A facade class to control the game classes
+ *
+ * @author Michael Collier
+ *
+ * @since 1.0.0
+ */
+
 package AcquireProject;
 
 import UserInterface.GameUI;
@@ -6,13 +14,7 @@ import lombok.Setter;
 
 import java.util.*;
 
-/**
- * A facade class to control the game classes
- *
- * @author Michael Collier
- *
- * @since 1.0.0
- */
+
 public class Game {
 
 
@@ -32,6 +34,17 @@ public class Game {
 
         this.unplayedTiles = new UnplayedTiles();
 
+        List<HotelChain> hotelChains = makeHotelChains();
+        this.gameBoard = new GameBoard(hotelChains);
+
+    }
+
+    /**
+     * create each hotel chain with their name and tier
+     *
+     * @return a list of hotel chains
+     */
+    private List<HotelChain> makeHotelChains(){
         List<HotelChain> hotelChains = new ArrayList<>();
         hotelChains.add(new HotelChain("Worldwide", HotelChain.TIER_ONE));
         hotelChains.add(new HotelChain("Sackson", HotelChain.TIER_ONE));
@@ -40,8 +53,8 @@ public class Game {
         hotelChains.add(new HotelChain("American", HotelChain.TIER_TWO));
         hotelChains.add(new HotelChain("Continental", HotelChain.TIER_THREE));
         hotelChains.add(new HotelChain("Tower", HotelChain.TIER_THREE));
-        this.gameBoard = new GameBoard(hotelChains);
 
+        return hotelChains;
     }
 
     /**
@@ -86,23 +99,17 @@ public class Game {
         return balances;
     }
 
+    /**
+     * creates a profile for each player and puts them in a list
+     *
+     * @return a list of maps describing the amount of stock a player has in each chain
+     */
     public List<Map<String, Integer>> getPlayerStockProfiles(){
         List<Map<String, Integer>> profiles = new ArrayList<>();
         for(Player p: players){
             profiles.add(StockProfiler.instance().createPlayerProfile(p));
         }
         return profiles;
-    }
-
-    /**
-     * changes the balance of the current player by an amount.
-     *
-     * @param change the amount to be added if positive or removed if negative
-     *
-     * @return the new balance of the players account
-     */
-    public int modifyCurrentPlayerBalance(int change){
-        return 200;
     }
 
     /**
@@ -159,17 +166,6 @@ public class Game {
     }
 
     /**
-     * check to see if the tile can legally be placed on the game board
-     *
-     * @param tile that is trying to get placed
-     *
-     * @return if the tile can be placed legally
-     */
-    public Boolean moveIsLegal(String tile){
-        return true;
-    }
-
-    /**
      * get the tiles that have already been placed
      * @return
      */
@@ -220,12 +216,25 @@ public class Game {
         return stocks;
     }
 
+    /**
+     * adds one stock of the given chain to the current player and charges their account
+     *
+     * @param chainIndex the number for the chain to buy stock in
+     */
     public void buyStock(int chainIndex){
         stockLeftToBuy--;
         HotelChain chain = gameBoard.getFoundedChains().get(chainIndex);
         chain.sellStock(currentPlayer);
     }
 
+    /**
+     * checks to see if a player can buy stock in the given chain
+     * checks if the player has enough money, they have bought less than three stock this turn, and if the chain still has stock to sell
+     *
+     * @param chainIndex the chain the player might be able to buy from
+     *
+     * @return true if the player can buy the stock
+     */
     public Boolean playerCanBuyStock(int chainIndex){
         HotelChain chain = gameBoard.getFoundedChains().get(chainIndex);
         if(currentPlayer.getBalance() < chain.getStockPrice()){
@@ -240,25 +249,6 @@ public class Game {
         return true;
     }
 
-
-    /**
-     * a method to get the name of the player who is currently deciding what to do with their stock during a merge
-     *
-     * @return the name of the player deciding their stock options
-     */
-    public String getMergingPlayerName(){
-        return "Alice";
-    }
-
-    /**
-     * a method to get how many stocks the player currently making stock options has in the acquired chain
-     *
-     * @return the number of stocks the player has in the acquired chain
-     */
-    public int getMergingPlayerStockAmount(){
-        return 5;
-    }
-
     /**
      * used to add a new player at the start of the game
      *
@@ -268,10 +258,9 @@ public class Game {
         this.players.add(new Player(name, unplayedTiles.drawStartingTiles()));
     }
 
-    public void handleMerger(Merger merge){
-
-    }
-
+    /**
+     * updates starts the next players turn and makes them the current player
+     */
     public void goToNextPlayer(){
         if(this.players.size() > 0){
             if(Objects.isNull(this.currentPlayer)){
@@ -286,22 +275,49 @@ public class Game {
         }
     }
 
+    /**
+     * checks if there is a founding that needs to be handled
+     *
+     * @return true if there is a founder waiting to be handled
+     */
     public Founder foundNeeded(){
         return gameBoard.foundNeeded();
     }
 
+    /**
+     * checks if there is a merging that needs to be handled
+     *
+     * @return treu if there is a founder waiting to be handled
+     */
     public Boolean mergeNeeded(){
         return gameBoard.mergeNeeded();
     }
 
+    /**
+     * gets the next merger to be handled
+     *
+     * @return a Merger object to be handled
+     */
     public Merger getCurrentMerger(){
         return gameBoard.getCurrentMerger();
     }
 
+    /**
+     * founds a chain
+     *
+     * @param chain the name of the chain that needs to be founded
+     */
     public void foundChain(String chain){
         gameBoard.FoundChain(chain, currentPlayer);
     }
 
+    /**
+     * check to see if the tile can legally be placed on the game board
+     *
+     * @param tileIndex the index for the tile being placed from the list of the current players hand
+     *
+     * @return if the tile can be placed legally
+     */
     public boolean moveIsLegal(int tileIndex){
         return gameBoard.moveIsLegal(currentPlayer.getPlayerTiles().get(tileIndex));
     }

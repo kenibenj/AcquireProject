@@ -113,6 +113,8 @@ public class HotelChain {
      * sells a stock to a player and charges their account
      *
      * @param player the player to sell the stock to
+     *
+     * @author Michael Collier
      */
     public void sellStock(Player player){
         giveStock(player);
@@ -138,12 +140,21 @@ public class HotelChain {
      * buys a stock from a player
      *
      * @param player the player selling the stock back to the chain
+     *
+     * @author Michael Collier
      */
     public void buyStock(Player player){
         takeStock(player);
         player.modifyBalance(getStockPrice());
     }
 
+    /**
+     * takes a stock from a player and lists it as unowned
+     *
+     * @param player the player to take the stock from
+     *
+     * @author Michael Collier
+     */
     public void takeStock(Player player){
         Stock stock = null;
         for(Stock s : ownedStock){

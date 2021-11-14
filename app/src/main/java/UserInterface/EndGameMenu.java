@@ -1,3 +1,11 @@
+/**
+ * Gives the options for ending the game
+ *
+ * @author Michael Collier
+ *
+ * @since 1.0.0
+ */
+
 package UserInterface;
 
 import AcquireProject.Game;

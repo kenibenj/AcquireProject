@@ -1,3 +1,11 @@
+/**
+ * Gives the options for buying stock at the end of each turn
+ *
+ * @author Michael Collier
+ *
+ * @since 1.0.0
+ */
+
 package UserInterface;
 
 import AcquireProject.Game;

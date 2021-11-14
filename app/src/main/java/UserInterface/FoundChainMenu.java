@@ -1,3 +1,11 @@
+/**
+ * Gives the options for which chain to found
+ *
+ * @author Michael Collier
+ *
+ * @since 1.0.0
+ */
+
 package UserInterface;
 
 import AcquireProject.Game;
