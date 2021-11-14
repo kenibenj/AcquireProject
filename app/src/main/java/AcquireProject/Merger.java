@@ -13,18 +13,20 @@ import java.util.*;
 public class Merger {
     @Getter private HotelChain acquiringChain;
     @Getter private HotelChain acquiredChain;
+    private GameBoard gameBoard;
 
     private List<Player> playersToMakeDecision;
 
-    Merger(HotelChain acquiringChain, HotelChain acquiredChain){
+    Merger(HotelChain acquiringChain, HotelChain acquiredChain, GameBoard gameBoard){
         this.acquiringChain = acquiringChain;
         this.acquiredChain = acquiredChain;
         this.playersToMakeDecision = findPlayers();
+        this.gameBoard = gameBoard;
     }
 
     public void giveShareholderBonus(){
 
-        List<Player> majority = getMajoritySharHolder();
+        List<Player> majority = getMajorityShareHolder();
         int majorityBonus = acquiredChain.getMajorityShareholderBonus();
         for(Player p : majority){
             p.modifyBalance(majorityBonus / majority.size());
@@ -43,7 +45,7 @@ public class Merger {
 
     }
 
-    private List<Player> getMajoritySharHolder(){
+    private List<Player> getMajorityShareHolder(){
         return getMinorityShareHolder(new ArrayList<Player>());
     }
 
@@ -61,11 +63,11 @@ public class Merger {
 
             int stockAmount = profile.get(p);
             if(stockAmount > maxStock){
-                majority.clear();
-                majority.add(p);
+                minority.clear();
+                minority.add(p);
                 maxStock = stockAmount;
             }else if(stockAmount == maxStock){
-                majority.add(p);
+                minority.add(p);
             }
         }
 
@@ -87,9 +89,34 @@ public class Merger {
         return playersToMakeDecision.size() > 0;
     }
 
-    public Player getNextPlayer(){
+    public void goToNextPlayer(){
+        playersToMakeDecision.remove(0);
+    }
+
+    public String getPlayerName(){
+        return playersToMakeDecision.get(0).getPlayerName();
+    }
+
+    public int getPlayerStockCount(){
+        return StockProfiler.instance().createPlayerProfile(playersToMakeDecision.get(0)).get(acquiredChain.getName());
+    }
+
+    public int getStockPrice(){
+        return acquiredChain.getStockPrice();
+    }
+
+    public void sellStock(){
+        acquiredChain.buyStock(playersToMakeDecision.get(0));
+    }
+
+    public void tradeStock(){
         Player player = playersToMakeDecision.get(0);
-        playersToMakeDecision.remove(player);
-        return player;
+        acquiredChain.takeStock(player);
+        acquiredChain.takeStock(player);
+        acquiringChain.giveStock(player);
+    }
+
+    public void mergeChains(){
+        gameBoard.mergeChains(this);
     }
 }

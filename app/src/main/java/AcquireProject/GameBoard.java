@@ -182,7 +182,7 @@ class GameBoard{
       }else if (modeChain.size() > 1) {
          HotelChain mode = modeChain.remove(0);
          for (HotelChain acquiredChain : modeChain){
-            Merger merger = new Merger(mode, acquiredChain);
+            Merger merger = new Merger(mode, acquiredChain, this);
             mergersToHandle.add(merger);
          }
       }
@@ -201,11 +201,27 @@ class GameBoard{
    }
 
    public Merger getCurrentMerger(){
-       return mergersToHandle.get(0);
+       return mergersToHandle.remove(0);
    }
 
-   public void MergeChains(Merger merger){
+   public void mergeChains(Merger merger){
+        for(Tile t : Scout(playedTiles.get(playedTiles.size()-1))){
+            t.setChainName(merger.getAcquiringChain().getName());
+            if(!merger.getAcquiringChain().getTiles().contains(t)){
+                merger.getAcquiringChain().addTile(t);
+            }
+        }
 
+        for(Tile t : merger.getAcquiredChain().getTiles()){
+            t.setChainName(merger.getAcquiringChain().getName());
+            if(!merger.getAcquiringChain().getTiles().contains(t)){
+                merger.getAcquiringChain().addTile(t);
+            }
+        }
+
+        merger.getAcquiredChain().getTiles().clear();
+        unfoundedChains.add(merger.getAcquiredChain());
+        foundedChains.remove(merger.getAcquiredChain());
    }
 
     /**

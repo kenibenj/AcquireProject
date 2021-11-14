@@ -146,6 +146,32 @@ public class HotelChain {
         player.addStock(stock);
     }
 
+    /**
+     * buys a stock from a player
+     *
+     * @param player the player selling the stock back to the chain
+     */
+    public void buyStock(Player player){
+        takeStock(player);
+        player.modifyBalance(getStockPrice());
+    }
+
+    public void takeStock(Player player){
+        Stock stock = null;
+        for(Stock s : ownedStock){
+            if(s.getOwner().equals(player)){
+                stock = s;
+                break;
+            }
+        }
+
+        stock.setOwner(null);
+        ownedStock.remove(stock);
+        unownedStock.add(stock);
+
+        player.removeStock(stock);
+    }
+
     public int getNumberOfUnsoldStock(){
         return unownedStock.size();
     }

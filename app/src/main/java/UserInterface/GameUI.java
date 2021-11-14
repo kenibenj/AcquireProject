@@ -39,6 +39,8 @@ public class GameUI {
     public static final int FOUND_CHAIN = 4;
     public static final int ADD_PLAYERS = 5;
 
+    private int currentState = ADD_PLAYERS;
+
     private List<ActionMenu> actionMenus;
 
     private UserInterface ui;
@@ -74,6 +76,7 @@ public class GameUI {
         saveGameButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
+                game.setUIState(currentState);
                 ui.saveGame(game);
             }
         });
@@ -84,8 +87,7 @@ public class GameUI {
 
         border.setBottom(makePlayerInfo());
 
-        actionMenus.get(ADD_PLAYERS).updateMenu();
-        border.setRight(actionMenus.get(ADD_PLAYERS).getMenu());
+        loadState();
 
         return scene;
     }
@@ -191,6 +193,7 @@ public class GameUI {
         if(menuOption >= 0 && menuOption < actionMenus.size()){
             actionMenus.get(menuOption).updateMenu();
             updatePlayerInfo();
+            currentState = menuOption;
             border.setRight(actionMenus.get(menuOption).getMenu());
             return;
         }
@@ -213,6 +216,10 @@ public class GameUI {
                 gameBoard.getChildren().get(index).getStyleClass().add(style);
             }
         }
+    }
+
+    public void loadState(){
+        changeActionMenu(game.getUIState());
     }
 
 

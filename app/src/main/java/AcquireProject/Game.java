@@ -1,5 +1,9 @@
 package AcquireProject;
 
+import UserInterface.GameUI;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.*;
 
 /**
@@ -17,6 +21,8 @@ public class Game {
     private Player currentPlayer;
     private int stockLeftToBuy;
     private UnplayedTiles unplayedTiles;
+
+    @Getter @Setter private int UIState = GameUI.ADD_PLAYERS;
 
     public Game(){
 

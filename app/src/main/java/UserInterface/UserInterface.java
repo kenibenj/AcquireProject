@@ -50,6 +50,7 @@ public class UserInterface {
 
     public void loadGame(){
         gameui.setGame(loader.loadGame());
+        gameui.loadState();
     }
 
     public void saveGame(Game game){
