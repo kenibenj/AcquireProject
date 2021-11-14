@@ -64,15 +64,9 @@ class GameBoard{
    }
 
     /**
-<<<<<<< HEAD
      * a method that adds a tile to the list of player's tiles
      *
      * @param playedTile that is added to the player's list of tiles
-=======
-     * adds a tile to the list of tiles that have already been played
-     *
-     * @param playedTile the tile that has just been played
->>>>>>> 88fb7b2a25f93406ef6f57beb56b7fb2ad339b54
      */
    public void addToPlayedTiles(Tile playedTile) {
       playedTiles.add(playedTile);
@@ -231,18 +225,11 @@ class GameBoard{
 
    }
 
-<<<<<<< HEAD
-    /**
-     * a method that determines if a merge is needed on the game board
-     *
-     * @return boolean value on if a merge is needed
-=======
 
     /**
      * checks if there is a merger that has not yet been handled
      *
      * @return true if there is a merger waiting to be handled
->>>>>>> 88fb7b2a25f93406ef6f57beb56b7fb2ad339b54
      */
    public Boolean mergeNeeded(){
        if(mergersToHandle.size() > 0){
@@ -252,31 +239,20 @@ class GameBoard{
    }
 
     /**
-<<<<<<< HEAD
      * a method that finds and returns the merger object currently being used
      *
      * @return Merger object that is currently occurring
-=======
-     *
-     * @return the next merger to be handled
->>>>>>> 88fb7b2a25f93406ef6f57beb56b7fb2ad339b54
      */
    public Merger getCurrentMerger(){
        return mergersToHandle.remove(0);
    }
 
     /**
-<<<<<<< HEAD
-     * a method that merges hotel chains on the board
-     *
-     * @param merger object that is being used to merge hotel chains
-=======
      * merges two chains and updates all the needed fields
      *
      * @param merger the Merger object holding all the information for the merge
      *
      * @author Michael Collier
->>>>>>> 88fb7b2a25f93406ef6f57beb56b7fb2ad339b54
      */
    public void mergeChains(Merger merger){
         for(Tile t : Scout(playedTiles.get(playedTiles.size()-1))){
@@ -335,13 +311,6 @@ class GameBoard{
    }
 
     /**
-<<<<<<< HEAD
-     * a method that determines if a placed tile is a legal move by viewing the position of its neighbors
-     *
-     * @param tile object that is being placed
-     *
-     * @return boolean vlaue on if the move is legal
-=======
      * checks if a tile can be placed
      *
      * @param tile the tile to be checked
@@ -349,7 +318,6 @@ class GameBoard{
      * @return true if the placing the tile would not cause a founding or merging that would be illegal
      *
      * @author Michael Collier
->>>>>>> 88fb7b2a25f93406ef6f57beb56b7fb2ad339b54
      */
    public boolean moveIsLegal(Tile tile){
        boolean legal = true;

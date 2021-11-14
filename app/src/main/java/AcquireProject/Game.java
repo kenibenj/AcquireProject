@@ -11,15 +11,8 @@ package AcquireProject;
 import UserInterface.GameUI;
 import lombok.Getter;
 import lombok.Setter;
-<<<<<<< HEAD
 import java.util.*;
 
-=======
-
-import java.util.*;
-
-
->>>>>>> 88fb7b2a25f93406ef6f57beb56b7fb2ad339b54
 public class Game {
 
 
@@ -123,15 +116,9 @@ public class Game {
     }
 
     /**
-<<<<<<< HEAD
-     * gets
-     *
-     * @return a list of player balances in turn order
-=======
      * creates a profile for each player and puts them in a list
      *
      * @return a list of maps describing the amount of stock a player has in each chain
->>>>>>> 88fb7b2a25f93406ef6f57beb56b7fb2ad339b54
      */
     public List<Map<String, Integer>> getPlayerStockProfiles(){
         List<Map<String, Integer>> profiles = new ArrayList<>();
@@ -285,13 +272,9 @@ public class Game {
     }
 
     /**
-<<<<<<< HEAD
-     * a method to give stock to a player and decreases how much is left to buy
-=======
      * adds one stock of the given chain to the current player and charges their account
      *
      * @param chainIndex the number for the chain to buy stock in
->>>>>>> 88fb7b2a25f93406ef6f57beb56b7fb2ad339b54
      */
     public void buyStock(int chainIndex){
         stockLeftToBuy--;
@@ -300,20 +283,12 @@ public class Game {
     }
 
     /**
-<<<<<<< HEAD
-     * a method to see if a player is able to buy stock based on availability and price
-     *
-     * @param
-     *
-     * @return boolean value on whether player can buy stock
-=======
      * checks to see if a player can buy stock in the given chain
      * checks if the player has enough money, they have bought less than three stock this turn, and if the chain still has stock to sell
      *
      * @param chainIndex the chain the player might be able to buy from
      *
      * @return true if the player can buy the stock
->>>>>>> 88fb7b2a25f93406ef6f57beb56b7fb2ad339b54
      */
     public Boolean playerCanBuyStock(int chainIndex){
         HotelChain chain = gameBoard.getFoundedChains().get(chainIndex);
@@ -339,20 +314,7 @@ public class Game {
     }
 
     /**
-<<<<<<< HEAD
-     * a method handle the merging of hotel chains
-     *
-     * @param merge object of the hotel chains getting merged
-     */
-    public void handleMerger(Merger merge){
-
-    }
-
-    /**
-     * a method that sets the next player as the current player in order to progess the turn cycle
-=======
      * updates starts the next players turn and makes them the current player
->>>>>>> 88fb7b2a25f93406ef6f57beb56b7fb2ad339b54
      */
     public void goToNextPlayer(){
         if(this.players.size() > 0){
@@ -369,77 +331,47 @@ public class Game {
     }
 
     /**
-<<<<<<< HEAD
-     * a method handle the merging of hotel chains
-     *
-     * @return
-=======
      * checks if there is a founding that needs to be handled
      *
      * @return true if there is a founder waiting to be handled
->>>>>>> 88fb7b2a25f93406ef6f57beb56b7fb2ad339b54
      */
     public Founder foundNeeded(){
         return gameBoard.foundNeeded();
     }
 
     /**
-<<<<<<< HEAD
      * a method that determines if a merge is needed between 2 chains when a tile is played
      *
      * @return boolen value on if a merge is needed
-=======
-     * checks if there is a merging that needs to be handled
-     *
-     * @return treu if there is a founder waiting to be handled
->>>>>>> 88fb7b2a25f93406ef6f57beb56b7fb2ad339b54
      */
     public Boolean mergeNeeded(){
         return gameBoard.mergeNeeded();
     }
 
     /**
-<<<<<<< HEAD
-     * a method that returns the merger object that is currently being used to merge hotel chains
-     *
-     * @return Merger object that is currently being used
-=======
      * gets the next merger to be handled
      *
      * @return a Merger object to be handled
->>>>>>> 88fb7b2a25f93406ef6f57beb56b7fb2ad339b54
      */
     public Merger getCurrentMerger(){
         return gameBoard.getCurrentMerger();
     }
 
     /**
-<<<<<<< HEAD
      * a method that founds a chain when tiles are placed next to each other
      *
      * @param chain object that is being formed
-=======
-     * founds a chain
-     *
-     * @param chain the name of the chain that needs to be founded
->>>>>>> 88fb7b2a25f93406ef6f57beb56b7fb2ad339b54
      */
     public void foundChain(String chain){
         gameBoard.FoundChain(chain, currentPlayer);
     }
 
     /**
-<<<<<<< HEAD
-     * method that determines if placing a tile on the board would be a legal move
-     *
-     * @param tileIndex that is being placed
-=======
      * check to see if the tile can legally be placed on the game board
      *
      * @param tileIndex the index for the tile being placed from the list of the current players hand
      *
      * @return if the tile can be placed legally
->>>>>>> 88fb7b2a25f93406ef6f57beb56b7fb2ad339b54
      */
     public boolean moveIsLegal(int tileIndex){
         return gameBoard.moveIsLegal(currentPlayer.getPlayerTiles().get(tileIndex));
