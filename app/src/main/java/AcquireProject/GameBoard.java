@@ -35,6 +35,7 @@ class GameBoard{
     * length of 12, so it there are no parameters for it in the constructor.
     * @param unfoundedChains list of chains that haven't been founded yet
     * @param foundedChains list of chains that are founded
+    * @author Emily Elzinga
     */
    public GameBoard(List<HotelChain> unfoundedChains, List<HotelChain> foundedChains) {
       this.board = new ArrayList<>();
@@ -78,6 +79,7 @@ class GameBoard{
     * @param queue List of nodes for possible neighbors for the tile just laid
     * @param visited Boolean matrix that has a bool value of whether that node has been visited
     * @return the newly laid tile's neighbors.
+    * @author Emily Elzinga
     */
    public List<Tile> breadthFirstSearch(
            Queue<List<Integer>> queue,
@@ -115,6 +117,7 @@ class GameBoard{
     * Setup necessary for the breadthFirstSearch method
     * @param tile string representation of the newly laid tile
     * @return list of all of the newly laid tile's neighbors, including itself
+    * @author Emily Elzinga
     */
    private List<Tile> Scout(Tile tile){
       Queue<List<Integer>> neighbors = new LinkedList<>();
@@ -131,6 +134,7 @@ class GameBoard{
     * the frequencyList
     * @param neighbors list of tiles in the clump
     * @return ordered list of hotel chains in the clump ordered in frequency
+    * @author Emily Elzinga
     */
 
    public List<HotelChain> modeInNeighborList(List<Tile> neighbors) {
@@ -162,6 +166,22 @@ class GameBoard{
 
 
     /**
+     * Determines whether a safe hotel chain is trying to merge another safe hotel chain
+     * @param frequencyChains list of hotel chains in order of frequency that they appear in the clump
+     * @return whether the merge can happen or not
+     */
+   public boolean mergeIsLegal(List<HotelChain> frequencyChains){
+       boolean legalMerge = true;
+       HotelChain acquiringChain = frequencyChains.remove(0);
+       if (acquiringChain.isSafe()) {
+           for (HotelChain chain : frequencyChains) {
+               if (chain.isSafe()) legalMerge = false;
+           }
+       }
+       return legalMerge;
+   }
+
+    /**
      * places a tile on the board and checks if a founding or merger are needed
      *
      * @param tile the tile that will be added to the board
@@ -170,7 +190,8 @@ class GameBoard{
       playedTiles.add(tile);
       List<Tile> chain = Scout(tile);
       List<HotelChain> modeChain = modeInNeighborList(chain);
-      if(modeChain.size() == 0 && chain.size() > 1){
+
+      if(modeChain.size() == 0 && chain.size() > 1 && !unfoundedChains.isEmpty()){
          currentFounder = new Founder(chain);
       }else if(modeChain.size() == 1){
           for(Tile t : chain){
@@ -179,7 +200,7 @@ class GameBoard{
                   modeChain.get(0).getTiles().add(t);
               }
           }
-      }else if (modeChain.size() > 1) {
+      }else if (modeChain.size() > 1 && mergeIsLegal(modeChain)) {
          HotelChain mode = modeChain.remove(0);
          for (HotelChain acquiredChain : modeChain){
             Merger merger = new Merger(mode, acquiredChain, this);
@@ -189,9 +210,6 @@ class GameBoard{
 
    }
 
-   private void addChain(){
-
-   }
 
    public Boolean mergeNeeded(){
        if(mergersToHandle.size() > 0){
