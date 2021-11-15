@@ -1,11 +1,13 @@
 /**
+<<<<<<< HEAD
 
+=======
+>>>>>>> 76b047e9d7b23bcf7fcc9d3abc061642a6d620c6
  * A remake of the Acquire board game in java
  *
  * @author Michael Collier
  * @author Emily Elzinga
  * @author Benjamin Keninger
->>>>>>> 88fb7b2a25f93406ef6f57beb56b7fb2ad339b54
  */
 
 package AcquireProject;
