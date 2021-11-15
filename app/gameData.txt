@@ -1,0 +1,1018 @@
+{
+  "players": [
+    {
+      "playerName": "bob",
+      "balance": 6000,
+      "playerTiles": [
+        {
+          "tileName": "2G",
+          "coordinates": [
+            1,
+            6
+          ],
+          "chainName": ""
+        },
+        {
+          "tileName": "7D",
+          "coordinates": [
+            6,
+            3
+          ],
+          "chainName": ""
+        },
+        {
+          "tileName": "2F",
+          "coordinates": [
+            1,
+            5
+          ],
+          "chainName": ""
+        },
+        {
+          "tileName": "12B",
+          "coordinates": [
+            11,
+            1
+          ],
+          "chainName": ""
+        },
+        {
+          "tileName": "9D",
+          "coordinates": [
+            8,
+            3
+          ],
+          "chainName": ""
+        },
+        {
+          "tileName": "6H",
+          "coordinates": [
+            5,
+            7
+          ],
+          "chainName": ""
+        }
+      ],
+      "playerStocks": []
+    },
+    {
+      "playerName": "fred",
+      "balance": 6000,
+      "playerTiles": [
+        {
+          "tileName": "10I",
+          "coordinates": [
+            9,
+            8
+          ],
+          "chainName": ""
+        },
+        {
+          "tileName": "7A",
+          "coordinates": [
+            6,
+            0
+          ],
+          "chainName": ""
+        },
+        {
+          "tileName": "1E",
+          "coordinates": [
+            0,
+            4
+          ],
+          "chainName": ""
+        },
+        {
+          "tileName": "6D",
+          "coordinates": [
+            5,
+            3
+          ],
+          "chainName": ""
+        },
+        {
+          "tileName": "6A",
+          "coordinates": [
+            5,
+            0
+          ],
+          "chainName": ""
+        },
+        {
+          "tileName": "3C",
+          "coordinates": [
+            2,
+            2
+          ],
+          "chainName": ""
+        }
+      ],
+      "playerStocks": []
+    },
+    {
+      "playerName": "mark",
+      "balance": 6000,
+      "playerTiles": [
+        {
+          "tileName": "8H",
+          "coordinates": [
+            7,
+            7
+          ],
+          "chainName": ""
+        },
+        {
+          "tileName": "7I",
+          "coordinates": [
+            6,
+            8
+          ],
+          "chainName": ""
+        },
+        {
+          "tileName": "9C",
+          "coordinates": [
+            8,
+            2
+          ],
+          "chainName": ""
+        },
+        {
+          "tileName": "1A",
+          "coordinates": [
+            0,
+            0
+          ],
+          "chainName": ""
+        },
+        {
+          "tileName": "12A",
+          "coordinates": [
+            11,
+            0
+          ],
+          "chainName": ""
+        },
+        {
+          "tileName": "3B",
+          "coordinates": [
+            2,
+            1
+          ],
+          "chainName": ""
+        }
+      ],
+      "playerStocks": []
+    },
+    {
+      "playerName": "george",
+      "balance": 6000,
+      "playerTiles": [
+        {
+          "tileName": "1B",
+          "coordinates": [
+            0,
+            1
+          ],
+          "chainName": ""
+        },
+        {
+          "tileName": "1I",
+          "coordinates": [
+            0,
+            8
+          ],
+          "chainName": ""
+        },
+        {
+          "tileName": "6B",
+          "coordinates": [
+            5,
+            1
+          ],
+          "chainName": ""
+        },
+        {
+          "tileName": "10A",
+          "coordinates": [
+            9,
+            0
+          ],
+          "chainName": ""
+        },
+        {
+          "tileName": "11C",
+          "coordinates": [
+            10,
+            2
+          ],
+          "chainName": ""
+        },
+        {
+          "tileName": "6I",
+          "coordinates": [
+            5,
+            8
+          ],
+          "chainName": ""
+        }
+      ],
+      "playerStocks": []
+    }
+  ],
+  "gameBoard": {
+    "playedTiles": [],
+    "board": [
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    ],
+    "unfoundedChains": [
+      {
+        "NUMBER_OF_STOCK": 25,
+        "SAFE_SIZE": 11,
+        "tier": 0,
+        "tiles": [],
+        "name": "Worldwide",
+        "unownedStock": [
+          {
+            "chainName": "Worldwide"
+          },
+          {
+            "chainName": "Worldwide"
+          },
+          {
+            "chainName": "Worldwide"
+          },
+          {
+            "chainName": "Worldwide"
+          },
+          {
+            "chainName": "Worldwide"
+          },
+          {
+            "chainName": "Worldwide"
+          },
+          {
+            "chainName": "Worldwide"
+          },
+          {
+            "chainName": "Worldwide"
+          },
+          {
+            "chainName": "Worldwide"
+          },
+          {
+            "chainName": "Worldwide"
+          },
+          {
+            "chainName": "Worldwide"
+          },
+          {
+            "chainName": "Worldwide"
+          },
+          {
+            "chainName": "Worldwide"
+          },
+          {
+            "chainName": "Worldwide"
+          },
+          {
+            "chainName": "Worldwide"
+          },
+          {
+            "chainName": "Worldwide"
+          },
+          {
+            "chainName": "Worldwide"
+          },
+          {
+            "chainName": "Worldwide"
+          },
+          {
+            "chainName": "Worldwide"
+          },
+          {
+            "chainName": "Worldwide"
+          },
+          {
+            "chainName": "Worldwide"
+          },
+          {
+            "chainName": "Worldwide"
+          },
+          {
+            "chainName": "Worldwide"
+          },
+          {
+            "chainName": "Worldwide"
+          },
+          {
+            "chainName": "Worldwide"
+          }
+        ],
+        "ownedStock": []
+      },
+      {
+        "NUMBER_OF_STOCK": 25,
+        "SAFE_SIZE": 11,
+        "tier": 0,
+        "tiles": [],
+        "name": "Sackson",
+        "unownedStock": [
+          {
+            "chainName": "Sackson"
+          },
+          {
+            "chainName": "Sackson"
+          },
+          {
+            "chainName": "Sackson"
+          },
+          {
+            "chainName": "Sackson"
+          },
+          {
+            "chainName": "Sackson"
+          },
+          {
+            "chainName": "Sackson"
+          },
+          {
+            "chainName": "Sackson"
+          },
+          {
+            "chainName": "Sackson"
+          },
+          {
+            "chainName": "Sackson"
+          },
+          {
+            "chainName": "Sackson"
+          },
+          {
+            "chainName": "Sackson"
+          },
+          {
+            "chainName": "Sackson"
+          },
+          {
+            "chainName": "Sackson"
+          },
+          {
+            "chainName": "Sackson"
+          },
+          {
+            "chainName": "Sackson"
+          },
+          {
+            "chainName": "Sackson"
+          },
+          {
+            "chainName": "Sackson"
+          },
+          {
+            "chainName": "Sackson"
+          },
+          {
+            "chainName": "Sackson"
+          },
+          {
+            "chainName": "Sackson"
+          },
+          {
+            "chainName": "Sackson"
+          },
+          {
+            "chainName": "Sackson"
+          },
+          {
+            "chainName": "Sackson"
+          },
+          {
+            "chainName": "Sackson"
+          },
+          {
+            "chainName": "Sackson"
+          }
+        ],
+        "ownedStock": []
+      },
+      {
+        "NUMBER_OF_STOCK": 25,
+        "SAFE_SIZE": 11,
+        "tier": 1,
+        "tiles": [],
+        "name": "Festival",
+        "unownedStock": [
+          {
+            "chainName": "Festival"
+          },
+          {
+            "chainName": "Festival"
+          },
+          {
+            "chainName": "Festival"
+          },
+          {
+            "chainName": "Festival"
+          },
+          {
+            "chainName": "Festival"
+          },
+          {
+            "chainName": "Festival"
+          },
+          {
+            "chainName": "Festival"
+          },
+          {
+            "chainName": "Festival"
+          },
+          {
+            "chainName": "Festival"
+          },
+          {
+            "chainName": "Festival"
+          },
+          {
+            "chainName": "Festival"
+          },
+          {
+            "chainName": "Festival"
+          },
+          {
+            "chainName": "Festival"
+          },
+          {
+            "chainName": "Festival"
+          },
+          {
+            "chainName": "Festival"
+          },
+          {
+            "chainName": "Festival"
+          },
+          {
+            "chainName": "Festival"
+          },
+          {
+            "chainName": "Festival"
+          },
+          {
+            "chainName": "Festival"
+          },
+          {
+            "chainName": "Festival"
+          },
+          {
+            "chainName": "Festival"
+          },
+          {
+            "chainName": "Festival"
+          },
+          {
+            "chainName": "Festival"
+          },
+          {
+            "chainName": "Festival"
+          },
+          {
+            "chainName": "Festival"
+          }
+        ],
+        "ownedStock": []
+      },
+      {
+        "NUMBER_OF_STOCK": 25,
+        "SAFE_SIZE": 11,
+        "tier": 1,
+        "tiles": [],
+        "name": "Imperial",
+        "unownedStock": [
+          {
+            "chainName": "Imperial"
+          },
+          {
+            "chainName": "Imperial"
+          },
+          {
+            "chainName": "Imperial"
+          },
+          {
+            "chainName": "Imperial"
+          },
+          {
+            "chainName": "Imperial"
+          },
+          {
+            "chainName": "Imperial"
+          },
+          {
+            "chainName": "Imperial"
+          },
+          {
+            "chainName": "Imperial"
+          },
+          {
+            "chainName": "Imperial"
+          },
+          {
+            "chainName": "Imperial"
+          },
+          {
+            "chainName": "Imperial"
+          },
+          {
+            "chainName": "Imperial"
+          },
+          {
+            "chainName": "Imperial"
+          },
+          {
+            "chainName": "Imperial"
+          },
+          {
+            "chainName": "Imperial"
+          },
+          {
+            "chainName": "Imperial"
+          },
+          {
+            "chainName": "Imperial"
+          },
+          {
+            "chainName": "Imperial"
+          },
+          {
+            "chainName": "Imperial"
+          },
+          {
+            "chainName": "Imperial"
+          },
+          {
+            "chainName": "Imperial"
+          },
+          {
+            "chainName": "Imperial"
+          },
+          {
+            "chainName": "Imperial"
+          },
+          {
+            "chainName": "Imperial"
+          },
+          {
+            "chainName": "Imperial"
+          }
+        ],
+        "ownedStock": []
+      },
+      {
+        "NUMBER_OF_STOCK": 25,
+        "SAFE_SIZE": 11,
+        "tier": 1,
+        "tiles": [],
+        "name": "American",
+        "unownedStock": [
+          {
+            "chainName": "American"
+          },
+          {
+            "chainName": "American"
+          },
+          {
+            "chainName": "American"
+          },
+          {
+            "chainName": "American"
+          },
+          {
+            "chainName": "American"
+          },
+          {
+            "chainName": "American"
+          },
+          {
+            "chainName": "American"
+          },
+          {
+            "chainName": "American"
+          },
+          {
+            "chainName": "American"
+          },
+          {
+            "chainName": "American"
+          },
+          {
+            "chainName": "American"
+          },
+          {
+            "chainName": "American"
+          },
+          {
+            "chainName": "American"
+          },
+          {
+            "chainName": "American"
+          },
+          {
+            "chainName": "American"
+          },
+          {
+            "chainName": "American"
+          },
+          {
+            "chainName": "American"
+          },
+          {
+            "chainName": "American"
+          },
+          {
+            "chainName": "American"
+          },
+          {
+            "chainName": "American"
+          },
+          {
+            "chainName": "American"
+          },
+          {
+            "chainName": "American"
+          },
+          {
+            "chainName": "American"
+          },
+          {
+            "chainName": "American"
+          },
+          {
+            "chainName": "American"
+          }
+        ],
+        "ownedStock": []
+      },
+      {
+        "NUMBER_OF_STOCK": 25,
+        "SAFE_SIZE": 11,
+        "tier": 2,
+        "tiles": [],
+        "name": "Continental",
+        "unownedStock": [
+          {
+            "chainName": "Continental"
+          },
+          {
+            "chainName": "Continental"
+          },
+          {
+            "chainName": "Continental"
+          },
+          {
+            "chainName": "Continental"
+          },
+          {
+            "chainName": "Continental"
+          },
+          {
+            "chainName": "Continental"
+          },
+          {
+            "chainName": "Continental"
+          },
+          {
+            "chainName": "Continental"
+          },
+          {
+            "chainName": "Continental"
+          },
+          {
+            "chainName": "Continental"
+          },
+          {
+            "chainName": "Continental"
+          },
+          {
+            "chainName": "Continental"
+          },
+          {
+            "chainName": "Continental"
+          },
+          {
+            "chainName": "Continental"
+          },
+          {
+            "chainName": "Continental"
+          },
+          {
+            "chainName": "Continental"
+          },
+          {
+            "chainName": "Continental"
+          },
+          {
+            "chainName": "Continental"
+          },
+          {
+            "chainName": "Continental"
+          },
+          {
+            "chainName": "Continental"
+          },
+          {
+            "chainName": "Continental"
+          },
+          {
+            "chainName": "Continental"
+          },
+          {
+            "chainName": "Continental"
+          },
+          {
+            "chainName": "Continental"
+          },
+          {
+            "chainName": "Continental"
+          }
+        ],
+        "ownedStock": []
+      },
+      {
+        "NUMBER_OF_STOCK": 25,
+        "SAFE_SIZE": 11,
+        "tier": 2,
+        "tiles": [],
+        "name": "Tower",
+        "unownedStock": [
+          {
+            "chainName": "Tower"
+          },
+          {
+            "chainName": "Tower"
+          },
+          {
+            "chainName": "Tower"
+          },
+          {
+            "chainName": "Tower"
+          },
+          {
+            "chainName": "Tower"
+          },
+          {
+            "chainName": "Tower"
+          },
+          {
+            "chainName": "Tower"
+          },
+          {
+            "chainName": "Tower"
+          },
+          {
+            "chainName": "Tower"
+          },
+          {
+            "chainName": "Tower"
+          },
+          {
+            "chainName": "Tower"
+          },
+          {
+            "chainName": "Tower"
+          },
+          {
+            "chainName": "Tower"
+          },
+          {
+            "chainName": "Tower"
+          },
+          {
+            "chainName": "Tower"
+          },
+          {
+            "chainName": "Tower"
+          },
+          {
+            "chainName": "Tower"
+          },
+          {
+            "chainName": "Tower"
+          },
+          {
+            "chainName": "Tower"
+          },
+          {
+            "chainName": "Tower"
+          },
+          {
+            "chainName": "Tower"
+          },
+          {
+            "chainName": "Tower"
+          },
+          {
+            "chainName": "Tower"
+          },
+          {
+            "chainName": "Tower"
+          },
+          {
+            "chainName": "Tower"
+          }
+        ],
+        "ownedStock": []
+      }
+    ],
+    "foundedChains": [],
+    "mergersToHandle": []
+  },
+  "currentPlayer": {
+    "playerName": "bob",
+    "balance": 6000,
+    "playerTiles": [
+      {
+        "tileName": "2G",
+        "coordinates": [
+          1,
+          6
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "7D",
+        "coordinates": [
+          6,
+          3
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "2F",
+        "coordinates": [
+          1,
+          5
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "12B",
+        "coordinates": [
+          11,
+          1
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "9D",
+        "coordinates": [
+          8,
+          3
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "6H",
+        "coordinates": [
+          5,
+          7
+        ],
+        "chainName": ""
+      }
+    ],
+    "playerStocks": []
+  },
+  "stockLeftToBuy": 3,
+  "unplayedTiles": {},
+  "UIState": 0
+}
