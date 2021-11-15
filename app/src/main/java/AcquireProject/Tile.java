@@ -21,8 +21,8 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
- * @author Emily Elzinga
- * @version 0.1.0
+ * @author Emily, Michael, Benjamin
+ * @version 1.0.0
  * @since 11/8/2021
  */
 

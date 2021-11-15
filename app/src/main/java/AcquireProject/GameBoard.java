@@ -25,7 +25,7 @@
  * board, with a matrix representing the physical board.
  *
  * @author Emily Elzinga
- * @version v0.1.0
+ * @version v1.0.0
  * @since 11/4/2021
  */
 
