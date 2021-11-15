@@ -14,15 +14,15 @@ class PlayerTest extends Specification{
         def tile4 = new Tile(Arrays.asList(4,3))
         def tile5 = new Tile(Arrays.asList(5,2))
         def tile6 = new Tile(Arrays.asList(6,1))
-        testPlayer =
+//        testPlayer =
 
     }
 
     def "giving player a new hand of tiles"(){
-        given:
-        def testPlayer = new Player();
+//        given:
+//        def testPlayer = new Player();
 
-        when:
-        testPlayer.giveNewHand()
+//        when:
+//        testPlayer.giveNewHand()
     }
 }
