@@ -19,10 +19,6 @@ class PlayerTest extends Specification{
     }
 
     def "giving player a new hand of tiles"(){
-//        given:
-//        def testPlayer = new Player();
 
-//        when:
-//        testPlayer.giveNewHand()
     }
 }
