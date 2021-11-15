@@ -1,61 +1,5 @@
 {
-  "players": [
-    {
-      "playerName": "Test",
-      "balance": 6000,
-      "playerTiles": [
-        {
-          "tileName": "7B",
-          "coordinates": [
-            6,
-            1
-          ],
-          "chainName": ""
-        },
-        {
-          "tileName": "2A",
-          "coordinates": [
-            1,
-            0
-          ],
-          "chainName": ""
-        },
-        {
-          "tileName": "1D",
-          "coordinates": [
-            0,
-            3
-          ],
-          "chainName": ""
-        },
-        {
-          "tileName": "5D",
-          "coordinates": [
-            4,
-            3
-          ],
-          "chainName": ""
-        },
-        {
-          "tileName": "11F",
-          "coordinates": [
-            10,
-            5
-          ],
-          "chainName": ""
-        },
-        {
-          "tileName": "1H",
-          "coordinates": [
-            0,
-            7
-          ],
-          "chainName": ""
-        }
-      ],
-      "playerStocks": []
-    }
-  ],
+  "players": [],
   "gameBoard": {
     "playedTiles": [],
     "board": [
@@ -792,62 +736,7 @@
     "foundedChains": [],
     "mergersToHandle": []
   },
-  "currentPlayer": {
-    "playerName": "Test",
-    "balance": 6000,
-    "playerTiles": [
-      {
-        "tileName": "7B",
-        "coordinates": [
-          6,
-          1
-        ],
-        "chainName": ""
-      },
-      {
-        "tileName": "2A",
-        "coordinates": [
-          1,
-          0
-        ],
-        "chainName": ""
-      },
-      {
-        "tileName": "1D",
-        "coordinates": [
-          0,
-          3
-        ],
-        "chainName": ""
-      },
-      {
-        "tileName": "5D",
-        "coordinates": [
-          4,
-          3
-        ],
-        "chainName": ""
-      },
-      {
-        "tileName": "11F",
-        "coordinates": [
-          10,
-          5
-        ],
-        "chainName": ""
-      },
-      {
-        "tileName": "1H",
-        "coordinates": [
-          0,
-          7
-        ],
-        "chainName": ""
-      }
-    ],
-    "playerStocks": []
-  },
   "stockLeftToBuy": 3,
   "unplayedTiles": {},
-  "UIState": 0
+  "UIState": 5
 }
