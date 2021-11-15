@@ -101,6 +101,9 @@ public class MergingMenu extends ActionMenu{
         });
 
         Button holdButton = new Button("Hold the remaining stock");
+        if (currentMerger.getPlayerStockCount() == 0) {
+            holdButton.setText("Continue");
+        }
         menu.getChildren().add(holdButton);
         holdButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
