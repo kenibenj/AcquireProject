@@ -1,0 +1,89 @@
+
+.tile{
+    -fx-border-color: black;
+    -fx-min-height: 40;
+    -fx-min-width: 40;
+    -fx-padding: 5;
+    -fx-text-alignment: center;
+}
+
+.playedTile{
+    -fx-background-color: #9f9e9e;
+}
+
+.Worldwide{
+    -fx-background-color: #a800a8;
+    -fx-text-fill: white;
+}
+
+.Sackson{
+    -fx-background-color: #ff6729;
+    -fx-text-fill: white;
+}
+
+.Festival{
+    -fx-background-color: green;
+    -fx-text-fill: white;
+}
+
+.Imperial{
+    -fx-background-color: #c4a400;
+    -fx-text-fill: white;
+}
+
+.American{
+    -fx-background-color: #0000d3;
+    -fx-text-fill: white;
+}
+
+.Continental{
+    -fx-background-color: #af0c0c;
+    -fx-text-fill: white;
+}
+
+.Tower{
+    -fx-background-color: black;
+    -fx-text-fill: white;
+}
+
+.stockDisplay{
+    -fx-padding: 2;
+    -fx-min-width: 30;
+}
+
+.button{
+    -fx-padding: 5;
+}
+
+.largeText{
+    -fx-font-size: 40;
+}
+
+.buttonBox{
+    -fx-padding: 10;
+    -fx-spacing: 5;
+}
+
+.hbox {
+    -fx-padding: 15;
+    -fx-spacing: 10;
+}
+
+.infoBox {
+    -fx-border-color: black;
+    -fx-padding: 10;
+}
+
+.actionMenu{
+    -fx-padding: 5;
+    -fx-border-color: black;
+    -fx-spacing: 2;
+    -fx-min-width: 360;
+    -fx-max-height: 360;
+    -fx-min-width: 280;
+    -fx-max-width: 280;
+}
+
+.gameBorder{
+    -fx-padding: 10;
+}
