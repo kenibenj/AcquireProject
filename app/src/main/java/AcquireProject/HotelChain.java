@@ -52,7 +52,7 @@ public class HotelChain {
     public static final int TIER_THREE = 2;
 
     private static final int[] stockPrices = new int[]{200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200};
-    private static final int[][] stockBracket = new int[][]{new int[]{2, 2}, new int[]{3, 3}, new int[]{4, 4}, new int[]{5, 5}
+    private static final int[][] stockBracket = new int[][]{new int[]{0, 2}, new int[]{3, 3}, new int[]{4, 4}, new int[]{5, 5}
             , new int[]{6, 10}, new int[]{11, 20}, new int[]{21, 30}, new int[]{31, 40}, new int[]{41, 42069}};
 
 
