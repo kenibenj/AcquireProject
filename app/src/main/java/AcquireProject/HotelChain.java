@@ -57,7 +57,8 @@ public class HotelChain {
      * @return name of the HotelChain
      */
     public String getName(){
-        return name;}
+        return name;
+    }
 
     /**
      * getter method that gets an integer amount of how many tiles are in the HotelChain

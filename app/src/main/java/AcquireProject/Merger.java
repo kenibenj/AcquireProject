@@ -65,7 +65,6 @@ public class Merger {
         Map<Player, Integer> profile = StockProfiler.instance().createChainProfile(acquiredChain);
 
         for(Player p : profile.keySet()){
-
             if(majority.contains(p)){
                 continue;
             }

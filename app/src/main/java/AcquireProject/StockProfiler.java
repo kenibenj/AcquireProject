@@ -39,7 +39,7 @@ public class StockProfiler {
     }
 
     /**
-     * Creates a map where keys are the names of the hotel chians in the system
+     * Creates a map where keys are the names of the hotel chains in the system
      * and values are the amount of stock the given player owns in that chian
      *
      * @param player the player to create the profile for

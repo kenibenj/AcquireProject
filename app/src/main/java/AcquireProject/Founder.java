@@ -22,8 +22,6 @@ public class Founder {
     }
 
 
-    public void foundChain(){
 
-    }
 
 }
