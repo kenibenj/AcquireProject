@@ -8,7 +8,6 @@
 
 package UserInterface;
 
-import UserInterface.UserInterface;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
