@@ -41,8 +41,8 @@ public class EndGameMenu extends ActionMenu{
 
     String winnerMessage = "";
 
-    public EndGameMenu(Game game, GameUI ui){
-        super(game, ui);
+    public EndGameMenu(GameUI ui){
+        super(ui);
     }
 
     @Override
@@ -64,8 +64,8 @@ public class EndGameMenu extends ActionMenu{
         endGameButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                game.endGame();
-                winnerMessage = game.getWinner();
+                ui.getGame().endGame();
+                winnerMessage = ui.getGame().getWinner();
                 ui.updatePlayerInfo();
                 ui.changeActionMenu(GameUI.END_GAME);
             }

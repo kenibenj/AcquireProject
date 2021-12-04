@@ -107,5 +107,9 @@ public class StockProfiler {
         return profile;
     }
 
+    public void clearRegesteredChains(){
+        this.chains.clear();
+    }
+
 
 }

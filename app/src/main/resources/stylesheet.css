@@ -59,9 +59,17 @@
     -fx-font-size: 40;
 }
 
+.mediumText{
+    -fx-font-size: 20;
+}
+
 .buttonBox{
     -fx-padding: 10;
     -fx-spacing: 5;
+}
+
+.mainMenuButton{
+    -fx-min-width: 300;
 }
 
 .hbox {

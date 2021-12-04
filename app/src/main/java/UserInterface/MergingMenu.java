@@ -45,8 +45,8 @@ public class MergingMenu extends ActionMenu{
 
     private Merger currentMerger = null;
 
-    public MergingMenu(Game game, GameUI ui){
-        super(game, ui);
+    public MergingMenu(GameUI ui){
+        super(ui);
     }
 
     @Override
@@ -60,7 +60,7 @@ public class MergingMenu extends ActionMenu{
         menu.getStyleClass().add("actionMenu");
 
         if(Objects.isNull(currentMerger)){
-            currentMerger = game.getCurrentMerger();
+            currentMerger = ui.getGame().getCurrentMerger();
             currentMerger.giveShareholderBonus();
         }
 
@@ -111,7 +111,7 @@ public class MergingMenu extends ActionMenu{
                 currentMerger.goToNextPlayer();
                 if(currentMerger.morePlayersToHandle()){
                     ui.changeActionMenu(GameUI.MERGING);
-                }else if(game.mergeNeeded()){
+                }else if(ui.getGame().mergeNeeded()){
                     currentMerger.mergeChains();
                     ui.updateGameBoard();
                     currentMerger = null;
@@ -120,7 +120,7 @@ public class MergingMenu extends ActionMenu{
                     currentMerger.mergeChains();
                     ui.updateGameBoard();
                     ui.changeActionMenu(GameUI.BUY_STOCK);
-                    if(game.gameCanEnd()){
+                    if(ui.getGame().gameCanEnd()){
                         ui.changeActionMenu(GameUI.END_GAME);
                     }
                     currentMerger = null;

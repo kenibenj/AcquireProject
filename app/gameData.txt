@@ -1,7 +1,72 @@
 {
-  "players": [],
+  "players": [
+    {
+      "playerName": "Me",
+      "balance": 6000,
+      "playerTiles": [
+        {
+          "tileName": "6B",
+          "coordinates": [
+            5,
+            1
+          ],
+          "chainName": ""
+        },
+        {
+          "tileName": "7D",
+          "coordinates": [
+            6,
+            3
+          ],
+          "chainName": ""
+        },
+        {
+          "tileName": "8H",
+          "coordinates": [
+            7,
+            7
+          ],
+          "chainName": ""
+        },
+        {
+          "tileName": "7I",
+          "coordinates": [
+            6,
+            8
+          ],
+          "chainName": ""
+        },
+        {
+          "tileName": "7G",
+          "coordinates": [
+            6,
+            6
+          ],
+          "chainName": ""
+        },
+        {
+          "tileName": "5H",
+          "coordinates": [
+            4,
+            7
+          ],
+          "chainName": ""
+        }
+      ],
+      "playerStocks": []
+    }
+  ],
   "gameBoard": {
-    "playedTiles": [],
+    "playedTiles": [
+      {
+        "tileName": "7F",
+        "coordinates": [
+          6,
+          5
+        ],
+        "chainName": ""
+      }
+    ],
     "board": [
       [
         null,
@@ -75,7 +140,14 @@
         null,
         null,
         null,
-        null,
+        {
+          "tileName": "7F",
+          "coordinates": [
+            6,
+            5
+          ],
+          "chainName": ""
+        },
         null,
         null,
         null
@@ -736,7 +808,873 @@
     "foundedChains": [],
     "mergersToHandle": []
   },
+  "currentPlayer": {
+    "playerName": "Me",
+    "balance": 6000,
+    "playerTiles": [
+      {
+        "tileName": "6B",
+        "coordinates": [
+          5,
+          1
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "7D",
+        "coordinates": [
+          6,
+          3
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "8H",
+        "coordinates": [
+          7,
+          7
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "7I",
+        "coordinates": [
+          6,
+          8
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "7G",
+        "coordinates": [
+          6,
+          6
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "5H",
+        "coordinates": [
+          4,
+          7
+        ],
+        "chainName": ""
+      }
+    ],
+    "playerStocks": []
+  },
   "stockLeftToBuy": 3,
-  "unplayedTiles": {},
-  "UIState": 5
+  "unplayedTiles": {
+    "allTiles": [
+      {
+        "tileName": "1A",
+        "coordinates": [
+          0,
+          0
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "1B",
+        "coordinates": [
+          0,
+          1
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "1C",
+        "coordinates": [
+          0,
+          2
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "1D",
+        "coordinates": [
+          0,
+          3
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "1E",
+        "coordinates": [
+          0,
+          4
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "1F",
+        "coordinates": [
+          0,
+          5
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "1G",
+        "coordinates": [
+          0,
+          6
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "1H",
+        "coordinates": [
+          0,
+          7
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "1I",
+        "coordinates": [
+          0,
+          8
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "2A",
+        "coordinates": [
+          1,
+          0
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "2B",
+        "coordinates": [
+          1,
+          1
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "2C",
+        "coordinates": [
+          1,
+          2
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "2D",
+        "coordinates": [
+          1,
+          3
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "2E",
+        "coordinates": [
+          1,
+          4
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "2F",
+        "coordinates": [
+          1,
+          5
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "2G",
+        "coordinates": [
+          1,
+          6
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "2H",
+        "coordinates": [
+          1,
+          7
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "2I",
+        "coordinates": [
+          1,
+          8
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "3A",
+        "coordinates": [
+          2,
+          0
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "3B",
+        "coordinates": [
+          2,
+          1
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "3C",
+        "coordinates": [
+          2,
+          2
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "3D",
+        "coordinates": [
+          2,
+          3
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "3E",
+        "coordinates": [
+          2,
+          4
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "3F",
+        "coordinates": [
+          2,
+          5
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "3G",
+        "coordinates": [
+          2,
+          6
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "3H",
+        "coordinates": [
+          2,
+          7
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "3I",
+        "coordinates": [
+          2,
+          8
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "4A",
+        "coordinates": [
+          3,
+          0
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "4B",
+        "coordinates": [
+          3,
+          1
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "4C",
+        "coordinates": [
+          3,
+          2
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "4D",
+        "coordinates": [
+          3,
+          3
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "4E",
+        "coordinates": [
+          3,
+          4
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "4F",
+        "coordinates": [
+          3,
+          5
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "4G",
+        "coordinates": [
+          3,
+          6
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "4H",
+        "coordinates": [
+          3,
+          7
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "4I",
+        "coordinates": [
+          3,
+          8
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "5A",
+        "coordinates": [
+          4,
+          0
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "5B",
+        "coordinates": [
+          4,
+          1
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "5C",
+        "coordinates": [
+          4,
+          2
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "5D",
+        "coordinates": [
+          4,
+          3
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "5E",
+        "coordinates": [
+          4,
+          4
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "5F",
+        "coordinates": [
+          4,
+          5
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "5G",
+        "coordinates": [
+          4,
+          6
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "5I",
+        "coordinates": [
+          4,
+          8
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "6A",
+        "coordinates": [
+          5,
+          0
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "6C",
+        "coordinates": [
+          5,
+          2
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "6D",
+        "coordinates": [
+          5,
+          3
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "6E",
+        "coordinates": [
+          5,
+          4
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "6F",
+        "coordinates": [
+          5,
+          5
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "6G",
+        "coordinates": [
+          5,
+          6
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "6H",
+        "coordinates": [
+          5,
+          7
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "6I",
+        "coordinates": [
+          5,
+          8
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "7A",
+        "coordinates": [
+          6,
+          0
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "7B",
+        "coordinates": [
+          6,
+          1
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "7C",
+        "coordinates": [
+          6,
+          2
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "7E",
+        "coordinates": [
+          6,
+          4
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "7H",
+        "coordinates": [
+          6,
+          7
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "8A",
+        "coordinates": [
+          7,
+          0
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "8B",
+        "coordinates": [
+          7,
+          1
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "8C",
+        "coordinates": [
+          7,
+          2
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "8D",
+        "coordinates": [
+          7,
+          3
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "8E",
+        "coordinates": [
+          7,
+          4
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "8F",
+        "coordinates": [
+          7,
+          5
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "8G",
+        "coordinates": [
+          7,
+          6
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "8I",
+        "coordinates": [
+          7,
+          8
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "9A",
+        "coordinates": [
+          8,
+          0
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "9B",
+        "coordinates": [
+          8,
+          1
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "9C",
+        "coordinates": [
+          8,
+          2
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "9D",
+        "coordinates": [
+          8,
+          3
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "9E",
+        "coordinates": [
+          8,
+          4
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "9F",
+        "coordinates": [
+          8,
+          5
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "9G",
+        "coordinates": [
+          8,
+          6
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "9H",
+        "coordinates": [
+          8,
+          7
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "9I",
+        "coordinates": [
+          8,
+          8
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "10A",
+        "coordinates": [
+          9,
+          0
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "10B",
+        "coordinates": [
+          9,
+          1
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "10C",
+        "coordinates": [
+          9,
+          2
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "10D",
+        "coordinates": [
+          9,
+          3
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "10E",
+        "coordinates": [
+          9,
+          4
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "10F",
+        "coordinates": [
+          9,
+          5
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "10G",
+        "coordinates": [
+          9,
+          6
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "10H",
+        "coordinates": [
+          9,
+          7
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "10I",
+        "coordinates": [
+          9,
+          8
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "11A",
+        "coordinates": [
+          10,
+          0
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "11B",
+        "coordinates": [
+          10,
+          1
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "11C",
+        "coordinates": [
+          10,
+          2
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "11D",
+        "coordinates": [
+          10,
+          3
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "11E",
+        "coordinates": [
+          10,
+          4
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "11F",
+        "coordinates": [
+          10,
+          5
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "11G",
+        "coordinates": [
+          10,
+          6
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "11H",
+        "coordinates": [
+          10,
+          7
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "11I",
+        "coordinates": [
+          10,
+          8
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "12A",
+        "coordinates": [
+          11,
+          0
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "12B",
+        "coordinates": [
+          11,
+          1
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "12C",
+        "coordinates": [
+          11,
+          2
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "12D",
+        "coordinates": [
+          11,
+          3
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "12E",
+        "coordinates": [
+          11,
+          4
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "12F",
+        "coordinates": [
+          11,
+          5
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "12G",
+        "coordinates": [
+          11,
+          6
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "12H",
+        "coordinates": [
+          11,
+          7
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "12I",
+        "coordinates": [
+          11,
+          8
+        ],
+        "chainName": ""
+      }
+    ]
+  },
+  "UIState": 0
 }
