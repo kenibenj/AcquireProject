@@ -1,54 +1,54 @@
 {
   "players": [
     {
-      "playerName": "M",
+      "playerName": "Me",
       "balance": 6000,
       "playerTiles": [
         {
-          "tileName": "1D",
+          "tileName": "6B",
           "coordinates": [
-            0,
+            5,
+            1
+          ],
+          "chainName": ""
+        },
+        {
+          "tileName": "7D",
+          "coordinates": [
+            6,
             3
           ],
           "chainName": ""
         },
         {
-          "tileName": "2B",
+          "tileName": "8H",
           "coordinates": [
-            1,
-            1
+            7,
+            7
           ],
           "chainName": ""
         },
         {
-          "tileName": "5E",
+          "tileName": "7I",
           "coordinates": [
-            4,
-            4
+            6,
+            8
           ],
           "chainName": ""
         },
         {
-          "tileName": "2G",
+          "tileName": "7G",
           "coordinates": [
-            1,
+            6,
             6
           ],
           "chainName": ""
         },
         {
-          "tileName": "10B",
+          "tileName": "5H",
           "coordinates": [
-            9,
-            1
-          ],
-          "chainName": ""
-        },
-        {
-          "tileName": "4C",
-          "coordinates": [
-            3,
-            2
+            4,
+            7
           ],
           "chainName": ""
         }
@@ -57,6 +57,16 @@
     }
   ],
   "gameBoard": {
+    "playedTiles": [
+      {
+        "tileName": "7F",
+        "coordinates": [
+          6,
+          5
+        ],
+        "chainName": ""
+      }
+    ],
     "board": [
       [
         null,
@@ -83,24 +93,6 @@
       [
         null,
         null,
-        {
-          "tileName": "3C",
-          "coordinates": [
-            2,
-            2
-          ],
-          "chainName": ""
-        },
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      [
-        null,
-        null,
         null,
         null,
         null,
@@ -143,19 +135,19 @@
         null
       ],
       [
+        null,
         null,
         null,
         null,
         null,
         {
-          "tileName": "8E",
+          "tileName": "7F",
           "coordinates": [
-            7,
-            4
+            6,
+            5
           ],
           "chainName": ""
         },
-        null,
         null,
         null,
         null
@@ -175,14 +167,18 @@
         null,
         null,
         null,
-        {
-          "tileName": "10D",
-          "coordinates": [
-            9,
-            3
-          ],
-          "chainName": ""
-        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
         null,
         null,
         null,
@@ -813,54 +809,54 @@
     "mergersToHandle": []
   },
   "currentPlayer": {
-    "playerName": "M",
+    "playerName": "Me",
     "balance": 6000,
     "playerTiles": [
       {
-        "tileName": "1D",
+        "tileName": "6B",
         "coordinates": [
-          0,
+          5,
+          1
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "7D",
+        "coordinates": [
+          6,
           3
         ],
         "chainName": ""
       },
       {
-        "tileName": "2B",
+        "tileName": "8H",
         "coordinates": [
-          1,
-          1
+          7,
+          7
         ],
         "chainName": ""
       },
       {
-        "tileName": "5E",
+        "tileName": "7I",
         "coordinates": [
-          4,
-          4
+          6,
+          8
         ],
         "chainName": ""
       },
       {
-        "tileName": "2G",
+        "tileName": "7G",
         "coordinates": [
-          1,
+          6,
           6
         ],
         "chainName": ""
       },
       {
-        "tileName": "10B",
+        "tileName": "5H",
         "coordinates": [
-          9,
-          1
-        ],
-        "chainName": ""
-      },
-      {
-        "tileName": "4C",
-        "coordinates": [
-          3,
-          2
+          4,
+          7
         ],
         "chainName": ""
       }
@@ -891,6 +887,14 @@
         "coordinates": [
           0,
           2
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "1D",
+        "coordinates": [
+          0,
+          3
         ],
         "chainName": ""
       },
@@ -943,6 +947,14 @@
         "chainName": ""
       },
       {
+        "tileName": "2B",
+        "coordinates": [
+          1,
+          1
+        ],
+        "chainName": ""
+      },
+      {
         "tileName": "2C",
         "coordinates": [
           1,
@@ -975,6 +987,14 @@
         "chainName": ""
       },
       {
+        "tileName": "2G",
+        "coordinates": [
+          1,
+          6
+        ],
+        "chainName": ""
+      },
+      {
         "tileName": "2H",
         "coordinates": [
           1,
@@ -1003,6 +1023,14 @@
         "coordinates": [
           2,
           1
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "3C",
+        "coordinates": [
+          2,
+          2
         ],
         "chainName": ""
       },
@@ -1067,6 +1095,14 @@
         "coordinates": [
           3,
           1
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "4C",
+        "coordinates": [
+          3,
+          2
         ],
         "chainName": ""
       },
@@ -1151,6 +1187,14 @@
         "chainName": ""
       },
       {
+        "tileName": "5E",
+        "coordinates": [
+          4,
+          4
+        ],
+        "chainName": ""
+      },
+      {
         "tileName": "5F",
         "coordinates": [
           4,
@@ -1167,14 +1211,6 @@
         "chainName": ""
       },
       {
-        "tileName": "5H",
-        "coordinates": [
-          4,
-          7
-        ],
-        "chainName": ""
-      },
-      {
         "tileName": "5I",
         "coordinates": [
           4,
@@ -1187,14 +1223,6 @@
         "coordinates": [
           5,
           0
-        ],
-        "chainName": ""
-      },
-      {
-        "tileName": "6B",
-        "coordinates": [
-          5,
-          1
         ],
         "chainName": ""
       },
@@ -1279,14 +1307,6 @@
         "chainName": ""
       },
       {
-        "tileName": "7D",
-        "coordinates": [
-          6,
-          3
-        ],
-        "chainName": ""
-      },
-      {
         "tileName": "7E",
         "coordinates": [
           6,
@@ -1295,34 +1315,10 @@
         "chainName": ""
       },
       {
-        "tileName": "7F",
-        "coordinates": [
-          6,
-          5
-        ],
-        "chainName": ""
-      },
-      {
-        "tileName": "7G",
-        "coordinates": [
-          6,
-          6
-        ],
-        "chainName": ""
-      },
-      {
         "tileName": "7H",
         "coordinates": [
           6,
           7
-        ],
-        "chainName": ""
-      },
-      {
-        "tileName": "7I",
-        "coordinates": [
-          6,
-          8
         ],
         "chainName": ""
       },
@@ -1359,6 +1355,14 @@
         "chainName": ""
       },
       {
+        "tileName": "8E",
+        "coordinates": [
+          7,
+          4
+        ],
+        "chainName": ""
+      },
+      {
         "tileName": "8F",
         "coordinates": [
           7,
@@ -1371,14 +1375,6 @@
         "coordinates": [
           7,
           6
-        ],
-        "chainName": ""
-      },
-      {
-        "tileName": "8H",
-        "coordinates": [
-          7,
-          7
         ],
         "chainName": ""
       },
@@ -1471,10 +1467,26 @@
         "chainName": ""
       },
       {
+        "tileName": "10B",
+        "coordinates": [
+          9,
+          1
+        ],
+        "chainName": ""
+      },
+      {
         "tileName": "10C",
         "coordinates": [
           9,
           2
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "10D",
+        "coordinates": [
+          9,
+          3
         ],
         "chainName": ""
       },
