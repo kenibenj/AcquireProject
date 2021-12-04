@@ -68,6 +68,7 @@ public class Game {
      * @return a list of hotel chains
      */
     private List<HotelChain> makeHotelChains(){
+        StockProfiler.instance().clearRegesteredChains();
         List<HotelChain> hotelChains = new ArrayList<>();
         hotelChains.add(new HotelChain("Worldwide", HotelChain.TIER_ONE));
         hotelChains.add(new HotelChain("Sackson", HotelChain.TIER_ONE));

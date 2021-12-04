@@ -67,7 +67,7 @@ public class MainMenu {
         Text title = new Text();
         title.setText("Acquire");
         title.getStyleClass().add("largeText");
-        title.setTextAlignment(TextAlignment.CENTER);
+        BorderPane.setAlignment(title, Pos.CENTER);
 
         border.setTop(title);
 
@@ -87,6 +87,7 @@ public class MainMenu {
     private Button makeStartButton(){
         Button startButton = new Button("Start");
         startButton.getStyleClass().add("largeText");
+        startButton.getStyleClass().add("mainMenuButton");
 
         startButton.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
@@ -102,6 +103,7 @@ public class MainMenu {
     private Button makeLoadButton(){
         Button loadButton = new Button("Load");
         loadButton.getStyleClass().add("largeText");
+        loadButton.getStyleClass().add("mainMenuButton");
 
         loadButton.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
@@ -118,6 +120,7 @@ public class MainMenu {
     private Button makeExitButton(){
         Button exitButton = new Button("Exit");
         exitButton.getStyleClass().add("largeText");
+        exitButton.getStyleClass().add("mainMenuButton");
 
         exitButton.setOnAction(new EventHandler<ActionEvent>() {
                 @Override

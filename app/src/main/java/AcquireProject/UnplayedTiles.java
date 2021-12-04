@@ -36,7 +36,7 @@ import java.util.List;
 public  class UnplayedTiles {
 
 
-    private static List<Tile> allTiles = new ArrayList<>();
+    private List<Tile> allTiles = new ArrayList<>();
 
     /**
      * Constructor that creates a list of all 108 Tile objects in the game

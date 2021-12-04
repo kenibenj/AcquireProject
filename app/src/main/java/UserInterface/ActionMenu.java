@@ -37,11 +37,9 @@ public abstract class ActionMenu {
 
     protected VBox menu;
 
-    Game game;
     GameUI ui;
 
-    public ActionMenu(Game game, GameUI ui){
-        this.game = game;
+    public ActionMenu(GameUI ui){
         this.ui = ui;
         this.menu = new VBox();
     }
