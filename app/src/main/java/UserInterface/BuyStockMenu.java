@@ -56,6 +56,7 @@ public class BuyStockMenu extends ActionMenu{
         menu.getStyleClass().add("actionMenu");
 
         Text title = new Text("Buy stock");
+        title.getStyleClass().add("mediumText");
         menu.getChildren().add(title);
 
         Text prompt = new Text("Stock left to buy: " + ui.getGame().getNumberOfStockLeftToBuy());

@@ -53,6 +53,15 @@ public  class UnplayedTiles {
     }
 
     /**
+     * alternate constructor for tests
+     */
+
+
+    UnplayedTiles(List<Tile> sampleTiles){
+        this.allTiles = sampleTiles;
+    }
+
+    /**
      * method that retrieves the list of unplayed tiles
      *
      * @return list of unplayed Tile objects

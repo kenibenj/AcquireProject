@@ -25,7 +25,7 @@
  * board, with a matrix representing the physical board.
  *
  * @author Emily Elzinga
- * @version v0.1.0
+ * @version v1.0.0
  * @since 11/4/2021
  */
 
@@ -83,6 +83,10 @@ class GameBoard{
      */
    public GameBoard(List<HotelChain> unfoundedChains){
       this(unfoundedChains, new ArrayList<HotelChain>());
+   }
+
+   public void addToUnfoundedChains(HotelChain chain){
+       unfoundedChains.add(chain);
    }
 
     /**
@@ -312,7 +316,7 @@ class GameBoard{
        HotelChain chainToFound = null;
 
        for(HotelChain c : unfoundedChains){
-           if(c.getName() == chain){
+           if(Objects.equals(c.getName(), chain)){
                chainToFound = c;
            }
        }

@@ -56,6 +56,7 @@ public class EndGameMenu extends ActionMenu{
         menu.getStyleClass().add("actionMenu");
 
         Text title = new Text("Would you like to end the game?");
+        title.getStyleClass().add("mediumText");
         menu.getChildren().add(title);
 
         Button endGameButton = new Button("End Game");

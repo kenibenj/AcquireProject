@@ -104,7 +104,19 @@ public class GameUI {
             }
         });
 
-        border.setTop(saveGameButton);
+        Button returnToMainMenuButton = new Button("Main Menu");
+        returnToMainMenuButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                ui.goToMainMenu();
+            }
+        });
+
+        HBox menuButtons = new HBox();
+        menuButtons.getChildren().add(saveGameButton);
+        menuButtons.getChildren().add(returnToMainMenuButton);
+
+        border.setTop(menuButtons);
 
         border.setCenter(makeGameBoard());
 

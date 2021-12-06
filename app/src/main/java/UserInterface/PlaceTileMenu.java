@@ -60,10 +60,13 @@ public class PlaceTileMenu extends ActionMenu{
         menu.getStyleClass().add("actionMenu");
 
         Text title = new Text("Which tile would you like to place?");
+        title.getStyleClass().add("mediumText");
         menu.getChildren().add(title);
 
         GridPane tileGrid = new GridPane();
-        tileGrid.setStyle("-fx-padding: 20");
+        tileGrid.setStyle("-fx-padding: 40");
+        tileGrid.setVgap(30);
+        tileGrid.setHgap(30);
         List<String> tileNames = ui.getGame().getCurrentPlayerTiles();
 
         int numberOfColumns = 3;

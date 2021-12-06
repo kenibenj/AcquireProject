@@ -54,6 +54,7 @@ public class AddPlayersMenu extends ActionMenu{
         menu.getStyleClass().add("actionMenu");
 
         Text title = new Text("Add Players");
+        title.getStyleClass().add("mediumText");
         menu.getChildren().add(title);
 
         Text prompt = new Text("Enter the name of the next Player");

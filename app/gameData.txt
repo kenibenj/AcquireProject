@@ -1,72 +1,7 @@
 {
-  "players": [
-    {
-      "playerName": "Me",
-      "balance": 6000,
-      "playerTiles": [
-        {
-          "tileName": "6B",
-          "coordinates": [
-            5,
-            1
-          ],
-          "chainName": ""
-        },
-        {
-          "tileName": "7D",
-          "coordinates": [
-            6,
-            3
-          ],
-          "chainName": ""
-        },
-        {
-          "tileName": "8H",
-          "coordinates": [
-            7,
-            7
-          ],
-          "chainName": ""
-        },
-        {
-          "tileName": "7I",
-          "coordinates": [
-            6,
-            8
-          ],
-          "chainName": ""
-        },
-        {
-          "tileName": "7G",
-          "coordinates": [
-            6,
-            6
-          ],
-          "chainName": ""
-        },
-        {
-          "tileName": "5H",
-          "coordinates": [
-            4,
-            7
-          ],
-          "chainName": ""
-        }
-      ],
-      "playerStocks": []
-    }
-  ],
+  "players": [],
   "gameBoard": {
-    "playedTiles": [
-      {
-        "tileName": "7F",
-        "coordinates": [
-          6,
-          5
-        ],
-        "chainName": ""
-      }
-    ],
+    "playedTiles": [],
     "board": [
       [
         null,
@@ -140,14 +75,7 @@
         null,
         null,
         null,
-        {
-          "tileName": "7F",
-          "coordinates": [
-            6,
-            5
-          ],
-          "chainName": ""
-        },
+        null,
         null,
         null,
         null
@@ -808,61 +736,6 @@
     "foundedChains": [],
     "mergersToHandle": []
   },
-  "currentPlayer": {
-    "playerName": "Me",
-    "balance": 6000,
-    "playerTiles": [
-      {
-        "tileName": "6B",
-        "coordinates": [
-          5,
-          1
-        ],
-        "chainName": ""
-      },
-      {
-        "tileName": "7D",
-        "coordinates": [
-          6,
-          3
-        ],
-        "chainName": ""
-      },
-      {
-        "tileName": "8H",
-        "coordinates": [
-          7,
-          7
-        ],
-        "chainName": ""
-      },
-      {
-        "tileName": "7I",
-        "coordinates": [
-          6,
-          8
-        ],
-        "chainName": ""
-      },
-      {
-        "tileName": "7G",
-        "coordinates": [
-          6,
-          6
-        ],
-        "chainName": ""
-      },
-      {
-        "tileName": "5H",
-        "coordinates": [
-          4,
-          7
-        ],
-        "chainName": ""
-      }
-    ],
-    "playerStocks": []
-  },
   "stockLeftToBuy": 3,
   "unplayedTiles": {
     "allTiles": [
@@ -1211,6 +1084,14 @@
         "chainName": ""
       },
       {
+        "tileName": "5H",
+        "coordinates": [
+          4,
+          7
+        ],
+        "chainName": ""
+      },
+      {
         "tileName": "5I",
         "coordinates": [
           4,
@@ -1223,6 +1104,14 @@
         "coordinates": [
           5,
           0
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "6B",
+        "coordinates": [
+          5,
+          1
         ],
         "chainName": ""
       },
@@ -1307,6 +1196,14 @@
         "chainName": ""
       },
       {
+        "tileName": "7D",
+        "coordinates": [
+          6,
+          3
+        ],
+        "chainName": ""
+      },
+      {
         "tileName": "7E",
         "coordinates": [
           6,
@@ -1315,10 +1212,34 @@
         "chainName": ""
       },
       {
+        "tileName": "7F",
+        "coordinates": [
+          6,
+          5
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "7G",
+        "coordinates": [
+          6,
+          6
+        ],
+        "chainName": ""
+      },
+      {
         "tileName": "7H",
         "coordinates": [
           6,
           7
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "7I",
+        "coordinates": [
+          6,
+          8
         ],
         "chainName": ""
       },
@@ -1375,6 +1296,14 @@
         "coordinates": [
           7,
           6
+        ],
+        "chainName": ""
+      },
+      {
+        "tileName": "8H",
+        "coordinates": [
+          7,
+          7
         ],
         "chainName": ""
       },
@@ -1676,5 +1605,5 @@
       }
     ]
   },
-  "UIState": 0
+  "UIState": 5
 }

@@ -2,7 +2,7 @@ package AcquireProject
 
 import spock.lang.Specification
 
-class PlayerTest extends Specification{
+class PlayerSpecification extends Specification{
     def testPlayer
     def listOfTiles
 

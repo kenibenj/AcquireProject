@@ -19,6 +19,9 @@ plugins {
     // Use javaDoc for documentation
     id 'java'
 
+    //Use jacoco for code coverage
+    id 'jacoco'
+
     // Use Project Lombok to reduce boilerplate
     id "io.freefair.lombok" version "6.2.0"
 }
@@ -61,4 +64,16 @@ javafx {
 }
 
 
+jacocoTestReport {
+    dependsOn test // tests are required to run before generating the report
+    reports {
+        xml.required = false
+        csv.required = false
+        html.outputLocation = layout.buildDirectory.dir('jacocoHtml')
+    }
+}
+
+jacoco {
+    toolVersion = "0.8.7"
+}
 

@@ -60,7 +60,7 @@
 }
 
 .mediumText{
-    -fx-font-size: 20;
+    -fx-font-size: 15;
 }
 
 .buttonBox{
@@ -90,8 +90,15 @@
     -fx-max-height: 360;
     -fx-min-width: 280;
     -fx-max-width: 280;
+    -fx-alignment: top-center;
 }
 
 .gameBorder{
     -fx-padding: 10;
 }
+
+.pseudoText{
+    -fx-spacing: 5;
+    -fx-alignment: center;
+}
+

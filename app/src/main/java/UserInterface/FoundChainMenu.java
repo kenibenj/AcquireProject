@@ -40,6 +40,7 @@ import javafx.scene.text.Text;
 
 import java.util.List;
 
+
 public class FoundChainMenu extends ActionMenu{
 
     public FoundChainMenu(GameUI ui){
@@ -56,7 +57,8 @@ public class FoundChainMenu extends ActionMenu{
         menu = new VBox();
         menu.getStyleClass().add("actionMenu");
 
-        Text title = new Text("Which hotel chain would you like to found?");
+        Text title = new Text("Which hotel chain would you\n like to found?");
+        title.getStyleClass().add("mediumText");
         menu.getChildren().add(title);
 
         List<String> names = ui.getGame().getUnfoundedChains();

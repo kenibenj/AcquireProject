@@ -144,4 +144,17 @@ class  GameBoardTest extends Specification {
         modeList.get(1).getTiles().size() == 3;
     }
 
+
+    def "make-illegal-tile-move"(){
+        when:
+        gameboard.getUnfoundedChains().clear();
+        gameboard.placeTile(new Tile(Arrays.asList(5,2)))
+        gameboard.placeTile(new Tile(Arrays.asList(6,3)))
+        gameboard.placeTile(new Tile(Arrays.asList(7,2)))
+        gameboard.placeTile(new Tile(Arrays.asList(6,1)))
+
+        then:
+        gameboard.moveIsLegal(new Tile(Arrays.asList(6,2))) == false;
+    }
+
 }
