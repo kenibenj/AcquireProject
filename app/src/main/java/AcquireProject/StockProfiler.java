@@ -60,9 +60,10 @@ public class StockProfiler {
         chains.add(name);
     }
 
+
     /**
      * Creates a map where keys are the names of the hotel chains in the system
-     * and values are the amount of stock the given player owns in that chian
+     * and values are the amount of stock the given player owns in that chain
      *
      * @param player the player to create the profile for
      * @return a map of chains to the amount of stock owned
