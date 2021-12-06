@@ -80,8 +80,10 @@ class StockProfilerSpecification extends Specification {
         map.put("American",0)
         map.put("Worldwide",7)
 
-        expect:
-        stockprofiler.createPlayerProfile(p1) == map
+        when:
+        def player1 = stockprofiler.createPlayerProfile(p1)
+        then:
+        player1.get("Worldwide") == map.get("Worldwide")
     }
 
 

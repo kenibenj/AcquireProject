@@ -46,7 +46,7 @@ import java.nio.file.Paths;
 public class Loader {
     private static Loader INSTANCE;
 
-    protected Loader getINSTANCE() {
+    public Loader getINSTANCE() {
         return INSTANCE;
     }
 

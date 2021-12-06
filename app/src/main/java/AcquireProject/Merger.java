@@ -72,7 +72,6 @@ public class Merger {
                 p.modifyBalance(minorityBonus / 100 / minority.size() * 100);
             }
         }
-
     }
 
     private List<Player> getMajorityShareHolder(){
