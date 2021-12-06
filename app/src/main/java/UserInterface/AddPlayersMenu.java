@@ -43,8 +43,8 @@ public class AddPlayersMenu extends ActionMenu{
     private int numberOfPlayers;
     private static final int MAX_PLAYERS = 6;
 
-    public AddPlayersMenu(Game game, GameUI ui){
-        super(game, ui);
+    public AddPlayersMenu(GameUI ui){
+        super(ui);
         numberOfPlayers = 0;
     }
 
@@ -54,6 +54,7 @@ public class AddPlayersMenu extends ActionMenu{
         menu.getStyleClass().add("actionMenu");
 
         Text title = new Text("Add Players");
+        title.getStyleClass().add("mediumText");
         menu.getChildren().add(title);
 
         Text prompt = new Text("Enter the name of the next Player");
@@ -73,13 +74,14 @@ public class AddPlayersMenu extends ActionMenu{
             @Override
             public void handle(ActionEvent event) {
                 if(!name.getCharacters().isEmpty()) {
-                    game.addPlayer(name.getCharacters().toString());
+                    ui.getGame().addPlayer(name.getCharacters().toString());
                     name.clear();
                     numberOfPlayers++;
                     if (numberOfPlayers >= MAX_PLAYERS - 1) {
                         continueButton.setDisable(true);
                     }
                     finishButton.setDisable(false);
+                    
                     name.requestFocus();
                 }
             }
@@ -90,7 +92,7 @@ public class AddPlayersMenu extends ActionMenu{
             public void handle(ActionEvent event) {
 
                 if(!name.getCharacters().isEmpty()){
-                    game.addPlayer(name.getCharacters().toString());
+                    ui.getGame().addPlayer(name.getCharacters().toString());
                     name.clear();
                     numberOfPlayers++;
                     if (numberOfPlayers >= MAX_PLAYERS - 1) {
@@ -98,7 +100,7 @@ public class AddPlayersMenu extends ActionMenu{
                     }
                 }
 
-                game.goToNextPlayer();
+                ui.getGame().goToNextPlayer();
                 ui.updatePlayerInfo();
                 ui.changeActionMenu(ui.PLACE_TILE);
             }

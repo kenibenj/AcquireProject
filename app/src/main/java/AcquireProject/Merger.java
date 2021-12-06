@@ -21,14 +21,13 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
- * Created by Emily Elzinga
  *
  * 11/5/2021
  *
  * performs all the functions and steps when merging two hotel chains.
  *
  * @since 1.0.0
- * @author Michael Collier
+ * @author Michael Collier, Emily Elzinga
  */
 
 
@@ -73,7 +72,6 @@ public class Merger {
                 p.modifyBalance(minorityBonus / 100 / minority.size() * 100);
             }
         }
-
     }
 
     private List<Player> getMajorityShareHolder(){

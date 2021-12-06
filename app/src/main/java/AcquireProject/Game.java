@@ -39,7 +39,7 @@ public class Game {
 
 
     private Queue<Player> players;
-    private GameBoard gameBoard;
+    private @Getter GameBoard gameBoard;
     private Player currentPlayer;
     private int stockLeftToBuy;
     private UnplayedTiles unplayedTiles;
@@ -59,7 +59,38 @@ public class Game {
 
         List<HotelChain> hotelChains = makeHotelChains();
         this.gameBoard = new GameBoard(hotelChains);
+    }
 
+    /**
+     * players queue getter for testing the game file
+     *
+     */
+
+
+    public Queue<Player> getPlayers(){
+        return players;
+    }
+    /**
+     * currentPlayer getter for testing the game file
+     *
+     */
+
+
+    public Player getCurrentPlayer(){
+        return currentPlayer;
+    }
+
+    /**
+     * alternate constructor for testing the game file
+     * @param testTiles
+     */
+    public Game(List<Tile> testTiles, List<HotelChain> unfounded){
+
+        stockLeftToBuy = 3;
+
+        this.players = new LinkedList<>();
+        this.unplayedTiles = new UnplayedTiles(testTiles);
+        this.gameBoard = new GameBoard(unfounded);
     }
 
     /**
@@ -68,6 +99,7 @@ public class Game {
      * @return a list of hotel chains
      */
     private List<HotelChain> makeHotelChains(){
+        StockProfiler.instance().clearRegesteredChains();
         List<HotelChain> hotelChains = new ArrayList<>();
         hotelChains.add(new HotelChain("Worldwide", HotelChain.TIER_ONE));
         hotelChains.add(new HotelChain("Sackson", HotelChain.TIER_ONE));

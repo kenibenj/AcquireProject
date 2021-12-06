@@ -59,9 +59,17 @@
     -fx-font-size: 40;
 }
 
+.mediumText{
+    -fx-font-size: 15;
+}
+
 .buttonBox{
     -fx-padding: 10;
     -fx-spacing: 5;
+}
+
+.mainMenuButton{
+    -fx-min-width: 300;
 }
 
 .hbox {
@@ -82,8 +90,15 @@
     -fx-max-height: 360;
     -fx-min-width: 280;
     -fx-max-width: 280;
+    -fx-alignment: top-center;
 }
 
 .gameBorder{
     -fx-padding: 10;
 }
+
+.pseudoText{
+    -fx-spacing: 5;
+    -fx-alignment: center;
+}
+
