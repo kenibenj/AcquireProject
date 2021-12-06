@@ -30,6 +30,7 @@ class MergerSpecification extends Specification{
         americanChain.sellStock(steve);
         americanChain.sellStock(steve);
 
+
         bob = new Player("Bob", new ArrayList<Tile>());
 
         merger = new Merger(towerChain, americanChain, gameBoard);
@@ -60,6 +61,13 @@ class MergerSpecification extends Specification{
 
         expect:
         !merger.morePlayersToHandle()
+    }
+    def "test steve's shareholder bonus"(){
+        given:
+        merger.giveShareholderBonus()
+
+        expect:
+        steve.getBalance() == 12500
     }
 
 }

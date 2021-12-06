@@ -45,8 +45,8 @@ import java.util.Objects;
 
 public class PlaceTileMenu extends ActionMenu{
     
-    public PlaceTileMenu(Game game, GameUI ui){
-        super(game, ui);
+    public PlaceTileMenu(GameUI ui){
+        super(ui);
     }
 
     @Override
@@ -60,11 +60,14 @@ public class PlaceTileMenu extends ActionMenu{
         menu.getStyleClass().add("actionMenu");
 
         Text title = new Text("Which tile would you like to place?");
+        title.getStyleClass().add("mediumText");
         menu.getChildren().add(title);
 
         GridPane tileGrid = new GridPane();
-        tileGrid.setStyle("-fx-padding: 20");
-        List<String> tileNames = game.getCurrentPlayerTiles();
+        tileGrid.setStyle("-fx-padding: 40");
+        tileGrid.setVgap(30);
+        tileGrid.setHgap(30);
+        List<String> tileNames = ui.getGame().getCurrentPlayerTiles();
 
         int numberOfColumns = 3;
 
@@ -72,8 +75,8 @@ public class PlaceTileMenu extends ActionMenu{
 
         for(int i = 0; i < tileNames.size(); i++){
             Button t = new Button(tileNames.get(i));
-            if(game.moveIsLegal(i)) numberOfPlayableTiles++;
-            t.setDisable(!game.moveIsLegal(i));
+            if(ui.getGame().moveIsLegal(i)) numberOfPlayableTiles++;
+            t.setDisable(!ui.getGame().moveIsLegal(i));
             t.getStyleClass().add("tile");
             t.getStyleClass().add("playedTile");
 
@@ -83,11 +86,11 @@ public class PlaceTileMenu extends ActionMenu{
                 @Override
                 public void handle(ActionEvent event) {
                     int tileIndex = index;
-                    game.placeTile(tileIndex);
-                    game.addTileToCurrentPlayer();
+                    ui.getGame().placeTile(tileIndex);
+                    ui.getGame().addTileToCurrentPlayer();
                     ui.updateGameBoard();
 
-                    Founder needFounder = game.foundNeeded();
+                    Founder needFounder = ui.getGame().foundNeeded();
 
                     if(!Objects.isNull(needFounder)){
                         ui.changeActionMenu(GameUI.FOUND_CHAIN);
@@ -95,14 +98,14 @@ public class PlaceTileMenu extends ActionMenu{
                     }
 
 
-                    if(game.mergeNeeded()){
+                    if(ui.getGame().mergeNeeded()){
                         ui.changeActionMenu(GameUI.MERGING);
                         return;
                     }
 
                     ui.changeActionMenu(GameUI.BUY_STOCK);
 
-                    if(game.gameCanEnd()){
+                    if(ui.getGame().gameCanEnd()){
                         ui.changeActionMenu(GameUI.END_GAME);
                     }
                 }
@@ -118,7 +121,7 @@ public class PlaceTileMenu extends ActionMenu{
             getNewHandButton.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {
-                    game.giveCurrentPlayerNewHand();
+                    ui.getGame().giveCurrentPlayerNewHand();
                     ui.changeActionMenu(GameUI.PLACE_TILE);
                 }
             });

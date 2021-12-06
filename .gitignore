@@ -27,6 +27,7 @@ buildNumber.properties
 ##############################
 ## Gradle
 ##############################
+app/build
 bin/
 build/
 .gradle

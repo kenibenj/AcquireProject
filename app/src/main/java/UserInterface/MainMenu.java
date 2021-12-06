@@ -35,12 +35,18 @@ import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import lombok.Getter;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 
 public class MainMenu {
 
@@ -59,17 +65,32 @@ public class MainMenu {
     private Scene makeScene(){
 
         BorderPane border = new BorderPane();
+        border.getStyleClass().add("Tower");
+        border.setStyle("-fx-padding: 30");
 
         Scene scene = new Scene(border, 800, 600, Color.WHITE);
         scene.getStylesheets().add(getClass().getClassLoader().getResource("stylesheet.css").toExternalForm());
 
 
-        Text title = new Text();
+        /*Label title = new Label();
         title.setText("Acquire");
+        title.setStyle("-fx-padding: 40");
         title.getStyleClass().add("largeText");
-        title.setTextAlignment(TextAlignment.CENTER);
+        title.getStyleClass().add("Tower");
+        BorderPane.setAlignment(title, Pos.CENTER);
 
-        border.setTop(title);
+        border.setTop(title);*/
+
+        try {
+            Image logo = new Image(new FileInputStream("src\\main\\resources\\AcquireLogo.png"));
+            ImageView logoView = new ImageView(logo);
+            BorderPane.setAlignment(logoView, Pos.CENTER);
+            border.setTop(logoView);
+        }catch(FileNotFoundException e){
+            System.out.println("Problem trying to load acquire logo");
+            e.printStackTrace();
+        }
+
 
         VBox buttons = new VBox();
         buttons.getStyleClass().add("buttonBox");
@@ -87,6 +108,7 @@ public class MainMenu {
     private Button makeStartButton(){
         Button startButton = new Button("Start");
         startButton.getStyleClass().add("largeText");
+        startButton.getStyleClass().add("mainMenuButton");
 
         startButton.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
@@ -102,6 +124,7 @@ public class MainMenu {
     private Button makeLoadButton(){
         Button loadButton = new Button("Load");
         loadButton.getStyleClass().add("largeText");
+        loadButton.getStyleClass().add("mainMenuButton");
 
         loadButton.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
@@ -118,9 +141,11 @@ public class MainMenu {
     private Button makeExitButton(){
         Button exitButton = new Button("Exit");
         exitButton.getStyleClass().add("largeText");
+        exitButton.getStyleClass().add("mainMenuButton");
 
         exitButton.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
+
                 public void handle(ActionEvent event) {
                     System.exit(0);
                 }

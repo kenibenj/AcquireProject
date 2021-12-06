@@ -35,7 +35,9 @@ import AcquireProject.Merger;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.Spinner;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
@@ -45,8 +47,8 @@ public class MergingMenu extends ActionMenu{
 
     private Merger currentMerger = null;
 
-    public MergingMenu(Game game, GameUI ui){
-        super(game, ui);
+    public MergingMenu(GameUI ui){
+        super(ui);
     }
 
     @Override
@@ -60,17 +62,31 @@ public class MergingMenu extends ActionMenu{
         menu.getStyleClass().add("actionMenu");
 
         if(Objects.isNull(currentMerger)){
-            currentMerger = game.getCurrentMerger();
+            currentMerger = ui.getGame().getCurrentMerger();
             currentMerger.giveShareholderBonus();
         }
 
+        HBox title = new HBox();
+        Label merging = new Label("Merging");
+        merging.getStyleClass().add("mediumText");
+        title.getChildren().add(merging);
+        Label chain1 = new Label(currentMerger.getAcquiredChain().getName());
+        chain1.getStyleClass().add("mediumText");
+        chain1.getStyleClass().add(currentMerger.getAcquiredChain().getName());
+        title.getChildren().add(chain1);
+        Label into = new Label("into");
+        into.getStyleClass().add("mediumText");
+        title.getChildren().add(into);
+        Label chain2 = new Label(currentMerger.getAcquiringChain().getName());
+        chain2.getStyleClass().add("mediumText");
+        chain2.getStyleClass().add(currentMerger.getAcquiringChain().getName());
+        title.getChildren().add(chain2);
 
+        title.getStyleClass().add("pseudoText");
 
-        Text title = new Text("Merging " + currentMerger.getAcquiredChain().getName() + " into " +
-                currentMerger.getAcquiringChain().getName());
         menu.getChildren().add(title);
 
-        Text prompt = new Text(currentMerger.getPlayerName() + " you still have " + currentMerger.getPlayerStockCount() +
+        Text prompt = new Text(currentMerger.getPlayerName() + ": you still have " + currentMerger.getPlayerStockCount() +
                 " stock in " + currentMerger.getAcquiredChain().getName());
         menu.getChildren().add(prompt);
 
@@ -111,7 +127,7 @@ public class MergingMenu extends ActionMenu{
                 currentMerger.goToNextPlayer();
                 if(currentMerger.morePlayersToHandle()){
                     ui.changeActionMenu(GameUI.MERGING);
-                }else if(game.mergeNeeded()){
+                }else if(ui.getGame().mergeNeeded()){
                     currentMerger.mergeChains();
                     ui.updateGameBoard();
                     currentMerger = null;
@@ -120,7 +136,7 @@ public class MergingMenu extends ActionMenu{
                     currentMerger.mergeChains();
                     ui.updateGameBoard();
                     ui.changeActionMenu(GameUI.BUY_STOCK);
-                    if(game.gameCanEnd()){
+                    if(ui.getGame().gameCanEnd()){
                         ui.changeActionMenu(GameUI.END_GAME);
                     }
                     currentMerger = null;

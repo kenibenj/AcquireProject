@@ -104,7 +104,19 @@ public class GameUI {
             }
         });
 
-        border.setTop(saveGameButton);
+        Button returnToMainMenuButton = new Button("Main Menu");
+        returnToMainMenuButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                ui.goToMainMenu();
+            }
+        });
+
+        HBox menuButtons = new HBox();
+        menuButtons.getChildren().add(saveGameButton);
+        menuButtons.getChildren().add(returnToMainMenuButton);
+
+        border.setTop(menuButtons);
 
         border.setCenter(makeGameBoard());
 
@@ -134,9 +146,11 @@ public class GameUI {
             info.getStyleClass().add("infoBox");
 
             Text name = new Text(playerNames.get(i));
+            name.getStyleClass().add("mediumText");
+            info.getChildren().add(name);
+
             Text balance = new Text("$" + playerBalances.get(i).toString());
 
-            info.getChildren().add(name);
 
             GridPane finance = new GridPane();
             finance.add(balance, 0, 0, 2, 1);
@@ -197,12 +211,12 @@ public class GameUI {
      * adds all the action menus to the action menu list
      */
     private void makeActionMenus(){
-        this.actionMenus.add(new PlaceTileMenu(game, this));
-        this.actionMenus.add(new BuyStockMenu(game, this));
-        this.actionMenus.add(new EndGameMenu(game, this));
-        this.actionMenus.add(new MergingMenu(game, this));
-        this.actionMenus.add(new FoundChainMenu(game, this));
-        this.actionMenus.add(new AddPlayersMenu(game, this));
+        this.actionMenus.add(new PlaceTileMenu(this));
+        this.actionMenus.add(new BuyStockMenu(this));
+        this.actionMenus.add(new EndGameMenu(this));
+        this.actionMenus.add(new MergingMenu(this));
+        this.actionMenus.add(new FoundChainMenu(this));
+        this.actionMenus.add(new AddPlayersMenu(this));
     }
 
     /**
@@ -239,7 +253,7 @@ public class GameUI {
             gameBoard.getChildren().get(index).getStyleClass().add("tile");
 
             String style = t.getChainName();
-            if(style == "") {
+            if(style.length() == 0) {
                 gameBoard.getChildren().get(index).getStyleClass().add("playedTile");
             }else{
                 gameBoard.getChildren().get(index).getStyleClass().add(style);
@@ -252,8 +266,11 @@ public class GameUI {
      */
     public void loadState(){
         changeActionMenu(game.getUIState());
+        updateGameBoard();
     }
 
-
+    protected Game getGame(){
+        return this.game;
+    }
 
 }

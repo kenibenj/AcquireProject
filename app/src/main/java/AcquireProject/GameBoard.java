@@ -85,6 +85,10 @@ class GameBoard{
       this(unfoundedChains, new ArrayList<HotelChain>());
    }
 
+   public void addToUnfoundedChains(HotelChain chain){
+       unfoundedChains.add(chain);
+   }
+
     /**
      * a method that adds a tile to the list of player's tiles
      *
@@ -312,7 +316,7 @@ class GameBoard{
        HotelChain chainToFound = null;
 
        for(HotelChain c : unfoundedChains){
-           if(c.getName() == chain){
+           if(Objects.equals(c.getName(), chain)){
                chainToFound = c;
            }
        }
