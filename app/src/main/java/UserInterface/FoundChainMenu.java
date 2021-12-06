@@ -43,8 +43,8 @@ import java.util.List;
 
 public class FoundChainMenu extends ActionMenu{
 
-    public FoundChainMenu(Game game, GameUI ui){
-        super(game, ui);
+    public FoundChainMenu(GameUI ui){
+        super(ui);
     }
 
     @Override
@@ -60,7 +60,7 @@ public class FoundChainMenu extends ActionMenu{
         Text title = new Text("Which hotel chain would you like to found?");
         menu.getChildren().add(title);
 
-        List<String> names = game.getUnfoundedChains();
+        List<String> names = ui.getGame().getUnfoundedChains();
 
         for(int i = 0; i < names.size(); i++){
             Button b = new Button(names.get(i));
@@ -71,9 +71,9 @@ public class FoundChainMenu extends ActionMenu{
             b.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {
-                    game.foundChain(game.getUnfoundedChains().get(index));
+                    ui.getGame().foundChain(ui.getGame().getUnfoundedChains().get(index));
                     ui.changeActionMenu(GameUI.BUY_STOCK);
-                    if(game.gameCanEnd()){
+                    if(ui.getGame().gameCanEnd()){
                         ui.changeActionMenu(GameUI.END_GAME);
                     }
                     ui.updateGameBoard();

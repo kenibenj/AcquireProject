@@ -41,8 +41,8 @@ import java.util.List;
 
 public class BuyStockMenu extends ActionMenu{
 
-    public BuyStockMenu(Game game, GameUI ui){
-        super(game, ui);
+    public BuyStockMenu(GameUI ui){
+        super(ui);
     }
 
     @Override
@@ -58,10 +58,10 @@ public class BuyStockMenu extends ActionMenu{
         Text title = new Text("Buy stock");
         menu.getChildren().add(title);
 
-        Text prompt = new Text("Stock left to buy:" + game.getNumberOfStockLeftToBuy());
+        Text prompt = new Text("Stock left to buy: " + ui.getGame().getNumberOfStockLeftToBuy());
         menu.getChildren().add(prompt);
 
-        List<String> stocks = game.getAvailableStocks();
+        List<String> stocks = ui.getGame().getAvailableStocks();
 
 
         for(int i = 0; i < stocks.size(); i++){
@@ -75,13 +75,13 @@ public class BuyStockMenu extends ActionMenu{
             s.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {
-                    game.buyStock(index);
+                    ui.getGame().buyStock(index);
                     ui.updatePlayerInfo();
                     ui.changeActionMenu(GameUI.BUY_STOCK);
                 }
             });
 
-            if(!game.playerCanBuyStock(index)){
+            if(!ui.getGame().playerCanBuyStock(index)){
                 s.setDisable(true);
             }
 
@@ -92,7 +92,7 @@ public class BuyStockMenu extends ActionMenu{
         continueButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                game.goToNextPlayer();
+                ui.getGame().goToNextPlayer();
                 ui.changeActionMenu(GameUI.PLACE_TILE);
             }
         });
