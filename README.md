@@ -1,9 +1,3 @@
-## Table of Contents
-*Project name*\
-*Description*\
-*Installation*\
-*Usage*\
-*Credits*\
 [Change log](CHANGELOG.md)
 ## Project Name
 AcquireProject
